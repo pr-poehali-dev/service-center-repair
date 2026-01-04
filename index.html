@@ -62,17 +62,19 @@
 <!-- /Yandex.Metrika counter -->
 
 <!-- LiveSklad Widget -->
-<script type="text/javascript">
-	window.liveskladOptions = {
-		api_key: "FbJWB3yAYUMpKhm2EXme"
-	};
-	(function() {
-		var script = document.createElement('script');
-		script.type = 'text/javascript'; script.async = true;
-		script.src = 'https://my.livesklad.com/static/widget.js';
-		document.getElementsByTagName('head')[0].appendChild(script);
-	})();
-</script>
+	<script type="text/javascript">
+		// Задаем параметры виджета при загрузке
+		window.liveskladOptions = {
+			// Ключ апи, индивидуально сгенерированный для вас
+			api_key: "FbJWB3yAYUMpKhm2EXme"
+		};
+		(function() {
+			var script = document.createElement('script');
+			script.type = 'text/javascript'; script.async = true;
+			script.src = 'https://my.livesklad.com/static/widget.js';
+			document.getElementsByTagName('head')[0].appendChild(script);
+		})();
+	</script>
 <!-- /LiveSklad Widget -->
 </body>
 </html>

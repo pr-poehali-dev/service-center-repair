@@ -390,9 +390,11 @@ const Index = () => {
               </CardHeader>
               <CardContent className="pt-6">
                 <div id="livesklad-widget"></div>
-                
+
                 <div className="mt-8 pt-8 border-t">
-                  <p className="text-center text-gray-600 mb-4">Или воспользуйтесь демо-проверкой:</p>
+                  <p className="text-center text-gray-600 mb-4">
+                    Или воспользуйтесь демо-проверкой:
+                  </p>
                   <div className="flex gap-3">
                     <Input
                       placeholder="Номер заказа (например: ORD-12345)"
@@ -518,7 +520,7 @@ const Index = () => {
           </div>
         </section>
       )}
-
+      <div id="livesklad-widget"></div>
       <section id="repairs" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
