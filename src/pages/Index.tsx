@@ -72,7 +72,7 @@ const Index = () => {
 
             <div className="flex items-center gap-4">
               <a href="tel:+79991234567" className="hidden md:flex flex-col items-end">
-                <span className="text-lg font-bold text-primary">+7 (999) 123-45-67</span>
+                <span className="text-lg font-bold text-primary mx-0">+7 (3952) 407-405</span>
                 <span className="text-xs text-gray-600">Звоните сейчас!</span>
               </a>
               <Button className="bg-primary hover:bg-primary/90 shadow-lg">
