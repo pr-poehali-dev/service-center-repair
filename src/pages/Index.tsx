@@ -695,7 +695,7 @@ const Index = () => {
               Производители
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Ремонтируем оборудование всех брендов
+              Ремонтируем оборудование популярных брендов
             </h2>
             <p className="text-xl text-gray-600">
               И многие другие производители
