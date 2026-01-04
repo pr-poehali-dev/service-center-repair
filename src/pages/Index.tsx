@@ -732,9 +732,7 @@ const Index = () => {
             <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
               Оборудование
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              С каким оборудованием работаем?
-            </h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Каким оборудованием мы работаем?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Современное профессиональное оборудование для ремонта электроники
             </p>
