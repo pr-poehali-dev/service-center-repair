@@ -180,8 +180,9 @@ const Index = () => {
 
   const equipment = [
     {
-      name: "Паяльная станция",
-      description: "Профессиональное оборудование для микропайки компонентов",
+      name: "Паяльные станции",
+      description:
+        "Профессиональное оборудование для микропайки компонентов: TermoPro ИК-650,  Sugon T26 C210, Sugon 8620DX Pro ",
       icon: "Flame",
     },
     {
@@ -191,7 +192,8 @@ const Index = () => {
     },
     {
       name: "Программаторы",
-      description: "Современные программаторы для восстановления ПО",
+      description:
+        "Современные программаторы для восстановления ПО. Программно аппаратный комплекс PC-3000 Flash + HDD+SSD. Программаторы Z3x, Octopus, Phoenix, авторизации брендов Samsung, Xiaomi, Huawei. Программаторы SPI Flash/NAND. Borneo Schematics, MaAnt",
       icon: "Cpu",
     },
     {
@@ -200,13 +202,14 @@ const Index = () => {
       icon: "Eye",
     },
     {
-      name: "Сепараторы",
-      description: "Для безопасной замены стекол и дисплеев",
+      name: "Сепараторы, ламинаторы, автоклавы",
+      description:
+        "Для безопасной замены стекол и дисплеев. FORWARD RMB-5Max+, лазерный станок Qianli SU8",
       icon: "Layers",
     },
     {
       name: "Тестовое оборудование",
-      description: "Мультиметры, осциллографы для диагностики",
+      description: "Мультиметры, осциллографы, тепловизоры для диагностики.",
       icon: "Activity",
     },
   ];
@@ -732,8 +735,13 @@ const Index = () => {
             <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
               Оборудование
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Каким оборудованием мы работаем?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Мы используем современное профессиональное оборудование для ремонта электроники</p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Каким оборудованием мы работаем?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Мы используем современное профессиональное оборудование для
+              ремонта электроники
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
