@@ -1042,7 +1042,7 @@ const Index = () => {
               </a>
 
               <a
-                href="https://t.me/89245401717"
+                href="https://t.me/element5_irk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl border-2 border-blue-200 transition-all duration-300 hover:shadow-lg group"
