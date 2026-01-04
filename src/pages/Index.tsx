@@ -957,7 +957,7 @@ const Index = () => {
 
             <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-orange-200">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=104.294792,52.280720&z=17&l=map&pt=104.294792,52.280720,pm2rdm"
+                src="https://yandex.ru/map-widget/v1/?ll=104.302444,52.316737&z=17&l=map&pt=104.302444,52.316737,pm2rdm"
                 width="100%"
                 height="400"
                 frameBorder="0"
@@ -1012,16 +1012,18 @@ const Index = () => {
       </section>
 
       {contactModalOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setContactModalOpen(false)}
         >
-          <div 
+          <div
             className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Выберите способ связи</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Выберите способ связи
+              </h3>
               <p className="text-gray-600">Свяжитесь с нами удобным способом</p>
             </div>
 
@@ -1050,7 +1052,9 @@ const Index = () => {
                 </div>
                 <div className="text-left">
                   <div className="font-semibold text-gray-900">Telegram</div>
-                  <div className="text-sm text-gray-600">Написать в Telegram</div>
+                  <div className="text-sm text-gray-600">
+                    Написать в Telegram
+                  </div>
                 </div>
               </a>
 
@@ -1065,7 +1069,9 @@ const Index = () => {
                 </div>
                 <div className="text-left">
                   <div className="font-semibold text-gray-900">WhatsApp</div>
-                  <div className="text-sm text-gray-600">Написать в WhatsApp</div>
+                  <div className="text-sm text-gray-600">
+                    Написать в WhatsApp
+                  </div>
                 </div>
               </a>
             </div>
