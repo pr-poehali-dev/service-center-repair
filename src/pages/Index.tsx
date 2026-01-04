@@ -390,6 +390,25 @@ const Index = () => {
               </CardHeader>
               <CardContent className="pt-6">
                 <div id="livesklad-widget"></div>
+                
+                <div className="mt-8 pt-8 border-t">
+                  <p className="text-center text-gray-600 mb-4">Или воспользуйтесь демо-проверкой:</p>
+                  <div className="flex gap-3">
+                    <Input
+                      placeholder="Номер заказа (например: ORD-12345)"
+                      value={orderNumber}
+                      onChange={(e) => setOrderNumber(e.target.value)}
+                      onKeyPress={(e) => e.key === "Enter" && trackOrder()}
+                      className="h-14 text-lg"
+                    />
+                    <Button
+                      onClick={trackOrder}
+                      className="bg-orange-600 hover:bg-orange-700 h-14 px-8 text-lg"
+                    >
+                      Проверить
+                    </Button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
