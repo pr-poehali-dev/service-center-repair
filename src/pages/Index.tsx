@@ -256,9 +256,7 @@ const Index = () => {
 
             <div className="flex items-center gap-2">
               <Icon name="Phone" className="text-orange-600" size={18} />
-              <a href="tel:83952407405" className={`font-bold text-orange-600 hover:text-orange-700 transition-all duration-300 ${isScrolled ? 'text-base' : 'text-lg'}`}>
-                8-3952-407-405
-              </a>
+              <a href="tel:83952407405" className={`font-bold text-orange-600 hover:text-orange-700 transition-all duration-300 ${isScrolled ? 'text-base' : 'text-lg'}`}>83952407405</a>
             </div>
 
             {!isScrolled && (
