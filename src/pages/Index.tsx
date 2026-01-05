@@ -232,6 +232,10 @@ const Index = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleTrackOrderClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     window.location.href = `mailto:89245401717@mail.ru?subject=Заявка с сайта&body=Телефон: ${contactPhone}%0A%0AСообщение: ${contactMessage}`;
@@ -242,6 +246,7 @@ const Index = () => {
       <Header
         isScrolled={isScrolled}
         onContactClick={() => setContactModalOpen(true)}
+        onTrackOrderClick={handleTrackOrderClick}
       />
 
       <HeroSection
