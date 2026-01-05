@@ -238,7 +238,8 @@ const Index = () => {
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `mailto:89245401717@mail.ru?subject=Заявка с сайта&body=Телефон: ${contactPhone}%0A%0AСообщение: ${contactMessage}`;
+    const message = `Заявка с сайта%0A%0AТелефон: ${contactPhone}${contactMessage ? `%0A%0AСообщение: ${contactMessage}` : ''}`;
+    window.open(`https://t.me/element5_irk?text=${message}`, '_blank');
   };
 
   return (
