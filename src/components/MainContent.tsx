@@ -112,7 +112,7 @@ const MainContent = ({
                 <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Search" className="text-white" size={28} />
                 </div>
-                <CardTitle className="text-3xl text-gray-900">
+                <CardTitle className="text-2xl sm:text-3xl text-gray-900">
                   Проверить статус ремонта
                 </CardTitle>
                 <CardDescription className="text-lg">
@@ -251,7 +251,7 @@ const MainContent = ({
             <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
               Услуги
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Что мы ремонтируем
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -303,7 +303,7 @@ const MainContent = ({
             <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
               Процесс
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Как мы работаем
             </h2>
             <p className="text-xl text-gray-600">
@@ -371,7 +371,7 @@ const MainContent = ({
       >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               Сделайте заказ прямо сейчас
             </h2>
             <p className="text-xl text-orange-100">
@@ -443,7 +443,7 @@ const MainContent = ({
             <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
               Бренды
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Работаем с популярными брендами</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Работаем с популярными брендами</h2>
             <p className="text-xl text-gray-600">
               И многими другими производителями электроники
             </p>
@@ -500,7 +500,7 @@ const MainContent = ({
             <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
               Оборудование
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Профессиональное оборудование
             </h2>
             <p className="text-xl text-gray-600">
@@ -540,7 +540,7 @@ const MainContent = ({
             <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
               Отзывы
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Отзывы довольных клиентов
             </h2>
             <div className="flex items-center justify-center gap-2 mb-4">

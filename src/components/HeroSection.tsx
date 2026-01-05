@@ -45,10 +45,10 @@ const HeroSection = ({
                 <Icon name={banner.icon as any} size={24} />
                 <span className="font-semibold">Профессиональный сервис</span>
               </div>
-              <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                 {banner.title}
               </h2>
-              <p className="text-2xl mb-8 text-gray-200">
+              <p className="text-lg sm:text-xl mb-8 text-gray-200">
                 {banner.description}
               </p>
               <Button
