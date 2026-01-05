@@ -3,10 +3,9 @@ import Icon from "@/components/ui/icon";
 interface HeaderProps {
   isScrolled: boolean;
   onContactClick: () => void;
-  onTrackOrderClick?: () => void;
 }
 
-const Header = ({ isScrolled, onContactClick, onTrackOrderClick }: HeaderProps) => {
+const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
   return (
     <header
       className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300 ${isScrolled ? "py-2" : "py-4"}`}
@@ -42,24 +41,14 @@ const Header = ({ isScrolled, onContactClick, onTrackOrderClick }: HeaderProps) 
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <Icon name="Phone" className="text-orange-600" size={18} />
             <button
-              onClick={onTrackOrderClick}
-              className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-300 font-medium"
+              onClick={onContactClick}
+              className={`font-bold text-orange-600 hover:text-orange-700 transition-all duration-300 ${isScrolled ? "text-base" : "text-lg"}`}
             >
-              <Icon name="Package" size={18} />
-              <span className="hidden sm:inline">Статус заказа</span>
+              83952407405
             </button>
-            
-            <div className="flex items-center gap-2">
-              <Icon name="Phone" className="text-orange-600" size={18} />
-              <button
-                onClick={onContactClick}
-                className={`font-bold text-orange-600 hover:text-orange-700 transition-all duration-300 ${isScrolled ? "text-base" : "text-lg"}`}
-              >
-                83952407405
-              </button>
-            </div>
           </div>
 
           {!isScrolled && (

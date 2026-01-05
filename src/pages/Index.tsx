@@ -246,7 +246,6 @@ const Index = () => {
       <Header
         isScrolled={isScrolled}
         onContactClick={() => setContactModalOpen(true)}
-        onTrackOrderClick={handleTrackOrderClick}
       />
 
       <HeroSection
