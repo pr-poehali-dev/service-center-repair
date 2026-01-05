@@ -134,9 +134,8 @@ const MainContent = ({
                     <div className="w-12 h-12 border-4 border-orange-200 border-t-orange-600 rounded-full animate-spin"></div>
                     <p className="text-gray-600">Загрузка виджета...</p>
                   </div>
-                  <div id="livesklad-widget" className={`w-full ${widgetLoading ? 'hidden' : ''}`}></div>
                 )}
-                
+                <div id="livesklad-widget" className={`w-full ${widgetLoading ? 'hidden' : ''}`}></div>
               </CardContent>
             </Card>
           </div>
