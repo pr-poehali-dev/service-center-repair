@@ -1126,26 +1126,14 @@ const Index = () => {
                   href="#"
                   className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
                 >
-                  <Icon name="Facebook" size={24} />
-                </a>
-                <a
-                  href="#"
-                  className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
-                >
-                  <Icon name="Instagram" size={24} />
-                </a>
-                <a
-                  href="#"
-                  className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
-                >
-                  <Icon name="MessageCircle" size={24} />
+                  <Icon name="Telegram" size={24} />
                 </a>
               </div>
             </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>© 2024 Сервис Клик. Все права защищены.</p>
+            <p>© 2025 Сервис Клик. Все права защищены.</p>
             <p className="mt-2 text-sm">
               Адрес: г. Иркутск, ул. Рабочего Штаба 78, здание супермаркета
               «Слата», 2 этаж
