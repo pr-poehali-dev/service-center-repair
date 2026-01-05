@@ -51,8 +51,10 @@ interface MainContentProps {
   reviews: Review[];
   orderNumber: string;
   trackingVisible: boolean;
+  contactName: string;
   contactPhone: string;
   contactMessage: string;
+  onContactNameChange: (value: string) => void;
   onContactPhoneChange: (value: string) => void;
   onContactMessageChange: (value: string) => void;
   onContactSubmit: (e: React.FormEvent) => void;
@@ -66,8 +68,10 @@ const MainContent = ({
   reviews,
   orderNumber,
   trackingVisible,
+  contactName,
   contactPhone,
   contactMessage,
+  onContactNameChange,
   onContactPhoneChange,
   onContactMessageChange,
   onContactSubmit,
@@ -378,6 +382,20 @@ const MainContent = ({
           <Card className="max-w-2xl mx-auto">
             <CardContent className="pt-8">
               <form onSubmit={onContactSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Ваше имя *
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="Как к вам обращаться?"
+                    value={contactName}
+                    onChange={(e) => onContactNameChange(e.target.value)}
+                    required
+                    className="h-14 text-lg"
+                  />
+                </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Ваш телефон *

@@ -7,6 +7,7 @@ import ContactModal from "@/components/ContactModal";
 const Index = () => {
   const [orderNumber, setOrderNumber] = useState("");
   const [trackingVisible, setTrackingVisible] = useState(false);
+  const [contactName, setContactName] = useState("");
   const [contactPhone, setContactPhone] = useState("");
   const [contactMessage, setContactMessage] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -238,7 +239,7 @@ const Index = () => {
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Заявка с сайта%0A%0AТелефон: ${contactPhone}${contactMessage ? `%0A%0AСообщение: ${contactMessage}` : ''}`;
+    const message = `Заявка с сайта%0A%0AИмя: ${contactName}%0AТелефон: ${contactPhone}${contactMessage ? `%0A%0AСообщение: ${contactMessage}` : ''}`;
     window.open(`https://t.me/element5_irk?text=${message}`, '_blank');
   };
 
@@ -264,8 +265,10 @@ const Index = () => {
         reviews={reviews}
         orderNumber={orderNumber}
         trackingVisible={trackingVisible}
+        contactName={contactName}
         contactPhone={contactPhone}
         contactMessage={contactMessage}
+        onContactNameChange={setContactName}
         onContactPhoneChange={setContactPhone}
         onContactMessageChange={setContactMessage}
         onContactSubmit={handleContactSubmit}
