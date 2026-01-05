@@ -72,41 +72,33 @@ const MainContent = ({
   onContactMessageChange,
   onContactSubmit,
 }: MainContentProps) => {
-  const [widgetLoading, setWidgetLoading] = useState(true);
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    let mounted = true;
-    
-    // Показываем анимацию минимум 1.5 секунды
-    const minimumLoadingTimer = setTimeout(() => {
-      if (mounted) {
-        setWidgetLoading(false);
-      }
-    }, 1500);
+    // Показываем loader минимум 2 секунды
+    const loaderTimer = setTimeout(() => {
+      setShowLoader(false);
+    }, 2000);
 
-    // Пытаемся инициализировать виджет
-    const initInterval = setInterval(() => {
-      if ((window as any).createLSWidget) {
-        try {
-          (window as any).createLSWidget();
-        } catch (error) {
-          console.error('LiveSklad init error:', error);
+    // Параллельно инициализируем виджет
+    const tryInit = () => {
+      const interval = setInterval(() => {
+        if ((window as any).createLSWidget) {
+          try {
+            (window as any).createLSWidget();
+            clearInterval(interval);
+          } catch (e) {
+            console.error('Widget init error:', e);
+          }
         }
-        clearInterval(initInterval);
-      }
-    }, 200);
+      }, 100);
 
-    // Таймаут на случай если виджет не загрузится
-    const maxWaitTimer = setTimeout(() => {
-      clearInterval(initInterval);
-    }, 10000);
-
-    return () => {
-      mounted = false;
-      clearTimeout(minimumLoadingTimer);
-      clearTimeout(maxWaitTimer);
-      clearInterval(initInterval);
+      setTimeout(() => clearInterval(interval), 8000);
     };
+
+    tryInit();
+
+    return () => clearTimeout(loaderTimer);
   }, []);
 
   return (
@@ -127,9 +119,9 @@ const MainContent = ({
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
-                <div className="flex flex-col items-center justify-center min-h-[250px]">
-                  {widgetLoading && (
-                    <div className="flex flex-col items-center gap-4 animate-in fade-in duration-300">
+                <div className="relative flex flex-col items-center justify-center min-h-[250px]">
+                  {showLoader ? (
+                    <div className="flex flex-col items-center gap-4">
                       <div className="relative">
                         <div className="w-16 h-16 border-4 border-orange-200 rounded-full"></div>
                         <div className="w-16 h-16 border-4 border-orange-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
@@ -139,11 +131,9 @@ const MainContent = ({
                         <p className="text-sm text-gray-500">Подождите несколько секунд...</p>
                       </div>
                     </div>
+                  ) : (
+                    <div id="livesklad-widget" className="w-full"></div>
                   )}
-                  <div 
-                    id="livesklad-widget" 
-                    className={`transition-opacity duration-500 ${widgetLoading ? 'opacity-0 absolute' : 'opacity-100'}`}
-                  ></div>
                 </div>
               </CardContent>
             </Card>
