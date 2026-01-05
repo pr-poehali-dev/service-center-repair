@@ -1059,7 +1059,7 @@ const Index = () => {
               </a>
 
               <a
-                href="https://wa.me/89245401717"
+                href="https://wa.me/+79245401717"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group"
