@@ -390,16 +390,16 @@ const MainContent = ({
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
             {brands.map((brand, index) => {
               const brandLogos: Record<string, string> = {
-                Samsung: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg",
-                Apple: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-                Xiaomi: "https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg",
-                Huawei: "https://upload.wikimedia.org/wikipedia/commons/0/04/Huawei_Standard_logo.svg",
-                Infinix: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Infinix_Mobile_logo.svg",
-                Realme: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Realme_logo.svg",
-                Tecno: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Tecno_Mobile_logo.svg",
-                LG: "https://upload.wikimedia.org/wikipedia/commons/b/bf/LG_logo_%282015%29.svg",
-                Haier: "https://upload.wikimedia.org/wikipedia/commons/8/80/Haier_logo.svg",
-                BBK: "https://upload.wikimedia.org/wikipedia/commons/8/8e/BBK_Electronics_logo.svg",
+                Samsung: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/320px-Samsung_Logo.svg.png",
+                Apple: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png",
+                Xiaomi: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/320px-Xiaomi_logo.svg.png",
+                Huawei: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Huawei_Standard_logo.svg/320px-Huawei_Standard_logo.svg.png",
+                Infinix: "https://cdn.worldvectorlogo.com/logos/infinix-1.svg",
+                Realme: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Realme_logo.svg/320px-Realme_logo.svg.png",
+                Tecno: "https://cdn.worldvectorlogo.com/logos/tecno-1.svg",
+                LG: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LG_logo_%282015%29.svg/200px-LG_logo_%282015%29.svg.png",
+                Haier: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Haier_logo.svg/320px-Haier_logo.svg.png",
+                BBK: "https://cdn.worldvectorlogo.com/logos/bbk-electronics.svg",
               };
 
               return (
@@ -415,6 +415,10 @@ const MainContent = ({
                     src={brandLogos[brand.name]}
                     alt={brand.name}
                     className="h-12 w-auto object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
                   />
                   <p
                     className={`font-semibold ${brand.popular ? "text-orange-600 text-lg" : "text-gray-700"}`}
