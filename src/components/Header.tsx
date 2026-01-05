@@ -57,7 +57,7 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
           </div>
           <h1 
             style={{
-              fontSize: window.innerWidth > 480 ? '20px' : '16px',
+              fontSize: window.innerWidth > 480 ? '26px' : '20px',
               fontWeight: '700',
               color: '#111827',
               margin: 0,
@@ -88,9 +88,10 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
           onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fff7ed'}
           onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
         >
-          <Icon name="Phone" size={16} />
           <span style={{ display: window.innerWidth > 480 ? 'inline' : 'none' }}>8-3952-407-405</span>
-          <span style={{ display: window.innerWidth <= 480 ? 'inline' : 'none' }}>Звонок</span>
+          <span style={{ display: window.innerWidth <= 480 ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#22c55e', boxShadow: '0 0 0 4px rgba(34, 197, 94, 0.2)', animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}>
+            <Icon name="Phone" size={20} className="text-white" />
+          </span>
         </a>
       </div>
     </header>
