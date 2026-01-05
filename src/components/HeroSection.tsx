@@ -22,7 +22,7 @@ const HeroSection = ({
   onScrollToSection,
 }: HeroSectionProps) => {
   return (
-    <section className="relative h-[600px] overflow-hidden bg-gray-900">
+    <section className="relative h-[450px] sm:h-[500px] overflow-hidden bg-gray-900">
       {banners.map((banner, index) => (
         <div
           key={index}
