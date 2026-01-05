@@ -69,32 +69,21 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
           </h1>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <a
-            href="tel:83952407405"
-            style={{
-              display: window.innerWidth > 480 ? 'flex' : 'none',
-              alignItems: 'center',
-              gap: '6px',
-              fontSize: '14px',
-              fontWeight: '700',
-              color: '#ea580c',
-              background: 'transparent',
-              textDecoration: 'none',
-              padding: '6px 8px',
-              borderRadius: '8px',
-              whiteSpace: 'nowrap',
-              flexShrink: 0
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fff7ed'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-          >
-            <span>8-3952-407-405</span>
-          </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: window.innerWidth > 768 ? '24px' : '8px' }}>
+          <div style={{ display: window.innerWidth > 768 ? 'flex' : 'none', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6b7280' }}>
+              <Icon name="MapPin" size={14} className="text-orange-600" />
+              <span>ул. Лермонтова, 257</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6b7280' }}>
+              <Icon name="Clock" size={14} className="text-orange-600" />
+              <span>Пн-Пт: 9:00-19:00, Сб-Вс: 10:00-18:00</span>
+            </div>
+          </div>
           <button
             onClick={onContactClick}
             style={{
-              display: window.innerWidth <= 480 ? 'flex' : 'none',
+              display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               width: '40px',
@@ -104,7 +93,8 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
               boxShadow: '0 0 0 4px rgba(34, 197, 94, 0.2)',
               animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               border: 'none',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              flexShrink: 0
             }}
           >
             <Icon name="Phone" size={20} className="text-white" />
