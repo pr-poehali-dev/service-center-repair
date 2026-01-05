@@ -75,28 +75,26 @@ const MainContent = ({
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    // Показываем loader минимум 2 секунды
+    // Показываем loader 2 секунды, потом скрываем и инициализируем виджет
     const loaderTimer = setTimeout(() => {
       setShowLoader(false);
-    }, 2000);
-
-    // Параллельно инициализируем виджет
-    const tryInit = () => {
-      const interval = setInterval(() => {
-        if ((window as any).createLSWidget) {
-          try {
-            (window as any).createLSWidget();
-            clearInterval(interval);
-          } catch (e) {
-            console.error('Widget init error:', e);
+      
+      // После скрытия loader инициализируем виджет
+      setTimeout(() => {
+        const tryInit = setInterval(() => {
+          if ((window as any).createLSWidget) {
+            try {
+              (window as any).createLSWidget();
+              clearInterval(tryInit);
+            } catch (e) {
+              console.error('Widget init:', e);
+            }
           }
-        }
+        }, 100);
+
+        setTimeout(() => clearInterval(tryInit), 8000);
       }, 100);
-
-      setTimeout(() => clearInterval(interval), 8000);
-    };
-
-    tryInit();
+    }, 2000);
 
     return () => clearTimeout(loaderTimer);
   }, []);
