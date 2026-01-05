@@ -134,14 +134,25 @@ const MainContent = ({
                   Введите номер заказа для отслеживания
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-6 flex justify-center">
-                {widgetLoading && (
-                  <div className="flex flex-col items-center gap-4 py-8">
-                    <div className="w-12 h-12 border-4 border-orange-200 border-t-orange-600 rounded-full animate-spin"></div>
-                    <p className="text-gray-600">Загрузка виджета...</p>
-                  </div>
-                )}
-                <div id="livesklad-widget" className={`w-full ${widgetLoading ? 'hidden' : ''}`}></div>
+              <CardContent className="pt-6">
+                <div className="flex flex-col items-center justify-center min-h-[250px]">
+                  {widgetLoading && (
+                    <div className="flex flex-col items-center gap-4 animate-in fade-in duration-300">
+                      <div className="relative">
+                        <div className="w-16 h-16 border-4 border-orange-200 rounded-full"></div>
+                        <div className="w-16 h-16 border-4 border-orange-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
+                      </div>
+                      <div className="text-center space-y-2">
+                        <p className="text-gray-900 font-medium">Загрузка виджета отслеживания</p>
+                        <p className="text-sm text-gray-500">Подождите несколько секунд...</p>
+                      </div>
+                    </div>
+                  )}
+                  <div 
+                    id="livesklad-widget" 
+                    className={`transition-opacity duration-500 ${widgetLoading ? 'opacity-0 absolute' : 'opacity-100'}`}
+                  ></div>
+                </div>
               </CardContent>
             </Card>
           </div>
