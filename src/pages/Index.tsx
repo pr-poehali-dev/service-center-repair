@@ -242,7 +242,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden max-w-[100vw]">
       <Header
         isScrolled={isScrolled}
         onContactClick={() => setContactModalOpen(true)}
