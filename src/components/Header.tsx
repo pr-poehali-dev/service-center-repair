@@ -72,12 +72,12 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
         <div style={{ display: 'flex', alignItems: 'center', gap: window.innerWidth > 768 ? '24px' : '8px' }}>
           <div style={{ display: window.innerWidth > 768 ? 'flex' : 'none', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6b7280' }}>
-              <Icon name="MapPin" size={14} className="text-orange-600" />
-              <span>ул. Лермонтова, 257</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6b7280' }}>
               <Icon name="Clock" size={14} className="text-orange-600" />
               <span>Пн-Пт: 9:00-19:00, Сб-Вс: 10:00-18:00</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6b7280' }}>
+              <Icon name="MapPin" size={14} className="text-orange-600" />
+              <span>г. Иркутск, ул. Рабочего Штаба 78, здание супермаркета Слата, 2 этаж</span>
             </div>
           </div>
           <button
