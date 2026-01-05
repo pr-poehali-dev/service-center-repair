@@ -39,7 +39,7 @@ const HeroSection = ({
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
           </div>
 
-          <div className="relative container mx-auto px-4 h-full flex items-center">
+          <div className="relative container mx-auto px-4 h-full flex items-center pt-12">
             <div className="max-w-2xl text-white">
               <div className="inline-flex items-center gap-2 bg-orange-600 px-4 py-2 rounded-full mb-6">
                 <Icon name={banner.icon as any} size={24} />
