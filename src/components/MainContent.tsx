@@ -76,63 +76,36 @@ const MainContent = ({
 
   useEffect(() => {
     let mounted = true;
-    let checkInterval: NodeJS.Timeout;
-    const minLoadingTime = 800;
-    const startTime = Date.now();
+    
+    // Показываем анимацию минимум 1.5 секунды
+    const minimumLoadingTimer = setTimeout(() => {
+      if (mounted) {
+        setWidgetLoading(false);
+      }
+    }, 1500);
 
-    const waitForScriptAndInit = () => {
-      checkInterval = setInterval(() => {
-        if ((window as any).createLSWidget) {
-          try {
-            (window as any).createLSWidget();
-            
-            const container = document.getElementById('livesklad-widget');
-            const verifyInterval = setInterval(() => {
-              if (container && container.children.length > 0) {
-                const elapsed = Date.now() - startTime;
-                const remainingTime = Math.max(0, minLoadingTime - elapsed);
-                
-                setTimeout(() => {
-                  if (mounted) setWidgetLoading(false);
-                }, remainingTime);
-                
-                clearInterval(verifyInterval);
-              }
-            }, 300);
-
-            setTimeout(() => {
-              clearInterval(verifyInterval);
-              const elapsed = Date.now() - startTime;
-              const remainingTime = Math.max(0, minLoadingTime - elapsed);
-              
-              setTimeout(() => {
-                if (mounted) setWidgetLoading(false);
-              }, remainingTime);
-            }, 5000);
-          } catch (error) {
-            console.error('LiveSklad widget init error:', error);
-            if (mounted) setWidgetLoading(false);
-          }
-          clearInterval(checkInterval);
+    // Пытаемся инициализировать виджет
+    const initInterval = setInterval(() => {
+      if ((window as any).createLSWidget) {
+        try {
+          (window as any).createLSWidget();
+        } catch (error) {
+          console.error('LiveSklad init error:', error);
         }
-      }, 200);
+        clearInterval(initInterval);
+      }
+    }, 200);
 
-      setTimeout(() => {
-        clearInterval(checkInterval);
-        const elapsed = Date.now() - startTime;
-        const remainingTime = Math.max(0, minLoadingTime - elapsed);
-        
-        setTimeout(() => {
-          if (mounted) setWidgetLoading(false);
-        }, remainingTime);
-      }, 10000);
-    };
-
-    waitForScriptAndInit();
+    // Таймаут на случай если виджет не загрузится
+    const maxWaitTimer = setTimeout(() => {
+      clearInterval(initInterval);
+    }, 10000);
 
     return () => {
       mounted = false;
-      if (checkInterval) clearInterval(checkInterval);
+      clearTimeout(minimumLoadingTimer);
+      clearTimeout(maxWaitTimer);
+      clearInterval(initInterval);
     };
   }, []);
 
