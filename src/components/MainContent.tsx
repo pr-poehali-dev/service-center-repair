@@ -72,31 +72,30 @@ const MainContent = ({
   onContactMessageChange,
   onContactSubmit,
 }: MainContentProps) => {
-  const [showLoader, setShowLoader] = useState(true);
+  const [hideLoader, setHideLoader] = useState(false);
 
   useEffect(() => {
-    // Показываем loader 2 секунды, потом скрываем и инициализируем виджет
-    const loaderTimer = setTimeout(() => {
-      setShowLoader(false);
-      
-      // После скрытия loader инициализируем виджет
-      setTimeout(() => {
-        const tryInit = setInterval(() => {
-          if ((window as any).createLSWidget) {
-            try {
-              (window as any).createLSWidget();
-              clearInterval(tryInit);
-            } catch (e) {
-              console.error('Widget init:', e);
-            }
-          }
-        }, 100);
+    // Инициализируем виджет сразу
+    const initWidget = setInterval(() => {
+      if ((window as any).createLSWidget) {
+        try {
+          (window as any).createLSWidget();
+        } catch (e) {
+          console.error('Init error:', e);
+        }
+        clearInterval(initWidget);
+      }
+    }, 150);
 
-        setTimeout(() => clearInterval(tryInit), 8000);
-      }, 100);
-    }, 2000);
+    // Скрываем loader через 2.5 секунды
+    const hideTimer = setTimeout(() => {
+      setHideLoader(true);
+    }, 2500);
 
-    return () => clearTimeout(loaderTimer);
+    return () => {
+      clearInterval(initWidget);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
   return (
@@ -118,8 +117,10 @@ const MainContent = ({
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="relative flex flex-col items-center justify-center min-h-[250px]">
-                  {showLoader ? (
-                    <div className="flex flex-col items-center gap-4">
+                  <div id="livesklad-widget" className="w-full"></div>
+                  
+                  {!hideLoader && (
+                    <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-4 z-10">
                       <div className="relative">
                         <div className="w-16 h-16 border-4 border-orange-200 rounded-full"></div>
                         <div className="w-16 h-16 border-4 border-orange-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
@@ -129,8 +130,6 @@ const MainContent = ({
                         <p className="text-sm text-gray-500">Подождите несколько секунд...</p>
                       </div>
                     </div>
-                  ) : (
-                    <div id="livesklad-widget" className="w-full"></div>
                   )}
                 </div>
               </CardContent>
