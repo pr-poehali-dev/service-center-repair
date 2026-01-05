@@ -75,39 +75,45 @@ const MainContent = ({
   const [widgetLoading, setWidgetLoading] = useState(true);
 
   useEffect(() => {
-    const initWidget = () => {
-      const container = document.getElementById('livesklad-widget');
-      if (!container) return;
+    let mounted = true;
+    let checkInterval: NodeJS.Timeout;
 
-      const checkInterval = setInterval(() => {
-        if (container.children.length > 0) {
-          setWidgetLoading(false);
+    const waitForScriptAndInit = () => {
+      checkInterval = setInterval(() => {
+        if ((window as any).createLSWidget) {
+          try {
+            (window as any).createLSWidget();
+            
+            const container = document.getElementById('livesklad-widget');
+            const verifyInterval = setInterval(() => {
+              if (container && container.children.length > 0) {
+                if (mounted) setWidgetLoading(false);
+                clearInterval(verifyInterval);
+              }
+            }, 300);
+
+            setTimeout(() => {
+              clearInterval(verifyInterval);
+              if (mounted) setWidgetLoading(false);
+            }, 5000);
+          } catch (error) {
+            console.error('LiveSklad widget init error:', error);
+          }
           clearInterval(checkInterval);
         }
       }, 200);
 
       setTimeout(() => {
-        setWidgetLoading(false);
         clearInterval(checkInterval);
-      }, 5000);
-
-      return checkInterval;
+        if (mounted) setWidgetLoading(false);
+      }, 10000);
     };
 
-    const checkScript = setInterval(() => {
-      if ((window as any).liveskladOptions) {
-        initWidget();
-        clearInterval(checkScript);
-      }
-    }, 100);
-
-    setTimeout(() => {
-      clearInterval(checkScript);
-      setWidgetLoading(false);
-    }, 10000);
+    waitForScriptAndInit();
 
     return () => {
-      clearInterval(checkScript);
+      mounted = false;
+      if (checkInterval) clearInterval(checkInterval);
     };
   }, []);
 
