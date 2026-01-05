@@ -100,7 +100,7 @@ const MainContent = ({
 
   return (
     <>
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <Card className="border-2 border-orange-200 shadow-xl">
@@ -241,7 +241,7 @@ const MainContent = ({
           </div>
         </section>
       )}
-      <section id="repairs" className="py-20 bg-gray-50">
+      <section id="repairs" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
@@ -293,7 +293,7 @@ const MainContent = ({
         </div>
       </section>
 
-      <section id="workflow" className="py-20 bg-white">
+      <section id="workflow" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
@@ -358,7 +358,7 @@ const MainContent = ({
 
       <section
         id="contact-form"
-        className="py-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white"
+        className="py-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -414,7 +414,7 @@ const MainContent = ({
         </div>
       </section>
 
-      <section id="brands" className="py-20 bg-white">
+      <section id="brands" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
@@ -473,7 +473,7 @@ const MainContent = ({
         </div>
       </section>
 
-      <section id="equipment" className="py-20 bg-gray-50">
+      <section id="equipment" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
@@ -513,7 +513,7 @@ const MainContent = ({
         </div>
       </section>
 
-      <section id="reviews" className="py-20 bg-white">
+      <section id="reviews" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
@@ -572,7 +572,7 @@ const MainContent = ({
 
       <section
         id="contact"
-        className="py-20 bg-gradient-to-br from-orange-500 to-orange-600"
+        className="py-12 bg-gradient-to-br from-orange-500 to-orange-600"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -657,7 +657,7 @@ const MainContent = ({
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
