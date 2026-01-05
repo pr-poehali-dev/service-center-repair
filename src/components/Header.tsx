@@ -8,11 +8,11 @@ interface HeaderProps {
 const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
   return (
     <header
-      className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm transition-[padding] duration-200 ${isScrolled ? "py-2" : "py-4"}`}
+      className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
     >
-      <div className="container mx-auto px-4">
+      <div className={`container mx-auto px-4 transition-[padding] duration-200 ${isScrolled ? "py-2" : "py-4"}`}>
         <div
-          className={`flex items-center justify-between ${isScrolled ? "gap-4" : "flex-col lg:flex-row gap-4"}`}
+          className="flex items-center justify-between gap-4"
         >
           <div className="flex items-center gap-3">
             <div className="relative">
@@ -33,11 +33,9 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
               >
                 Сервис Клик
               </h1>
-              {!isScrolled && (
-                <p className="text-sm text-gray-600">
-                  Профессиональный ремонт техники
-                </p>
-              )}
+              <p className={`text-sm text-gray-600 transition-all duration-200 ${isScrolled ? "h-0 opacity-0 overflow-hidden" : "h-auto opacity-100"}`}>
+                Профессиональный ремонт техники
+              </p>
             </div>
           </div>
 
@@ -51,24 +49,22 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
             </button>
           </div>
 
-          {!isScrolled && (
-            <div className="hidden lg:flex items-center gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <Icon name="MapPin" className="text-gray-600" size={18} />
-                <div className="text-gray-700">
-                  г. Иркутск, ул. Рабочего Штаба 78
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Icon name="Clock" className="text-gray-600" size={18} />
-                <div className="text-gray-700">
-                  <div>Пн-Пт: 9:00-19:00</div>
-                  <div className="text-xs">Сб: 10:00-16:00, Вс: выходной</div>
-                </div>
+          <div className={`lg:flex items-center gap-6 text-sm transition-opacity duration-200 ${isScrolled ? "hidden opacity-0" : "hidden lg:flex opacity-100"}`}>
+            <div className="flex items-center gap-2">
+              <Icon name="MapPin" className="text-gray-600" size={18} />
+              <div className="text-gray-700">
+                г. Иркутск, ул. Рабочего Штаба 78
               </div>
             </div>
-          )}
+
+            <div className="flex items-center gap-2">
+              <Icon name="Clock" className="text-gray-600" size={18} />
+              <div className="text-gray-700">
+                <div>Пн-Пт: 9:00-19:00</div>
+                <div className="text-xs">Сб: 10:00-16:00, Вс: выходной</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
