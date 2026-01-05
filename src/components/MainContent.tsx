@@ -393,7 +393,7 @@ const MainContent = ({
                 Samsung: "https://cdn.poehali.dev/files/Samsung_Electro-Mechanics_логотип.png",
                 Apple: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png",
                 Xiaomi: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/320px-Xiaomi_logo.svg.png",
-                Huawei: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Huawei_Standard_logo.svg/320px-Huawei_Standard_logo.svg.png",
+                Huawei: "https://cdn.poehali.dev/files/Huawei-Logo1.png",
                 Infinix: "https://cdn.worldvectorlogo.com/logos/infinix-1.svg",
                 Realme: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Realme_logo.svg/320px-Realme_logo.svg.png",
                 Tecno: "https://cdn.worldvectorlogo.com/logos/tecno-1.svg",
