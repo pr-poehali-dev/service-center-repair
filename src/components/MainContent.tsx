@@ -75,26 +75,39 @@ const MainContent = ({
   const [widgetLoading, setWidgetLoading] = useState(true);
 
   useEffect(() => {
-    const checkWidget = setInterval(() => {
-      const widgetElement = document.getElementById('livesklad-widget');
-      if (widgetElement && widgetElement.children.length > 0) {
+    const initWidget = () => {
+      const container = document.getElementById('livesklad-widget');
+      if (!container) return;
+
+      const checkInterval = setInterval(() => {
+        if (container.children.length > 0) {
+          setWidgetLoading(false);
+          clearInterval(checkInterval);
+        }
+      }, 200);
+
+      setTimeout(() => {
         setWidgetLoading(false);
-        clearInterval(checkWidget);
+        clearInterval(checkInterval);
+      }, 5000);
+
+      return checkInterval;
+    };
+
+    const checkScript = setInterval(() => {
+      if ((window as any).liveskladOptions) {
+        initWidget();
+        clearInterval(checkScript);
       }
     }, 100);
 
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
+      clearInterval(checkScript);
       setWidgetLoading(false);
-      clearInterval(checkWidget);
-    }, 5000);
-
-    if (typeof window !== 'undefined' && (window as any).LiveSkladWidget) {
-      (window as any).LiveSkladWidget.init();
-    }
+    }, 10000);
 
     return () => {
-      clearInterval(checkWidget);
-      clearTimeout(timeout);
+      clearInterval(checkScript);
     };
   }, []);
 
@@ -232,7 +245,6 @@ const MainContent = ({
           </div>
         </section>
       )}
-      <div id="livesklad-widget"></div>
       <section id="repairs" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
