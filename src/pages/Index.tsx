@@ -247,8 +247,8 @@ const Index = () => {
         isScrolled={isScrolled}
         onContactClick={() => setContactModalOpen(true)}
       />
-
-      <HeroSection
+      <div style={{ paddingTop: '72px' }}>
+        <HeroSection
         banners={banners}
         currentSlide={currentSlide}
         onSlideChange={setCurrentSlide}
@@ -274,6 +274,7 @@ const Index = () => {
         isOpen={contactModalOpen}
         onClose={() => setContactModalOpen(false)}
       />
+      </div>
     </div>
   );
 };
