@@ -345,10 +345,17 @@ const MainContent = ({
                 size={48}
               />
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Отслеживайте статус ремонта в реальном времени</h3>
-              <p className="text-lg text-gray-700">
+              <p className="text-lg text-gray-700 mb-6">
                 На протяжении всего ремонта вы получаете уведомления о статусах
                 ремонта
               </p>
+              <Button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 h-auto"
+              >
+                <Icon name="Search" className="mr-2" size={20} />
+                Проверить статус
+              </Button>
             </div>
           </div>
         </div>
