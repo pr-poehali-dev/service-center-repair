@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -71,6 +72,12 @@ const MainContent = ({
   onContactMessageChange,
   onContactSubmit,
 }: MainContentProps) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).LiveSkladWidget) {
+      (window as any).LiveSkladWidget.init();
+    }
+  }, []);
+
   return (
     <>
       <section className="py-16 bg-white">
