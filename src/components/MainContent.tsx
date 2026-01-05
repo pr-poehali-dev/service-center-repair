@@ -117,7 +117,7 @@ const MainContent = ({
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="relative flex flex-col items-center justify-center min-h-[250px]">
-                  <div id="livesklad-widget" className="w-full"></div>
+                  <div id="livesklad-widget" className="w-full max-w-md mx-auto"></div>
                   
                   {!hideLoader && (
                     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-4 z-10">
