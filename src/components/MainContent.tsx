@@ -388,22 +388,42 @@ const MainContent = ({
           </div>
 
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
-            {brands.map((brand, index) => (
-              <div
-                key={index}
-                className={`p-6 border-2 rounded-xl text-center transition-all hover:shadow-lg ${
-                  brand.popular
-                    ? "border-orange-300 bg-gradient-to-br from-orange-50 to-white"
-                    : "border-gray-200 hover:border-orange-200"
-                }`}
-              >
-                <p
-                  className={`font-semibold ${brand.popular ? "text-orange-600 text-lg" : "text-gray-700"}`}
+            {brands.map((brand, index) => {
+              const brandLogos: Record<string, string> = {
+                Samsung: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg",
+                Apple: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+                Xiaomi: "https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg",
+                Huawei: "https://upload.wikimedia.org/wikipedia/commons/0/04/Huawei_Standard_logo.svg",
+                Infinix: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Infinix_Mobile_logo.svg",
+                Realme: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Realme_logo.svg",
+                Tecno: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Tecno_Mobile_logo.svg",
+                LG: "https://upload.wikimedia.org/wikipedia/commons/b/bf/LG_logo_%282015%29.svg",
+                Haier: "https://upload.wikimedia.org/wikipedia/commons/8/80/Haier_logo.svg",
+                BBK: "https://upload.wikimedia.org/wikipedia/commons/8/8e/BBK_Electronics_logo.svg",
+              };
+
+              return (
+                <div
+                  key={index}
+                  className={`p-6 border-2 rounded-xl text-center transition-all hover:shadow-lg flex flex-col items-center justify-center gap-3 ${
+                    brand.popular
+                      ? "border-orange-300 bg-gradient-to-br from-orange-50 to-white"
+                      : "border-gray-200 hover:border-orange-200"
+                  }`}
                 >
-                  {brand.name}
-                </p>
-              </div>
-            ))}
+                  <img
+                    src={brandLogos[brand.name]}
+                    alt={brand.name}
+                    className="h-12 w-auto object-contain"
+                  />
+                  <p
+                    className={`font-semibold ${brand.popular ? "text-orange-600 text-lg" : "text-gray-700"}`}
+                  >
+                    {brand.name}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
