@@ -420,9 +420,7 @@ const MainContent = ({
             <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
               Бренды
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Работаем со всеми брендами
-            </h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Работаем с популярными брендами</h2>
             <p className="text-xl text-gray-600">
               И многими другими производителями электроники
             </p>
