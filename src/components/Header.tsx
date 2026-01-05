@@ -26,18 +26,19 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
           margin: '0 auto'
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: window.innerWidth > 480 ? '12px' : '8px', flexShrink: 1, minWidth: 0 }}>
           <div 
             style={{
-              width: '48px',
-              height: '48px',
+              width: window.innerWidth > 480 ? '48px' : '40px',
+              height: window.innerWidth > 480 ? '48px' : '40px',
               borderRadius: '12px',
               background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-              position: 'relative'
+              position: 'relative',
+              flexShrink: 0
             }}
           >
             <Icon name="Zap" className="text-white" size={24} />
@@ -56,38 +57,41 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
           </div>
           <h1 
             style={{
-              fontSize: '20px',
+              fontSize: window.innerWidth > 480 ? '20px' : '16px',
               fontWeight: '700',
               color: '#111827',
               margin: 0,
-              lineHeight: 1
+              lineHeight: 1,
+              whiteSpace: 'nowrap'
             }}
           >
             Сервис Клик
           </h1>
         </div>
 
-        <button
-          onClick={onContactClick}
+        <a
+          href="tel:83952407405"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
-            fontSize: '16px',
+            gap: '6px',
+            fontSize: '14px',
             fontWeight: '700',
             color: '#ea580c',
             background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            padding: '8px 12px',
-            borderRadius: '8px'
+            textDecoration: 'none',
+            padding: '6px 8px',
+            borderRadius: '8px',
+            whiteSpace: 'nowrap',
+            flexShrink: 0
           }}
           onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fff7ed'}
           onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
         >
-          <Icon name="Phone" size={18} />
-          <span>8-3952-407-405</span>
-        </button>
+          <Icon name="Phone" size={16} />
+          <span style={{ display: window.innerWidth > 480 ? 'inline' : 'none' }}>8-3952-407-405</span>
+          <span style={{ display: window.innerWidth <= 480 ? 'inline' : 'none' }}>Звонок</span>
+        </a>
       </div>
     </header>
   );
