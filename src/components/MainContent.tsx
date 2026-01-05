@@ -77,6 +77,8 @@ const MainContent = ({
   useEffect(() => {
     let mounted = true;
     let checkInterval: NodeJS.Timeout;
+    const minLoadingTime = 800;
+    const startTime = Date.now();
 
     const waitForScriptAndInit = () => {
       checkInterval = setInterval(() => {
@@ -87,17 +89,29 @@ const MainContent = ({
             const container = document.getElementById('livesklad-widget');
             const verifyInterval = setInterval(() => {
               if (container && container.children.length > 0) {
-                if (mounted) setWidgetLoading(false);
+                const elapsed = Date.now() - startTime;
+                const remainingTime = Math.max(0, minLoadingTime - elapsed);
+                
+                setTimeout(() => {
+                  if (mounted) setWidgetLoading(false);
+                }, remainingTime);
+                
                 clearInterval(verifyInterval);
               }
             }, 300);
 
             setTimeout(() => {
               clearInterval(verifyInterval);
-              if (mounted) setWidgetLoading(false);
+              const elapsed = Date.now() - startTime;
+              const remainingTime = Math.max(0, minLoadingTime - elapsed);
+              
+              setTimeout(() => {
+                if (mounted) setWidgetLoading(false);
+              }, remainingTime);
             }, 5000);
           } catch (error) {
             console.error('LiveSklad widget init error:', error);
+            if (mounted) setWidgetLoading(false);
           }
           clearInterval(checkInterval);
         }
@@ -105,7 +119,12 @@ const MainContent = ({
 
       setTimeout(() => {
         clearInterval(checkInterval);
-        if (mounted) setWidgetLoading(false);
+        const elapsed = Date.now() - startTime;
+        const remainingTime = Math.max(0, minLoadingTime - elapsed);
+        
+        setTimeout(() => {
+          if (mounted) setWidgetLoading(false);
+        }, remainingTime);
       }, 10000);
     };
 
