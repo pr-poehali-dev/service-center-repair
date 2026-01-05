@@ -100,7 +100,7 @@ const MainContent = ({
 
   return (
     <>
-      <section className="py-10 bg-white">
+      <section id="tracking-widget" className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <Card className="border-2 border-orange-200 shadow-xl">
@@ -350,7 +350,7 @@ const MainContent = ({
                 ремонта
               </p>
               <Button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                onClick={() => document.getElementById('tracking-widget')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 h-auto"
               >
                 <Icon name="Search" className="mr-2" size={20} />
