@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -72,10 +72,30 @@ const MainContent = ({
   onContactMessageChange,
   onContactSubmit,
 }: MainContentProps) => {
+  const [widgetLoading, setWidgetLoading] = useState(true);
+
   useEffect(() => {
+    const checkWidget = setInterval(() => {
+      const widgetElement = document.getElementById('livesklad-widget');
+      if (widgetElement && widgetElement.children.length > 0) {
+        setWidgetLoading(false);
+        clearInterval(checkWidget);
+      }
+    }, 100);
+
+    const timeout = setTimeout(() => {
+      setWidgetLoading(false);
+      clearInterval(checkWidget);
+    }, 5000);
+
     if (typeof window !== 'undefined' && (window as any).LiveSkladWidget) {
       (window as any).LiveSkladWidget.init();
     }
+
+    return () => {
+      clearInterval(checkWidget);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
@@ -96,7 +116,13 @@ const MainContent = ({
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-6 flex justify-center">
-                <div id="livesklad-widget" className="w-full"></div>
+                {widgetLoading && (
+                  <div className="flex flex-col items-center gap-4 py-8">
+                    <div className="w-12 h-12 border-4 border-orange-200 border-t-orange-600 rounded-full animate-spin"></div>
+                    <p className="text-gray-600">Загрузка виджета...</p>
+                  </div>
+                )}
+                <div id="livesklad-widget" className={`w-full ${widgetLoading ? 'hidden' : ''}`}></div>
               </CardContent>
             </Card>
           </div>
