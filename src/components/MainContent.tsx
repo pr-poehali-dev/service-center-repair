@@ -390,7 +390,7 @@ const MainContent = ({
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
             {brands.map((brand, index) => {
               const brandLogos: Record<string, string> = {
-                Samsung: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/320px-Samsung_Logo.svg.png",
+                Samsung: "https://cdn.poehali.dev/files/Samsung_Electro-Mechanics_логотип.png",
                 Apple: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png",
                 Xiaomi: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/320px-Xiaomi_logo.svg.png",
                 Huawei: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Huawei_Standard_logo.svg/320px-Huawei_Standard_logo.svg.png",
