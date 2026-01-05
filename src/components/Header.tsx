@@ -57,7 +57,7 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
           </div>
           <h1 
             style={{
-              fontSize: window.innerWidth > 480 ? '26px' : '20px',
+              fontSize: window.innerWidth > 480 ? '32px' : '24px',
               fontWeight: '700',
               color: '#111827',
               margin: 0,
