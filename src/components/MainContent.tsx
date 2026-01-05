@@ -344,9 +344,7 @@ const MainContent = ({
                 className="text-orange-600 mx-auto mb-4"
                 size={48}
               />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Отслеживание статуса в реальном времени
-              </h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Отслеживайте статус ремонта в реальном времени</h3>
               <p className="text-lg text-gray-700">
                 На протяжении всего ремонта вы получаете уведомления о статусах
                 ремонта
