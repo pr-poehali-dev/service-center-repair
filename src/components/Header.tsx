@@ -69,30 +69,47 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
           </h1>
         </div>
 
-        <a
-          href="tel:83952407405"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            fontSize: '14px',
-            fontWeight: '700',
-            color: '#ea580c',
-            background: 'transparent',
-            textDecoration: 'none',
-            padding: '6px 8px',
-            borderRadius: '8px',
-            whiteSpace: 'nowrap',
-            flexShrink: 0
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fff7ed'}
-          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-        >
-          <span style={{ display: window.innerWidth > 480 ? 'inline' : 'none' }}>8-3952-407-405</span>
-          <span style={{ display: window.innerWidth <= 480 ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#22c55e', boxShadow: '0 0 0 4px rgba(34, 197, 94, 0.2)', animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <a
+            href="tel:83952407405"
+            style={{
+              display: window.innerWidth > 480 ? 'flex' : 'none',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '14px',
+              fontWeight: '700',
+              color: '#ea580c',
+              background: 'transparent',
+              textDecoration: 'none',
+              padding: '6px 8px',
+              borderRadius: '8px',
+              whiteSpace: 'nowrap',
+              flexShrink: 0
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#fff7ed'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+          >
+            <span>8-3952-407-405</span>
+          </a>
+          <button
+            onClick={onContactClick}
+            style={{
+              display: window.innerWidth <= 480 ? 'flex' : 'none',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              backgroundColor: '#22c55e',
+              boxShadow: '0 0 0 4px rgba(34, 197, 94, 0.2)',
+              animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+          >
             <Icon name="Phone" size={20} className="text-white" />
-          </span>
-        </a>
+          </button>
+        </div>
       </div>
     </header>
   );
