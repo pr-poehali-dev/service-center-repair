@@ -26,7 +26,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
         <div className="space-y-3">
           <a
-            href="tel:89245401717"
+            href="tel:+79245401717"
             className="flex items-center gap-4 p-4 bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 rounded-xl border-2 border-orange-200 transition-all duration-300 hover:shadow-lg group"
           >
             <div className="w-14 h-14 bg-orange-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -49,14 +49,12 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             </div>
             <div className="text-left">
               <div className="font-semibold text-gray-900">Telegram</div>
-              <div className="text-sm text-gray-600">
-                Написать в Telegram
-              </div>
+              <div className="text-sm text-gray-600">Написать в Telegram</div>
             </div>
           </a>
 
           <a
-            href="https://wa.me/89245401717"
+            href="https://wa.me/+79245401717"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group"
@@ -66,9 +64,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             </div>
             <div className="text-left">
               <div className="font-semibold text-gray-900">WhatsApp</div>
-              <div className="text-sm text-gray-600">
-                Написать в WhatsApp
-              </div>
+              <div className="text-sm text-gray-600">Написать в WhatsApp</div>
             </div>
           </a>
         </div>
