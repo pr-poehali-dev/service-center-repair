@@ -67,6 +67,21 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <div className="text-sm text-gray-600">Написать в WhatsApp</div>
             </div>
           </a>
+
+          <a
+            href="https://t.me/+HKTSqQ6MPBwwZTMy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-xl border-2 border-purple-200 transition-all duration-300 hover:shadow-lg group"
+          >
+            <div className="w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Icon name="Users" className="text-white" size={28} />
+            </div>
+            <div className="text-left">
+              <div className="font-semibold text-gray-900">Перейти в группу</div>
+              <div className="text-sm text-gray-600">Telegram группа</div>
+            </div>
+          </a>
         </div>
 
         <button
