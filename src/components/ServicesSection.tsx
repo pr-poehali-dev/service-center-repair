@@ -56,11 +56,28 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
             </p>
           </div>
 
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {repairs.map((repair, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  const element = document.getElementById(`repair-${index}`);
+                  element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }}
+                className="px-6 py-3 bg-white hover:bg-orange-600 hover:text-white text-gray-700 rounded-lg border-2 border-gray-200 hover:border-orange-600 transition-all duration-300 font-semibold flex items-center gap-2 shadow-sm hover:shadow-lg"
+              >
+                <Icon name={repair.icon as any} size={20} />
+                {repair.title}
+              </button>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {repairs.map((repair, index) => (
               <Card
                 key={index}
-                className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300"
+                id={`repair-${index}`}
+                className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300 scroll-mt-32"
               >
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
