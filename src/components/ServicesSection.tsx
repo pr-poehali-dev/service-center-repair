@@ -10,6 +10,7 @@ import Icon from "@/components/ui/icon";
 interface Repair {
   title: string;
   icon: string;
+  imageUrl?: string;
   items: string[];
 }
 
@@ -18,6 +19,7 @@ interface WorkflowStep {
   title: string;
   description: string;
   icon: string;
+  imageUrl?: string;
 }
 
 interface Brand {
@@ -79,10 +81,18 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                 className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300 scroll-mt-32"
               >
                 <CardHeader>
-                  <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                    <span className="text-6xl leading-none" role="img" aria-label={repair.title}>
-                      {index === 0 ? '📱' : index === 1 ? '💻' : index === 2 ? '🖨️' : '📺'}
-                    </span>
+                  <div className="w-24 h-24 rounded-2xl flex items-center justify-center mb-4 shadow-lg overflow-hidden">
+                    {repair.imageUrl ? (
+                      <img 
+                        src={repair.imageUrl} 
+                        alt={repair.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                        <Icon name={repair.icon as any} className="text-white" size={32} />
+                      </div>
+                    )}
                   </div>
                   <CardTitle className="text-2xl text-gray-900">
                     {repair.title}
@@ -144,10 +154,18 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                   </span>
                 </div>
                 <CardHeader className="pt-8">
-                  <div className="w-20 h-20 bg-orange-100 rounded-xl flex items-center justify-center mb-3">
-                    <span className="text-5xl leading-none" role="img" aria-label={step.title}>
-                      {index === 0 ? '📦' : index === 1 ? '🔍' : index === 2 ? '✅' : index === 3 ? '🔧' : '✨'}
-                    </span>
+                  <div className="w-20 h-20 rounded-xl flex items-center justify-center mb-3 overflow-hidden">
+                    {step.imageUrl ? (
+                      <img 
+                        src={step.imageUrl} 
+                        alt={step.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-orange-100 flex items-center justify-center">
+                        <Icon name={step.icon as any} className="text-orange-600" size={28} />
+                      </div>
+                    )}
                   </div>
                   <CardTitle className="text-xl text-gray-900">
                     {step.title}
