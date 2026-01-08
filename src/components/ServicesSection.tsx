@@ -9,7 +9,7 @@ import Icon from "@/components/ui/icon";
 
 interface Repair {
   title: string;
-  icon: string;
+  image: string;
   items: string[];
 }
 
@@ -17,7 +17,7 @@ interface WorkflowStep {
   number: number;
   title: string;
   description: string;
-  icon: string;
+  image: string;
 }
 
 interface Brand {
@@ -63,9 +63,8 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                   const element = document.getElementById(`repair-${index}`);
                   element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
-                className="px-6 py-3 bg-white hover:bg-orange-600 hover:text-white text-gray-700 rounded-lg border-2 border-gray-200 hover:border-orange-600 transition-all duration-300 font-semibold flex items-center gap-2 shadow-sm hover:shadow-lg"
+                className="px-6 py-3 bg-white hover:bg-orange-600 hover:text-white text-gray-700 rounded-lg border-2 border-gray-200 hover:border-orange-600 transition-all duration-300 font-semibold shadow-sm hover:shadow-lg"
               >
-                <Icon name={repair.icon as any} size={20} />
                 {repair.title}
               </button>
             ))}
@@ -79,13 +78,11 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                 className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300 scroll-mt-32"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                    <Icon
-                      name={repair.icon as any}
-                      className="text-white"
-                      size={32}
-                    />
-                  </div>
+                  <img
+                    src={repair.image}
+                    alt={repair.title}
+                    className="w-16 h-16 rounded-2xl object-cover mb-4 shadow-lg"
+                  />
                   <CardTitle className="text-2xl text-gray-900">
                     {repair.title}
                   </CardTitle>
@@ -146,13 +143,11 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                   </span>
                 </div>
                 <CardHeader className="pt-8">
-                  <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-3">
-                    <Icon
-                      name={step.icon as any}
-                      className="text-orange-600"
-                      size={28}
-                    />
-                  </div>
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-14 h-14 rounded-xl object-cover mb-3"
+                  />
                   <CardTitle className="text-xl text-gray-900">
                     {step.title}
                   </CardTitle>

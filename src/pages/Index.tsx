@@ -70,7 +70,7 @@ const Index = () => {
   const repairs = [
     {
       title: "Ремонт смартфонов",
-      icon: "Smartphone",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3a287a0d-96be-4753-86b7-67750c43c474.jpg",
       items: [
         "Замена экранов на любой смартфон",
         "Электрический ремонт любой сложности",
@@ -84,7 +84,7 @@ const Index = () => {
     },
     {
       title: "Ремонт компьютеров и ноутбуков",
-      icon: "Laptop",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/bc80488b-968a-494c-9645-927a0123be9d.jpg",
       items: [
         "Установка программ",
         "Восстановление данных с поврежденных носителей",
@@ -99,7 +99,7 @@ const Index = () => {
     },
     {
       title: "Ремонт принтеров и МФУ",
-      icon: "Printer",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1ca31fec-35d2-447c-9284-1f704c639231.jpg",
       items: [
         "Устранение дефектов печати",
         "Устранение замятий бумаги",
@@ -113,7 +113,7 @@ const Index = () => {
     },
     {
       title: "Ремонт телевизоров",
-      icon: "Tv",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/146acfc0-3b2f-4504-8bab-1365357f8d70.jpg",
       items: [
         "Замена матрицы, ремонт матрицы",
         "Замена подсветки",
@@ -129,33 +129,33 @@ const Index = () => {
       number: 1,
       title: "Приносите оборудование",
       description: "Вы приносите к нам ваше неисправное оборудование",
-      icon: "Package",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/be82ea15-1c2b-4cb0-a9b1-5b1b38260d58.jpg",
     },
     {
       number: 2,
       title: "Диагностика",
       description:
         "Наш мастер проводит осмотр-диагностику в течение 1 рабочего дня",
-      icon: "Search",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/afdac08e-963b-42b5-99a7-cc84002b317f.jpg",
     },
     {
       number: 3,
       title: "Согласование",
       description: "Менеджер согласовывает с вами стоимость ремонта",
-      icon: "FileCheck",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/506fea10-5d0e-439f-bd78-9c329d233973.jpg",
     },
     {
       number: 4,
       title: "Ремонт",
       description:
         "Производим ремонт от 1 до 3 рабочих дней при наличии запчастей",
-      icon: "Wrench",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1fde14ab-8c5d-432f-aa50-64a6a1d010f9.jpg",
     },
     {
       number: 5,
       title: "Выдача",
       description: "По окончании ремонта звоним вам и вы забираете изделие",
-      icon: "CheckCircle2",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/723f5347-f826-44a6-870f-28d518436687.jpg",
     },
   ];
 
