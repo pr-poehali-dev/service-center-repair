@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 interface HeaderProps {
@@ -6,6 +7,15 @@ interface HeaderProps {
 }
 
 const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
+  };
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200"
@@ -121,8 +131,136 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
             </div>
           </div>
 
+          <button
+            onClick={() => setMenuOpen(true)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "48px",
+              height: "48px",
+              borderRadius: "12px",
+              backgroundColor: "#f97316",
+              border: "none",
+              cursor: "pointer",
+              boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+              transition: "all 0.3s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#ea580c";
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#f97316";
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            <Icon name="Menu" className="text-white" size={24} />
+          </button>
         </div>
       </div>
+
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-start justify-center pt-24 p-4 animate-in fade-in duration-200"
+          onClick={() => setMenuOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in slide-in-from-top duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-bold text-gray-900">Навигация</h3>
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+              >
+                <Icon name="X" className="text-gray-600" size={24} />
+              </button>
+            </div>
+
+            <div className="space-y-2">
+              <button
+                onClick={() => scrollToSection("repairs")}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 rounded-xl border-2 border-orange-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="Wrench" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Услуги</div>
+                  <div className="text-sm text-gray-600">Что мы ремонтируем</div>
+                </div>
+              </button>
+
+              <button
+                onClick={() => scrollToSection("workflow")}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl border-2 border-blue-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="ListChecks" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Процесс</div>
+                  <div className="text-sm text-gray-600">Как проходит ремонт</div>
+                </div>
+              </button>
+
+              <button
+                onClick={() => scrollToSection("brands")}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-xl border-2 border-purple-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="Sparkles" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Бренды</div>
+                  <div className="text-sm text-gray-600">Ремонтируем все бренды</div>
+                </div>
+              </button>
+
+              <button
+                onClick={() => scrollToSection("equipment")}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="Settings" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Оборудование</div>
+                  <div className="text-sm text-gray-600">Наши инструменты</div>
+                </div>
+              </button>
+
+              <button
+                onClick={() => scrollToSection("reviews")}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 rounded-xl border-2 border-yellow-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="Star" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Отзывы</div>
+                  <div className="text-sm text-gray-600">Что говорят клиенты</div>
+                </div>
+              </button>
+
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="MessageSquare" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Контакты</div>
+                  <div className="text-sm text-gray-600">Свяжитесь с нами</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
