@@ -1,7 +1,6 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -159,9 +158,9 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base text-gray-600">
+                  <p className="text-base text-gray-600">
                     {step.description}
-                  </CardDescription>
+                  </p>
                 </CardContent>
               </Card>
             ))}
