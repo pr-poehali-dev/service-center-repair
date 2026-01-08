@@ -80,8 +80,8 @@ const MainContent = ({
   const [routeModalOpen, setRouteModalOpen] = useState(false);
 
   const handleRouteApp = (app: '2gis' | 'yandex') => {
-    const lat = 52.316737;
-    const lon = 104.302444;
+    const lat = 52.317768;
+    const lon = 104.302578;
     const address = 'г. Иркутск, ул. Рабочего Штаба 78';
     
     if (app === '2gis') {
