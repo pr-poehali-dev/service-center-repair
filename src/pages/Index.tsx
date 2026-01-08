@@ -70,7 +70,7 @@ const Index = () => {
   const repairs = [
     {
       title: "Ремонт смартфонов",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3a287a0d-96be-4753-86b7-67750c43c474.jpg",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/eb16588c-2815-43b9-9b55-2e0539803f61.jpg",
       items: [
         "Замена экранов на любой смартфон",
         "Электрический ремонт любой сложности",
@@ -84,7 +84,7 @@ const Index = () => {
     },
     {
       title: "Ремонт компьютеров и ноутбуков",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/bc80488b-968a-494c-9645-927a0123be9d.jpg",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/541ca54b-f71b-4315-83d5-e91f232a5ab4.jpg",
       items: [
         "Установка программ",
         "Восстановление данных с поврежденных носителей",
@@ -99,7 +99,7 @@ const Index = () => {
     },
     {
       title: "Ремонт принтеров и МФУ",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1ca31fec-35d2-447c-9284-1f704c639231.jpg",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/56f14f50-41ff-42ff-ad52-95069fa3353e.jpg",
       items: [
         "Устранение дефектов печати",
         "Устранение замятий бумаги",
@@ -113,7 +113,7 @@ const Index = () => {
     },
     {
       title: "Ремонт телевизоров",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/146acfc0-3b2f-4504-8bab-1365357f8d70.jpg",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/152de214-5f4b-4fe1-b400-7e861b88dffc.jpg",
       items: [
         "Замена матрицы, ремонт матрицы",
         "Замена подсветки",
@@ -129,27 +129,27 @@ const Index = () => {
       number: 1,
       title: "Приносите оборудование",
       description: "Вы приносите к нам ваше неисправное оборудование",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/be82ea15-1c2b-4cb0-a9b1-5b1b38260d58.jpg",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/958c3af1-fd2f-4822-a0e0-19a13d38b8db.jpg",
     },
     {
       number: 2,
       title: "Диагностика",
       description:
         "Наш мастер проводит осмотр-диагностику в течение 1 рабочего дня",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/afdac08e-963b-42b5-99a7-cc84002b317f.jpg",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/6bbcbe77-d149-4417-a4f4-346f5365a71c.jpg",
     },
     {
       number: 3,
       title: "Согласование",
       description: "Менеджер согласовывает с вами стоимость ремонта",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/506fea10-5d0e-439f-bd78-9c329d233973.jpg",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/9ff6aed5-d551-4d98-a786-ec4cd1f2f85e.jpg",
     },
     {
       number: 4,
       title: "Ремонт",
       description:
         "Производим ремонт от 1 до 3 рабочих дней при наличии запчастей",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1fde14ab-8c5d-432f-aa50-64a6a1d010f9.jpg",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/7ebf8447-9f7a-4406-be64-560d68bcb6a3.jpg",
     },
     {
       number: 5,
