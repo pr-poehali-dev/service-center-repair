@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MainContent from "@/components/MainContent";
 import ContactModal from "@/components/ContactModal";
+import Icon from "@/components/ui/icon";
 
 const Index = () => {
   const [orderNumber, setOrderNumber] = useState("");
@@ -287,6 +288,29 @@ const Index = () => {
         isOpen={contactModalOpen}
         onClose={() => setContactModalOpen(false)}
       />
+
+      <button
+        onClick={() => setContactModalOpen(true)}
+        style={{
+          position: "fixed",
+          bottom: "100px",
+          right: "24px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "56px",
+          height: "56px",
+          borderRadius: "50%",
+          backgroundColor: "#22c55e",
+          boxShadow: "0 0 0 4px rgba(34, 197, 94, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15)",
+          animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+          border: "none",
+          cursor: "pointer",
+          zIndex: 40,
+        }}
+      >
+        <Icon name="Phone" size={24} className="text-white" />
+      </button>
       </div>
     </div>
   );

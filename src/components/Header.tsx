@@ -120,25 +120,7 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
               </span>
             </div>
           </div>
-          <button
-            onClick={onContactClick}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              backgroundColor: "#22c55e",
-              boxShadow: "0 0 0 4px rgba(34, 197, 94, 0.2)",
-              animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-              border: "none",
-              cursor: "pointer",
-              flexShrink: 0,
-            }}
-          >
-            <Icon name="Phone" size={20} className="text-white" />
-          </button>
+
         </div>
       </div>
     </header>
