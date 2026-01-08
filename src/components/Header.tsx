@@ -257,6 +257,19 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
                   <div className="text-sm text-gray-600">Свяжитесь с нами</div>
                 </div>
               </button>
+
+              <button
+                onClick={() => scrollToSection("map")}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-cyan-50 to-cyan-100 hover:from-cyan-100 hover:to-cyan-200 rounded-xl border-2 border-cyan-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="Navigation" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Как добраться</div>
+                  <div className="text-sm text-gray-600">Построить маршрут</div>
+                </div>
+              </button>
             </div>
           </div>
         </div>
