@@ -85,7 +85,7 @@ const MainContent = ({
         try {
           (window as any).createLSWidget();
         } catch (e) {
-          console.error('Init error:', e);
+          console.error("Init error:", e);
         }
         clearInterval(initWidget);
       }
@@ -121,8 +121,11 @@ const MainContent = ({
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="relative flex flex-col items-center justify-center min-h-[250px]">
-                  <div id="livesklad-widget" className="w-full max-w-md ml-2"></div>
-                  
+                  <div
+                    id="livesklad-widget"
+                    className="w-full max-w-md ml-2"
+                  ></div>
+
                   {!hideLoader && (
                     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-4 z-10">
                       <div className="relative">
@@ -130,8 +133,12 @@ const MainContent = ({
                         <div className="w-16 h-16 border-4 border-orange-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
                       </div>
                       <div className="text-center space-y-2">
-                        <p className="text-gray-900 font-medium">Загрузка виджета отслеживания</p>
-                        <p className="text-sm text-gray-500">Подождите несколько секунд...</p>
+                        <p className="text-gray-900 font-medium">
+                          Загрузка виджета отслеживания
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          Подождите несколько секунд...
+                        </p>
                       </div>
                     </div>
                   )}
@@ -348,13 +355,19 @@ const MainContent = ({
                 className="text-orange-600 mx-auto mb-4"
                 size={48}
               />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Отслеживайте статус ремонта в реальном времени</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Отслеживайте статус ремонта в реальном времени
+              </h3>
               <p className="text-lg text-gray-700 mb-6">
                 На протяжении всего ремонта вы получаете уведомления о статусах
                 ремонта
               </p>
               <Button
-                onClick={() => document.getElementById('tracking-widget')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                onClick={() =>
+                  document
+                    .getElementById("tracking-widget")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
                 className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 h-auto"
               >
                 <Icon name="Search" className="mr-2" size={20} />
@@ -443,7 +456,9 @@ const MainContent = ({
             <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
               Бренды
             </Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Работаем с популярными брендами</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Работаем с популярными брендами
+            </h2>
             <p className="text-xl text-gray-600">
               И многими другими производителями электроники
             </p>
@@ -452,15 +467,20 @@ const MainContent = ({
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
             {brands.map((brand, index) => {
               const brandLogos: Record<string, string> = {
-                Samsung: "https://cdn.poehali.dev/files/Samsung_Electro-Mechanics_логотип.png",
-                Apple: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png",
-                Xiaomi: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/320px-Xiaomi_logo.svg.png",
+                Samsung:
+                  "https://cdn.poehali.dev/files/Samsung_Electro-Mechanics_логотип.png",
+                Apple:
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png",
+                Xiaomi:
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/320px-Xiaomi_logo.svg.png",
                 Huawei: "https://cdn.poehali.dev/files/Huawei-Logo1.png",
                 Infinix: "https://cdn.worldvectorlogo.com/logos/infinix-1.svg",
-                Realme: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Realme_logo.svg/320px-Realme_logo.svg.png",
+                Realme:
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Realme_logo.svg/320px-Realme_logo.svg.png",
                 Tecno: "https://cdn.worldvectorlogo.com/logos/tecno-1.svg",
                 LG: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LG_logo_%282015%29.svg/200px-LG_logo_%282015%29.svg.png",
-                Haier: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Haier_logo.svg/320px-Haier_logo.svg.png",
+                Haier:
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Haier_logo.svg/320px-Haier_logo.svg.png",
                 BBK: "https://cdn.worldvectorlogo.com/logos/bbk-electronics.svg",
               };
 
@@ -479,7 +499,7 @@ const MainContent = ({
                     className="h-12 w-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
+                      target.style.display = "none";
                     }}
                   />
                   <p
@@ -563,7 +583,10 @@ const MainContent = ({
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {reviews.map((review, index) => (
-              <Card key={index} className="border-2 hover:shadow-xl transition-all">
+              <Card
+                key={index}
+                className="border-2 hover:shadow-xl transition-all"
+              >
                 <CardContent className="pt-6">
                   <div className="flex mb-3">
                     {[...Array(review.rating)].map((_, i) => (
@@ -819,7 +842,7 @@ const MainContent = ({
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
             <p>
-              © 2025 Сервис Клик. Все права защищены. Ремонт техники в Иркутске
+              © 2025 СЕРВИС КЛИК. Все права защищены. Ремонт техники в Иркутске
             </p>
           </div>
         </div>
