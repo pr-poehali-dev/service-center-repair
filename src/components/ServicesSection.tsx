@@ -92,7 +92,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     {repair.items.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <Icon
@@ -104,6 +104,16 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                       </li>
                     ))}
                   </ul>
+                  <button
+                    onClick={() => {
+                      const contactSection = document.getElementById('contact');
+                      contactSection?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                  >
+                    <Icon name="Phone" size={20} />
+                    Заказать ремонт
+                  </button>
                 </CardContent>
               </Card>
             ))}
