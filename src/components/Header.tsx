@@ -69,37 +69,6 @@ const Header = ({ isScrolled, onContactClick }: HeaderProps) => {
           </h1>
         </div>
 
-        <nav style={{ display: window.innerWidth > 1024 ? 'flex' : 'none', alignItems: 'center', gap: '32px', flex: 1, justifyContent: 'center', marginLeft: '40px', marginRight: '40px' }}>
-          {[
-            { label: 'Услуги', id: 'repairs' },
-            { label: 'Процесс', id: 'workflow' },
-            { label: 'Бренды', id: 'brands' },
-            { label: 'Оборудование', id: 'equipment' }
-          ].map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              style={{
-                fontSize: '15px',
-                fontWeight: '500',
-                color: '#4b5563',
-                textDecoration: 'none',
-                transition: 'color 0.2s',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#f97316'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#4b5563'}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
         <div style={{ display: 'flex', alignItems: 'center', gap: window.innerWidth > 768 ? '24px' : '8px' }}>
           <div style={{ display: window.innerWidth > 768 ? 'flex' : 'none', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#6b7280' }}>
