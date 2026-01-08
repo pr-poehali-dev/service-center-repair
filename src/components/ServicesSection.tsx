@@ -79,11 +79,21 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                 className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300 scroll-mt-32"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                    <Icon
-                      name={repair.icon as any}
-                      className="text-white"
-                      size={32}
+                  <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg overflow-hidden">
+                    <img
+                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(repair.title)}&size=96&background=f97316&color=fff&bold=true&format=svg`}
+                      alt={repair.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const iconWrapper = document.createElement('div');
+                          iconWrapper.className = 'w-full h-full flex items-center justify-center';
+                          parent.appendChild(iconWrapper);
+                        }
+                      }}
                     />
                   </div>
                   <CardTitle className="text-2xl text-gray-900">
@@ -146,11 +156,11 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                   </span>
                 </div>
                 <CardHeader className="pt-8">
-                  <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-3">
-                    <Icon
-                      name={step.icon as any}
-                      className="text-orange-600"
-                      size={28}
+                  <div className="w-20 h-20 bg-orange-100 rounded-xl flex items-center justify-center mb-3 overflow-hidden">
+                    <img
+                      src={`https://ui-avatars.com/api/?name=${step.number}&size=80&background=fed7aa&color=ea580c&bold=true&format=svg&font-size=0.5`}
+                      alt={`Шаг ${step.number}`}
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <CardTitle className="text-xl text-gray-900">
