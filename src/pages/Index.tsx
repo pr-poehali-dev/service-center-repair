@@ -73,12 +73,7 @@ const Index = () => {
     },
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % banners.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -271,7 +266,12 @@ const Index = () => {
         onContactClick={() => setContactModalOpen(true)}
         onRouteClick={() => setRouteModalOpen(true)}
       />
-      <div style={{ paddingTop: '72px' }}>
+      <div
+        className="fixed top-[72px] left-0 right-0 z-40 bg-orange-600 text-white text-center py-3 font-semibold text-lg"
+      >
+        Профессиональный ремонт электроники
+      </div>
+      <div style={{ paddingTop: '120px' }}>
         <HeroSection
         banners={banners}
         currentSlide={currentSlide}
