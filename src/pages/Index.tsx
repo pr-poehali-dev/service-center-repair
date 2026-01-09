@@ -267,11 +267,12 @@ const Index = () => {
         onRouteClick={() => setRouteModalOpen(true)}
       />
       <div
-        className="fixed top-[72px] left-0 right-0 z-40 bg-orange-600 text-white text-center py-3 font-semibold text-lg"
+        className="fixed top-[72px] left-0 right-0 z-40 bg-orange-600 text-white text-center font-semibold uppercase"
+        style={{ padding: '9.6px 0', fontSize: '14.4px' }}
       >
         Профессиональный ремонт электроники
       </div>
-      <div style={{ paddingTop: '120px' }}>
+      <div style={{ paddingTop: '110px' }}>
         <HeroSection
         banners={banners}
         currentSlide={currentSlide}
