@@ -21,7 +21,14 @@ const Index = () => {
     const lon = 104.302578;
     
     if (app === '2gis') {
-      window.open(`https://2gis.ru/irkutsk/directions/points/%7C${lon}%2C${lat}`, '_blank');
+      // Попытка открыть приложение 2GIS
+      const deepLink = `dgis://2gis.ru/routeSearch/rsType/car/to/${lon},${lat}`;
+      window.location.href = deepLink;
+      
+      // Если приложение не открылось, через 1.5 сек открываем веб-версию
+      setTimeout(() => {
+        window.open(`https://2gis.ru/irkutsk?m=${lon},${lat}`, '_blank');
+      }, 1500);
     } else {
       window.open(`https://yandex.ru/maps/?rtext=~${lat},${lon}`, '_blank');
     }
