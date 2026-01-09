@@ -21,7 +21,7 @@ const Index = () => {
     const lon = 104.302578;
     
     if (app === '2gis') {
-      window.open(`https://2gis.ru/geo/${lon},${lat}`, '_blank');
+      window.open(`https://2gis.ru/irkutsk/directions/points/%7C${lon}%2C${lat}`, '_blank');
     } else {
       window.open(`https://yandex.ru/maps/?rtext=~${lat},${lon}`, '_blank');
     }
