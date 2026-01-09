@@ -79,15 +79,15 @@ const MainContent = ({
   const [hideLoader, setHideLoader] = useState(false);
   const [routeModalOpen, setRouteModalOpen] = useState(false);
 
-  const handleRouteApp = (app: '2gis' | 'yandex') => {
+  const handleRouteApp = (app: "2gis" | "yandex") => {
     const lat = 52.317768;
     const lon = 104.302578;
-    const address = 'г. Иркутск, ул. Рабочего Штаба 78';
-    
-    if (app === '2gis') {
-      window.open(`https://2gis.ru/geo/${lon},${lat}`, '_blank');
+    const address = "г. Иркутск, ул. Рабочего Штаба 78";
+
+    if (app === "2gis") {
+      window.open(`https://2gis.ru/geo/${lon},${lat}`, "_blank");
     } else {
-      window.open(`https://yandex.ru/maps/?rtext=~${lat},${lon}`, '_blank');
+      window.open(`https://yandex.ru/maps/?rtext=~${lat},${lon}`, "_blank");
     }
     setRouteModalOpen(false);
   };
@@ -733,10 +733,10 @@ const MainContent = ({
                 Здание супермаркета «Слата», 2 этаж
               </p>
             </div>
-
+            52.317768, 104.302578
             <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-orange-200">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=104.302444,52.316737&z=17&l=map&pt=104.302444,52.316737,pm2rdm"
+                src="https://yandex.ru/map-widget/v1/?ll=104.30257,52.317768&z=17&l=map&pt=104.30257,52.317768,pm2rdm"
                 width="100%"
                 height="400"
                 frameBorder="0"
@@ -744,7 +744,6 @@ const MainContent = ({
                 style={{ position: "relative" }}
               />
             </div>
-
             <button
               onClick={() => setRouteModalOpen(true)}
               className="w-full mt-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-lg"
@@ -752,7 +751,6 @@ const MainContent = ({
               <Icon name="Navigation" size={24} />
               Построить маршрут
             </button>
-
             {routeModalOpen && (
               <div
                 className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
@@ -771,7 +769,7 @@ const MainContent = ({
 
                   <div className="space-y-3">
                     <button
-                      onClick={() => handleRouteApp('2gis')}
+                      onClick={() => handleRouteApp("2gis")}
                       className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group"
                     >
                       <div className="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -779,20 +777,26 @@ const MainContent = ({
                       </div>
                       <div className="text-left">
                         <div className="font-semibold text-gray-900">2GIS</div>
-                        <div className="text-sm text-gray-600">Открыть в 2ГИС</div>
+                        <div className="text-sm text-gray-600">
+                          Открыть в 2ГИС
+                        </div>
                       </div>
                     </button>
 
                     <button
-                      onClick={() => handleRouteApp('yandex')}
+                      onClick={() => handleRouteApp("yandex")}
                       className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group"
                     >
                       <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Icon name="Map" className="text-white" size={28} />
                       </div>
                       <div className="text-left">
-                        <div className="font-semibold text-gray-900">Яндекс Карты</div>
-                        <div className="text-sm text-gray-600">Открыть в Яндекс Картах</div>
+                        <div className="font-semibold text-gray-900">
+                          Яндекс Карты
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          Открыть в Яндекс Картах
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -806,7 +810,6 @@ const MainContent = ({
                 </div>
               </div>
             )}
-
             <div className="mt-8 grid md:grid-cols-3 gap-6">
               <div className="flex items-center gap-3 p-4 bg-green-50 rounded-xl">
                 <Icon
