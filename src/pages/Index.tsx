@@ -14,6 +14,19 @@ const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [routeModalOpen, setRouteModalOpen] = useState(false);
+
+  const handleRouteApp = (app: '2gis' | 'yandex') => {
+    const lat = 52.317768;
+    const lon = 104.302578;
+    
+    if (app === '2gis') {
+      window.open(`https://2gis.ru/geo/${lon},${lat}`, '_blank');
+    } else {
+      window.open(`https://yandex.ru/maps/?rtext=~${lat},${lon}`, '_blank');
+    }
+    setRouteModalOpen(false);
+  };
 
   const banners = [
     {
@@ -258,6 +271,7 @@ const Index = () => {
       <Header
         isScrolled={isScrolled}
         onContactClick={() => setContactModalOpen(true)}
+        onRouteClick={() => setRouteModalOpen(true)}
       />
       <div style={{ paddingTop: '72px' }}>
         <HeroSection
@@ -288,6 +302,60 @@ const Index = () => {
         isOpen={contactModalOpen}
         onClose={() => setContactModalOpen(false)}
       />
+
+      {routeModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          onClick={() => setRouteModalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Выберите приложение
+              </h3>
+              <p className="text-gray-600">Построить маршрут в карте</p>
+            </div>
+
+            <div className="space-y-3">
+              <button
+                onClick={() => handleRouteApp('2gis')}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group"
+              >
+                <div className="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Icon name="MapPin" className="text-white" size={28} />
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-900">2GIS</div>
+                  <div className="text-sm text-gray-600">Открыть в 2ГИС</div>
+                </div>
+              </button>
+
+              <button
+                onClick={() => handleRouteApp('yandex')}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group"
+              >
+                <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Icon name="Map" className="text-white" size={28} />
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-900">Яндекс Карты</div>
+                  <div className="text-sm text-gray-600">Открыть в Яндекс Картах</div>
+                </div>
+              </button>
+            </div>
+
+            <button
+              onClick={() => setRouteModalOpen(false)}
+              className="mt-6 w-full py-3 text-gray-600 hover:text-gray-900 font-medium transition-colors"
+            >
+              Закрыть
+            </button>
+          </div>
+        </div>
+      )}
 
       <button
         onClick={() => setContactModalOpen(true)}
