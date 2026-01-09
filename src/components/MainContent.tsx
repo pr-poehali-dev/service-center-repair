@@ -58,6 +58,7 @@ interface MainContentProps {
   onContactPhoneChange: (value: string) => void;
   onContactMessageChange: (value: string) => void;
   onContactSubmit: (e: React.FormEvent) => void;
+  onRouteClick: () => void;
 }
 
 const MainContent = ({
@@ -75,6 +76,7 @@ const MainContent = ({
   onContactPhoneChange,
   onContactMessageChange,
   onContactSubmit,
+  onRouteClick,
 }: MainContentProps) => {
   const [hideLoader, setHideLoader] = useState(false);
 
@@ -719,7 +721,6 @@ const MainContent = ({
                 Здание супермаркета «Слата», 2 этаж
               </p>
             </div>
-            52.317768, 104.302578
             <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-orange-200">
               <iframe
                 src="https://yandex.ru/map-widget/v1/?ll=104.30257,52.317768&z=17&l=map&pt=104.30257,52.317768,pm2rdm"
@@ -730,6 +731,14 @@ const MainContent = ({
                 style={{ position: "relative" }}
               />
             </div>
+
+            <Button
+              onClick={onRouteClick}
+              className="mt-6 bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg h-auto"
+            >
+              <Icon name="Navigation" className="mr-2" size={24} />
+              Построить маршрут
+            </Button>
 
             <div className="mt-8 grid md:grid-cols-3 gap-6">
               <div className="flex items-center gap-3 p-4 bg-green-50 rounded-xl">

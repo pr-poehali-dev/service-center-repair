@@ -294,6 +294,7 @@ const Index = () => {
         onContactPhoneChange={setContactPhone}
         onContactMessageChange={setContactMessage}
         onContactSubmit={handleContactSubmit}
+        onRouteClick={() => setRouteModalOpen(true)}
       />
 
       <ContactModal
