@@ -92,7 +92,6 @@ const Index = () => {
     {
       title: "Ремонт смартфонов",
       icon: "Smartphone",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=smartphone&backgroundColor=f97316",
       items: [
         "Замена экранов на любой смартфон",
         "Электрический ремонт любой сложности",
@@ -107,7 +106,6 @@ const Index = () => {
     {
       title: "Ремонт компьютеров и ноутбуков",
       icon: "Laptop",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=laptop&backgroundColor=f97316",
       items: [
         "Установка программ",
         "Восстановление данных с поврежденных носителей",
@@ -123,7 +121,6 @@ const Index = () => {
     {
       title: "Ремонт принтеров и МФУ",
       icon: "Printer",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=printer&backgroundColor=f97316",
       items: [
         "Устранение дефектов печати",
         "Устранение замятий бумаги",
@@ -138,7 +135,6 @@ const Index = () => {
     {
       title: "Ремонт телевизоров",
       icon: "Tv",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=tv&backgroundColor=f97316",
       items: [
         "Замена матрицы, ремонт матрицы",
         "Замена подсветки",
@@ -155,7 +151,6 @@ const Index = () => {
       title: "Приносите оборудование",
       description: "Вы приносите к нам ваше неисправное оборудование",
       icon: "Package",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=step1&backgroundColor=fed7aa",
     },
     {
       number: 2,
@@ -163,14 +158,12 @@ const Index = () => {
       description:
         "Наш мастер проводит осмотр-диагностику в течение 1 рабочего дня",
       icon: "Search",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=step2&backgroundColor=fed7aa",
     },
     {
       number: 3,
       title: "Согласование",
       description: "Менеджер согласовывает с вами стоимость ремонта",
       icon: "FileCheck",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=step3&backgroundColor=fed7aa",
     },
     {
       number: 4,
@@ -178,14 +171,12 @@ const Index = () => {
       description:
         "Производим ремонт от 1 до 3 рабочих дней при наличии запчастей",
       icon: "Wrench",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=step4&backgroundColor=fed7aa",
     },
     {
       number: 5,
       title: "Выдача",
       description: "По окончании ремонта звоним вам и вы забираете изделие",
       icon: "CheckCircle2",
-      imageUrl: "https://api.dicebear.com/7.x/shapes/svg?seed=step5&backgroundColor=fed7aa",
     },
   ];
 
