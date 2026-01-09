@@ -76,7 +76,7 @@ const HeroSection = ({
               <p className="text-lg sm:text-xl mb-8 text-gray-200">
                 {banner.description}
               </p>
-              <div className="absolute" style={{ top: '30%' }}>
+              <div className="absolute" style={{ top: '70%' }}>
                 <Button
                   size="lg"
                   className="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-6 h-auto"
