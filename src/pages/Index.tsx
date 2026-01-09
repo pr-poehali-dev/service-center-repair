@@ -40,35 +40,35 @@ const Index = () => {
       title: "Ремонт телефонов",
       description: "Замена экранов, батарей, восстановление ПО",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/5532d0d4-1d87-4000-a1c0-68cdd4809a60.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a3222b64-002b-45fd-ab5c-737dddff92d4.jpg",
       icon: "Smartphone",
     },
     {
       title: "Ремонт компьютеров",
       description: "Установка ПО, восстановление данных, замена комплектующих",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/e2304232-baed-489d-8286-ea3241fd4ffe.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/7a5023e9-82b3-497a-9cf7-4e69b5c30cee.jpg",
       icon: "Monitor",
     },
     {
       title: "Ремонт ноутбуков",
       description: "Чистка системы охлаждения, замена экранов, клавиатур",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/941f0e48-6e98-460a-9520-c703159ea8cd.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/e4b5f5c4-93d7-4ccf-b783-b5d0ecc3bbf2.jpg",
       icon: "Laptop",
     },
     {
       title: "Ремонт принтеров и МФУ",
       description: "Прочистка головки, замена деталей, продажа расходников",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/8efbf180-1c13-4ac1-9884-51ef2b4975a1.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/015b32b0-0f45-4368-8228-220a972a6bac.jpg",
       icon: "Printer",
     },
     {
       title: "Ремонт телевизоров",
       description: "Замена матрицы, подсветки, ремонт блоков питания",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/d7797c40-b470-467d-a4a0-db322cb17de4.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a084f4fe-5907-4182-930d-8b7f5bf0fa59.jpg",
       icon: "Tv",
     },
   ];
