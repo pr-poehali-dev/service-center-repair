@@ -163,14 +163,14 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
 
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-start justify-center pt-24 p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-start justify-center pt-20 p-4 animate-in fade-in duration-200"
           onClick={() => setMenuOpen(false)}
         >
           <div
-            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in slide-in-from-top duration-300"
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[85vh] flex flex-col animate-in slide-in-from-top duration-300"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between p-6 pb-4 flex-shrink-0">
               <h3 className="text-2xl font-bold text-gray-900">Навигация</h3>
               <button
                 onClick={() => setMenuOpen(false)}
@@ -180,7 +180,7 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               </button>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 px-6 pb-6 overflow-y-auto flex-1">
               <button
                 onClick={() => scrollToSection("repairs")}
                 className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 rounded-xl border-2 border-orange-200 transition-all duration-300 hover:shadow-lg group text-left"
