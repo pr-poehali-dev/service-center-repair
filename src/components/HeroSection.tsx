@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
@@ -21,8 +22,36 @@ const HeroSection = ({
   onSlideChange,
   onScrollToSection,
 }: HeroSectionProps) => {
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swipe left - next slide
+      onSlideChange((currentSlide + 1) % banners.length);
+    }
+
+    if (touchStart - touchEnd < -75) {
+      // Swipe right - previous slide
+      onSlideChange(currentSlide === 0 ? banners.length - 1 : currentSlide - 1);
+    }
+  };
+
   return (
-    <section className="relative h-[600px] overflow-hidden bg-gray-900">
+    <section 
+      className="relative h-[600px] overflow-hidden bg-gray-900"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {banners.map((banner, index) => (
         <div
           key={index}
@@ -39,7 +68,7 @@ const HeroSection = ({
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
           </div>
 
-          <div className="relative container mx-auto px-4 h-full flex items-center pt-12">
+          <div className="relative container mx-auto px-4 h-full flex items-start pt-[20%]">
             <div className="max-w-2xl text-white">
               <div className="inline-flex items-center gap-2 bg-orange-600 px-4 py-2 rounded-full mb-6">
                 <Icon name={banner.icon as any} size={24} />
