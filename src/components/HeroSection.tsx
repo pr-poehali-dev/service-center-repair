@@ -69,23 +69,26 @@ const HeroSection = ({
           </div>
 
           <div className="relative container mx-auto px-4 h-full flex items-start pt-[20%]">
-            <div className="max-w-2xl text-white relative">
+            <div className="max-w-2xl text-white">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                 {banner.title}
               </h2>
               <p className="text-lg sm:text-xl mb-8 text-gray-200">
                 {banner.description}
               </p>
-              <div className="absolute" style={{ top: '70%' }}>
-                <Button
-                  size="lg"
-                  className="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-6 h-auto"
-                  onClick={() => onScrollToSection("contact-form")}
-                >
-                  Записаться на ремонт
-                  <Icon name="ArrowRight" className="ml-2" size={20} />
-                </Button>
-              </div>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-20 left-0 right-0 z-10">
+            <div className="container mx-auto px-4">
+              <Button
+                size="lg"
+                className="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-6 h-auto"
+                onClick={() => onScrollToSection("contact-form")}
+              >
+                Записаться на ремонт
+                <Icon name="ArrowRight" className="ml-2" size={20} />
+              </Button>
             </div>
           </div>
         </div>
