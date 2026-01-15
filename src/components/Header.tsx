@@ -84,7 +84,7 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               whiteSpace: "nowrap",
             }}
           >
-            СЕРВИС КЛИК
+            Сервис Клик
           </h1>
         </div>
 
@@ -190,7 +190,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Услуги</div>
-                  <div className="text-sm text-gray-600">Что мы ремонтируем</div>
+                  <div className="text-sm text-gray-600">
+                    Что мы ремонтируем
+                  </div>
                 </div>
               </button>
 
@@ -203,7 +205,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Процесс</div>
-                  <div className="text-sm text-gray-600">Как проходит ремонт</div>
+                  <div className="text-sm text-gray-600">
+                    Как проходит ремонт
+                  </div>
                 </div>
               </button>
 
@@ -216,7 +220,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Бренды</div>
-                  <div className="text-sm text-gray-600">Ремонтируем все бренды</div>
+                  <div className="text-sm text-gray-600">
+                    Ремонтируем все бренды
+                  </div>
                 </div>
               </button>
 
@@ -228,7 +234,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                   <Icon name="Settings" className="text-white" size={20} />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Оборудование</div>
+                  <div className="font-semibold text-gray-900">
+                    Оборудование
+                  </div>
                   <div className="text-sm text-gray-600">Наши инструменты</div>
                 </div>
               </button>
@@ -242,7 +250,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Отзывы</div>
-                  <div className="text-sm text-gray-600">Что говорят клиенты</div>
+                  <div className="text-sm text-gray-600">
+                    Что говорят клиенты
+                  </div>
                 </div>
               </button>
 
@@ -268,7 +278,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Карта</div>
-                  <div className="text-sm text-gray-600">Наше местоположение</div>
+                  <div className="text-sm text-gray-600">
+                    Наше местоположение
+                  </div>
                 </div>
               </button>
 
@@ -283,7 +295,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                   <Icon name="Navigation" className="text-white" size={20} />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Построить маршрут</div>
+                  <div className="font-semibold text-gray-900">
+                    Построить маршрут
+                  </div>
                   <div className="text-sm text-gray-600">Как добраться</div>
                 </div>
               </button>
