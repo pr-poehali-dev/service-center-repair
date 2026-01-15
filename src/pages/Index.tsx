@@ -369,15 +369,15 @@ const Index = () => {
           width: "56px",
           height: "56px",
           borderRadius: "50%",
-          backgroundColor: "#22c55e",
-          boxShadow: "0 0 0 4px rgba(34, 197, 94, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15)",
-          animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+          backgroundColor: "#f97316",
+          boxShadow: "0 0 0 4px rgba(249, 115, 22, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15)",
+          animation: "ripple 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
           border: "none",
           cursor: "pointer",
           zIndex: 40,
         }}
       >
-        <Icon name="Phone" size={24} className="text-white" />
+        <span className="text-white text-xs font-semibold">клик</span>
       </button>
       </div>
     </div>
