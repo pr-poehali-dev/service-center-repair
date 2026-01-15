@@ -37,10 +37,10 @@ const Index = () => {
 
   const banners = [
     {
-      title: "Ремонт телефонов",
-      description: "Замена экранов, батарей, восстановление ПО",
+      title: "Замена экранов на любом смартфоне",
+      description: "Используем оригинальные запчасти или аналоги, по желанию",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a3222b64-002b-45fd-ab5c-737dddff92d4.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/0a5594fb-a578-4a23-bbba-3195d9aa15f5.jpg",
       icon: "Smartphone",
     },
     {
