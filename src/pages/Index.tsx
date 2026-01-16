@@ -151,6 +151,7 @@ const Index = () => {
       title: "Приносите оборудование",
       description: "Вы приносите к нам ваше неисправное оборудование",
       icon: "Package",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/c37eb601-9e58-4caa-8f76-14c5204da4e8.jpg",
     },
     {
       number: 2,
@@ -158,12 +159,14 @@ const Index = () => {
       description:
         "Наш мастер проводит осмотр-диагностику в течение 1 рабочего дня",
       icon: "Search",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/de1c44bc-9446-4ed7-8fb5-cf354aa130cf.jpg",
     },
     {
       number: 3,
       title: "Согласование",
       description: "Менеджер согласовывает с вами стоимость ремонта",
       icon: "FileCheck",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/9981a73a-0be8-479f-b612-011b7fc79c79.jpg",
     },
     {
       number: 4,
@@ -171,12 +174,14 @@ const Index = () => {
       description:
         "Производим ремонт от 1 до 3 рабочих дней при наличии запчастей",
       icon: "Wrench",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/ae76337d-d2c2-4dbb-8944-2f4a9ebf6eca.jpg",
     },
     {
       number: 5,
       title: "Выдача",
       description: "По окончании ремонта звоним вам и вы забираете изделие",
       icon: "CheckCircle2",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/ff64a915-70fb-435a-86d2-9b7a3b58117c.jpg",
     },
   ];
 

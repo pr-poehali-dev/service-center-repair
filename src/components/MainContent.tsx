@@ -24,6 +24,7 @@ interface WorkflowStep {
   title: string;
   description: string;
   icon: string;
+  image: string;
 }
 
 interface Brand {
@@ -327,11 +328,11 @@ const MainContent = ({
                 <div key={index} className="relative">
                   <Card className="text-center hover:shadow-xl transition-all border-2 hover:border-orange-300">
                     <CardContent className="pt-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Icon
-                          name={step.icon as any}
-                          className="text-white"
-                          size={28}
+                      <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-4">
+                        <img 
+                          src={step.image}
+                          alt={step.title}
+                          className="w-full h-full object-cover"
                         />
                       </div>
                       <div className="text-3xl font-bold text-orange-600 mb-2">
