@@ -299,7 +299,7 @@ const Index = () => {
       />
       <div
         className="fixed top-[72px] left-0 right-0 z-40 bg-orange-600 text-white text-center font-semibold uppercase"
-        style={{ padding: "9.6px 0", fontSize: "14.4px" }}
+        style={{ padding: "9.6px 0", fontSize: "12px" }}
       >
         Профессиональный ремонт электроники в Иркутске
       </div>
