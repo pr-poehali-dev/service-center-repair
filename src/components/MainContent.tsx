@@ -662,7 +662,7 @@ const MainContent = ({
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold mb-4 text-orange-400">
-                Element5
+                Сервис Клик
               </h3>
               <p className="text-gray-400">
                 Профессиональный ремонт электроники в Иркутске
