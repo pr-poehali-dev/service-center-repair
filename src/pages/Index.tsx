@@ -204,33 +204,39 @@ const Index = () => {
       description:
         "Профессиональное оборудование для микропайки компонентов: TermoPro ИК-650,  Sugon T26 C210, Sugon 8620DX Pro ",
       icon: "Flame",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/af12b6f1-e420-40ca-b184-302d704edbd8.jpg",
     },
     {
       name: "Ультразвуковая ванна",
       description: "Для глубокой очистки плат и компонентов",
       icon: "Droplets",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3c21d922-5b9f-4675-bc04-01fdc82d1bcb.jpg",
     },
     {
       name: "Программаторы",
       description:
         "Современные программаторы для восстановления ПО. Программно аппаратный комплекс PC-3000 Flash + HDD+SSD. Программаторы Z3x, Octopus, Phoenix, авторизации брендов Samsung, Xiaomi, Huawei. Программаторы SPI Flash/NAND. Borneo Schematics, MaAnt",
       icon: "Cpu",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/95a09ddf-5d57-4844-8117-81551b047a90.jpg",
     },
     {
       name: "Микроскопы",
       description: "Для работы с микросхемами и мелкими компонентами",
       icon: "Eye",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3a40ac89-b13b-436e-8425-eb6fb73d30a7.jpg",
     },
     {
       name: "Сепараторы, ламинаторы, автоклавы",
       description:
         "Для безопасной замены стекол и дисплеев. FORWARD RMB-5Max+, лазерный станок Qianli SU8",
       icon: "Layers",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/c8f299f3-971a-4489-84fa-e3f16c9fa431.jpg",
     },
     {
       name: "Тестовое оборудование",
       description: "Мультиметры, осциллографы, тепловизоры для диагностики.",
       icon: "Activity",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/9cc8e27c-65af-4fa3-a14b-eab384d595d2.jpg",
     },
   ];
 

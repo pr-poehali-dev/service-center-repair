@@ -36,6 +36,7 @@ interface Equipment {
   name: string;
   description: string;
   icon: string;
+  image: string;
 }
 
 interface Review {
@@ -325,15 +326,12 @@ const MainContent = ({
                 <div key={index} className="relative">
                   <Card className="text-center hover:shadow-xl transition-all border-2 hover:border-orange-300">
                     <CardContent className="pt-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Icon
-                          name={step.icon as any}
-                          className="text-white"
-                          size={28}
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden">
+                        <img
+                          src={step.image}
+                          alt={step.title}
+                          className="w-full h-full object-cover"
                         />
-                      </div>
-                      <div className="text-3xl font-bold text-orange-600 mb-2">
-                        {step.number}
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-2">
                         {step.title}
@@ -545,11 +543,11 @@ const MainContent = ({
                 className="border-2 hover:border-orange-300 transition-all hover:shadow-xl"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4">
-                    <Icon
-                      name={item.icon as any}
-                      className="text-white"
-                      size={32}
+                  <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <CardTitle className="text-xl">{item.name}</CardTitle>
