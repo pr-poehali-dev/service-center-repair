@@ -375,8 +375,8 @@ const Index = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            width: "56px",
-            height: "56px",
+            width: "72px",
+            height: "72px",
             borderRadius: "50%",
             backgroundColor: "#22c55e",
             boxShadow:
@@ -387,7 +387,7 @@ const Index = () => {
             zIndex: 40,
           }}
         >
-          <span className="text-white text-xs font-semibold">клик</span>
+          <span className="text-white text-base font-bold">клик</span>
         </button>
       </div>
     </div>

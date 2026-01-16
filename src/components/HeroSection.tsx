@@ -82,12 +82,12 @@ const HeroSection = ({
           <div className="absolute bottom-20 left-0 right-0 z-10">
             <div className="container mx-auto px-4">
               <Button
-                size="lg"
-                className="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-6 h-auto"
+                size="default"
+                className="bg-orange-600 hover:bg-orange-700 text-white text-base px-6 py-4 h-auto"
                 onClick={() => onScrollToSection("contact-form")}
               >
                 Записаться на ремонт
-                <Icon name="ArrowRight" className="ml-2" size={20} />
+                <Icon name="ArrowRight" className="ml-2" size={18} />
               </Button>
             </div>
           </div>
