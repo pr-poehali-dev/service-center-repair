@@ -70,7 +70,7 @@ const HeroSection = ({
 
           <div className="relative container mx-auto px-4 h-full flex items-start pt-[20%] lg:pt-[10%]">
             <div className="max-w-2xl text-white">
-              <h2 className="text-[2rem] sm:text-[2.64rem] lg:text-[3.3rem] font-bold mb-6 text-yellow-400 leading-tight">
+              <h2 className="text-[2.4rem] sm:text-[3.17rem] lg:text-[3.96rem] font-bold mb-6 text-yellow-400 leading-tight">
                 {banner.title}
               </h2>
               <p className="text-xl sm:text-2xl mb-8 text-gray-100">
