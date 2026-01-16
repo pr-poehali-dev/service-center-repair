@@ -88,7 +88,8 @@ const Index = () => {
     {
       title: "Ремонт смартфонов",
       icon: "Smartphone",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/0a5594fb-a578-4a23-bbba-3195d9aa15f5.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/0a5594fb-a578-4a23-bbba-3195d9aa15f5.jpg",
       items: [
         "Замена экранов на любой смартфон",
         "Электрический ремонт любой сложности",
@@ -103,7 +104,8 @@ const Index = () => {
     {
       title: "Ремонт компьютеров и ноутбуков",
       icon: "Laptop",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/e4b5f5c4-93d7-4ccf-b783-b5d0ecc3bbf2.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/e4b5f5c4-93d7-4ccf-b783-b5d0ecc3bbf2.jpg",
       items: [
         "Установка программ",
         "Восстановление данных с поврежденных носителей",
@@ -119,7 +121,8 @@ const Index = () => {
     {
       title: "Ремонт принтеров и МФУ",
       icon: "Printer",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/015b32b0-0f45-4368-8228-220a972a6bac.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/015b32b0-0f45-4368-8228-220a972a6bac.jpg",
       items: [
         "Устранение дефектов печати",
         "Устранение замятий бумаги",
@@ -134,7 +137,8 @@ const Index = () => {
     {
       title: "Ремонт телевизоров",
       icon: "Tv",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a084f4fe-5907-4182-930d-8b7f5bf0fa59.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a084f4fe-5907-4182-930d-8b7f5bf0fa59.jpg",
       items: [
         "Замена матрицы, ремонт матрицы",
         "Замена подсветки",
@@ -151,7 +155,8 @@ const Index = () => {
       title: "Приносите оборудование",
       description: "Вы приносите к нам ваше неисправное оборудование",
       icon: "Package",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/c37eb601-9e58-4caa-8f76-14c5204da4e8.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/c37eb601-9e58-4caa-8f76-14c5204da4e8.jpg",
     },
     {
       number: 2,
@@ -159,14 +164,16 @@ const Index = () => {
       description:
         "Наш мастер проводит осмотр-диагностику в течение 1 рабочего дня",
       icon: "Search",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/de1c44bc-9446-4ed7-8fb5-cf354aa130cf.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/de1c44bc-9446-4ed7-8fb5-cf354aa130cf.jpg",
     },
     {
       number: 3,
       title: "Согласование",
       description: "Менеджер согласовывает с вами стоимость ремонта",
       icon: "FileCheck",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/9981a73a-0be8-479f-b612-011b7fc79c79.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/9981a73a-0be8-479f-b612-011b7fc79c79.jpg",
     },
     {
       number: 4,
@@ -174,14 +181,16 @@ const Index = () => {
       description:
         "Производим ремонт от 1 до 3 рабочих дней при наличии запчастей",
       icon: "Wrench",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/ae76337d-d2c2-4dbb-8944-2f4a9ebf6eca.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/ae76337d-d2c2-4dbb-8944-2f4a9ebf6eca.jpg",
     },
     {
       number: 5,
       title: "Выдача",
       description: "По окончании ремонта звоним вам и вы забираете изделие",
       icon: "CheckCircle2",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/ff64a915-70fb-435a-86d2-9b7a3b58117c.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/ff64a915-70fb-435a-86d2-9b7a3b58117c.jpg",
     },
   ];
 
@@ -204,39 +213,45 @@ const Index = () => {
       description:
         "Профессиональное оборудование для микропайки компонентов: TermoPro ИК-650,  Sugon T26 C210, Sugon 8620DX Pro ",
       icon: "Flame",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/af12b6f1-e420-40ca-b184-302d704edbd8.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/af12b6f1-e420-40ca-b184-302d704edbd8.jpg",
     },
     {
       name: "Ультразвуковая ванна",
       description: "Для глубокой очистки плат и компонентов",
       icon: "Droplets",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3c21d922-5b9f-4675-bc04-01fdc82d1bcb.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3c21d922-5b9f-4675-bc04-01fdc82d1bcb.jpg",
     },
     {
       name: "Программаторы",
       description:
         "Современные программаторы для восстановления ПО. Программно аппаратный комплекс PC-3000 Flash + HDD+SSD. Программаторы Z3x, Octopus, Phoenix, авторизации брендов Samsung, Xiaomi, Huawei. Программаторы SPI Flash/NAND. Borneo Schematics, MaAnt",
       icon: "Cpu",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/95a09ddf-5d57-4844-8117-81551b047a90.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/95a09ddf-5d57-4844-8117-81551b047a90.jpg",
     },
     {
       name: "Микроскопы",
       description: "Для работы с микросхемами и мелкими компонентами",
       icon: "Eye",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3a40ac89-b13b-436e-8425-eb6fb73d30a7.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3a40ac89-b13b-436e-8425-eb6fb73d30a7.jpg",
     },
     {
       name: "Сепараторы, ламинаторы, автоклавы",
       description:
         "Для безопасной замены стекол и дисплеев. FORWARD RMB-5Max+, лазерный станок Qianli SU8",
       icon: "Layers",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/c8f299f3-971a-4489-84fa-e3f16c9fa431.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/c8f299f3-971a-4489-84fa-e3f16c9fa431.jpg",
     },
     {
       name: "Тестовое оборудование",
       description: "Мультиметры, осциллографы, тепловизоры для диагностики.",
       icon: "Activity",
-      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/9cc8e27c-65af-4fa3-a14b-eab384d595d2.jpg",
+      image:
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/9cc8e27c-65af-4fa3-a14b-eab384d595d2.jpg",
     },
   ];
 
@@ -286,7 +301,7 @@ const Index = () => {
         className="fixed top-[72px] left-0 right-0 z-40 bg-orange-600 text-white text-center font-semibold uppercase"
         style={{ padding: "9.6px 0", fontSize: "14.4px" }}
       >
-        Профессиональный ремонт электроники
+        Профессиональный ремонт электроники в Иркутске
       </div>
       <div style={{ paddingTop: "110px" }}>
         <HeroSection
