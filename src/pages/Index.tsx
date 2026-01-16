@@ -88,6 +88,7 @@ const Index = () => {
     {
       title: "Ремонт смартфонов",
       icon: "Smartphone",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/0a5594fb-a578-4a23-bbba-3195d9aa15f5.jpg",
       items: [
         "Замена экранов на любой смартфон",
         "Электрический ремонт любой сложности",
@@ -102,6 +103,7 @@ const Index = () => {
     {
       title: "Ремонт компьютеров и ноутбуков",
       icon: "Laptop",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/e4b5f5c4-93d7-4ccf-b783-b5d0ecc3bbf2.jpg",
       items: [
         "Установка программ",
         "Восстановление данных с поврежденных носителей",
@@ -117,6 +119,7 @@ const Index = () => {
     {
       title: "Ремонт принтеров и МФУ",
       icon: "Printer",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/015b32b0-0f45-4368-8228-220a972a6bac.jpg",
       items: [
         "Устранение дефектов печати",
         "Устранение замятий бумаги",
@@ -131,6 +134,7 @@ const Index = () => {
     {
       title: "Ремонт телевизоров",
       icon: "Tv",
+      image: "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a084f4fe-5907-4182-930d-8b7f5bf0fa59.jpg",
       items: [
         "Замена матрицы, ремонт матрицы",
         "Замена подсветки",

@@ -15,6 +15,7 @@ import Icon from "@/components/ui/icon";
 interface Repair {
   title: string;
   icon: string;
+  image: string;
   items: string[];
 }
 
@@ -277,7 +278,7 @@ const MainContent = ({
                 <CardHeader>
                   <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
                     <img 
-                      src={`https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/repair-${index + 1}.jpg`}
+                      src={repair.image}
                       alt={repair.title}
                       className="w-full h-full object-cover"
                     />
