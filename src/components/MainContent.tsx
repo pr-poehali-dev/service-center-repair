@@ -672,7 +672,7 @@ const MainContent = ({
             <div>
               <h4 className="text-lg font-semibold mb-4">Контакты</h4>
               <div className="space-y-2 text-gray-400">
-                <p>+7 (3952) 50-03-03</p>
+                <p>+7 (3952) 407-405</p>
                 <p>г. Иркутск, ул. Рабочего Штаба, д. 78</p>
                 <p>Пн-Пт: 9:00 - 19:00</p>
                 <p>Сб: 10:00 - 16:00</p>
