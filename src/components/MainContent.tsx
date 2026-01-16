@@ -275,11 +275,11 @@ const MainContent = ({
                 className="border-2 hover:border-orange-300 transition-all hover:shadow-xl"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4">
-                    <Icon
-                      name={repair.icon as any}
-                      className="text-white"
-                      size={32}
+                  <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
+                    <img 
+                      src={`https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/repair-${index + 1}.jpg`}
+                      alt={repair.title}
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <CardTitle className="text-2xl mb-4">
