@@ -357,7 +357,10 @@ const MainContent = ({
         </div>
       </section>
 
-      <section id="promo-tracking" className="py-12 bg-gradient-to-br from-green-500 to-green-600 text-white">
+      <section
+        id="promo-tracking"
+        className="py-12 bg-gradient-to-br from-green-500 to-green-600 text-white"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -623,7 +626,7 @@ const MainContent = ({
               Как нас найти
             </h2>
             <p className="text-xl text-gray-600">
-              г. Иркутск, ул. Карла-Маркса, д. 48
+              г. Иркутск, ул. Рабочего Штаба, д. 78
             </p>
           </div>
 
@@ -639,7 +642,7 @@ const MainContent = ({
                 loading="lazy"
               ></iframe>
             </div>
-            
+
             <div className="mt-6 text-center">
               <Button
                 onClick={onRouteClick}
@@ -670,7 +673,7 @@ const MainContent = ({
               <h4 className="text-lg font-semibold mb-4">Контакты</h4>
               <div className="space-y-2 text-gray-400">
                 <p>+7 (3952) 50-03-03</p>
-                <p>г. Иркутск, ул. Карла-Маркса, д. 48</p>
+                <p>г. Иркутск, ул. Рабочего Штаба, д. 78</p>
                 <p>Пн-Пт: 9:00 - 19:00</p>
                 <p>Сб: 10:00 - 16:00</p>
               </div>
