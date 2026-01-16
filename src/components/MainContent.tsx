@@ -615,84 +615,7 @@ const MainContent = ({
         </div>
       </section>
 
-      <section id="contact" className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
-                Контакты
-              </Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Наши контакты
-              </h2>
-              <p className="text-xl text-gray-600">
-                Приходите к нам в сервисный центр или свяжитесь удобным способом
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-2 hover:border-orange-300 transition-all">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4">
-                    <Icon name="MapPin" className="text-white" size={32} />
-                  </div>
-                  <CardTitle className="text-2xl mb-4">Адрес</CardTitle>
-                  <CardDescription className="text-base text-gray-700 space-y-2">
-                    <p>г. Иркутск, ул. Карла-Маркса, д. 48</p>
-                    <p>Вход с торца, офис №3</p>
-                    <p className="font-semibold text-gray-900">
-                      Пн-Пт: 9:00 - 19:00
-                    </p>
-                    <p className="font-semibold text-gray-900">
-                      Сб: 10:00 - 16:00
-                    </p>
-                  </CardDescription>
-                  <Button
-                    onClick={onRouteClick}
-                    className="mt-4 bg-orange-600 hover:bg-orange-700 text-white w-full"
-                  >
-                    <Icon name="Navigation" className="mr-2" size={20} />
-                    Построить маршрут
-                  </Button>
-                </CardHeader>
-              </Card>
-
-              <Card className="border-2 hover:border-orange-300 transition-all">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4">
-                    <Icon name="Phone" className="text-white" size={32} />
-                  </div>
-                  <CardTitle className="text-2xl mb-4">Телефон</CardTitle>
-                  <CardDescription className="text-base text-gray-700 space-y-3">
-                    <div>
-                      <a
-                        href="tel:+73952500303"
-                        className="text-2xl font-bold text-orange-600 hover:text-orange-700 transition-colors"
-                      >
-                        +7 (3952) 50-03-03
-                      </a>
-                      <p className="text-sm text-gray-600 mt-1">Звоните нам</p>
-                    </div>
-                    <div>
-                      <a
-                        href="https://wa.me/79025119090"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors"
-                      >
-                        <Icon name="MessageCircle" size={20} />
-                        WhatsApp: +7 (902) 511-90-90
-                      </a>
-                    </div>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="map" className="py-12 bg-white">
+      <section id="map" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
@@ -717,6 +640,17 @@ const MainContent = ({
                 allowFullScreen
                 loading="lazy"
               ></iframe>
+            </div>
+            
+            <div className="mt-6 text-center">
+              <Button
+                onClick={onRouteClick}
+                size="lg"
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 h-auto text-lg"
+              >
+                <Icon name="Navigation" className="mr-2" size={24} />
+                Построить маршрут
+              </Button>
             </div>
           </div>
         </div>
