@@ -328,15 +328,12 @@ const MainContent = ({
                 <div key={index} className="relative">
                   <Card className="text-center hover:shadow-xl transition-all border-2 hover:border-orange-300">
                     <CardContent className="pt-6">
-                      <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-4">
+                      <div className="w-32 h-32 rounded-2xl overflow-hidden mx-auto mb-4">
                         <img 
                           src={step.image}
                           alt={step.title}
                           className="w-full h-full object-cover"
                         />
-                      </div>
-                      <div className="text-3xl font-bold text-orange-600 mb-2">
-                        {step.number}
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-2">
                         {step.title}
