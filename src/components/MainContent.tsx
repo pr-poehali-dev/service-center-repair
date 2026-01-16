@@ -326,7 +326,7 @@ const MainContent = ({
                 <div key={index} className="relative">
                   <Card className="text-center hover:shadow-xl transition-all border-2 hover:border-orange-300">
                     <CardContent className="pt-6">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden">
+                      <div className="w-48 h-48 mx-auto mb-4 rounded-2xl overflow-hidden">
                         <img
                           src={step.image}
                           alt={step.title}
