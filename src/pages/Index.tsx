@@ -39,34 +39,36 @@ const Index = () => {
     {
       title: "Замена экрана на любом смартфоне",
       description:
-        "Используем оригинальные запчасти или аналогисамого высокого качества",
+        "Используем оригинальные запчасти или аналоги самого высокого качества",
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/0a5594fb-a578-4a23-bbba-3195d9aa15f5.jpg",
       icon: "Smartphone",
     },
     {
       title: "Ремонт компьютеров",
-      description: "Установка ПО, восстановление данных, замена комплектующих",
+      description:
+        "Установка ПО, восстановление данных, замена комплектующих. Техническое обслуживание.",
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/7a5023e9-82b3-497a-9cf7-4e69b5c30cee.jpg",
       icon: "Monitor",
     },
     {
-      title: "Ремонт ноутбуков",
-      description: "Чистка системы охлаждения, замена экранов, клавиатур",
+      title: "Ремонт ноутбуков любой сложности",
+      description:
+        "Чистка системы охлаждения, замена экранов, клавиатур. Ремонт после других сервисных центров.",
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/e4b5f5c4-93d7-4ccf-b783-b5d0ecc3bbf2.jpg",
       icon: "Laptop",
     },
     {
       title: "Ремонт принтеров и МФУ",
-      description: "Прочистка головки, замена деталей, продажа расходников",
+      description: "Профессиональное восстановление печатающих головок Epson",
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/015b32b0-0f45-4368-8228-220a972a6bac.jpg",
       icon: "Printer",
     },
     {
-      title: "Ремонт телевизоров",
+      title: "Ремонт телевизоров всех марок",
       description: "Замена матрицы, подсветки, ремонт блоков питания",
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a084f4fe-5907-4182-930d-8b7f5bf0fa59.jpg",
