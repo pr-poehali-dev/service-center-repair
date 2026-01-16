@@ -16,29 +16,30 @@ const Index = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [routeModalOpen, setRouteModalOpen] = useState(false);
 
-  const handleRouteApp = (app: '2gis' | 'yandex') => {
+  const handleRouteApp = (app: "2gis" | "yandex") => {
     const lat = 52.317768;
     const lon = 104.302578;
-    
-    if (app === '2gis') {
+
+    if (app === "2gis") {
       // Попытка открыть приложение 2GIS
       const deepLink = `dgis://2gis.ru/routeSearch/rsType/car/to/${lon},${lat}`;
       window.location.href = deepLink;
-      
+
       // Если приложение не открылось, через 1.5 сек открываем веб-версию
       setTimeout(() => {
-        window.open(`https://2gis.ru/irkutsk?m=${lon},${lat}`, '_blank');
+        window.open(`https://2gis.ru/irkutsk?m=${lon},${lat}`, "_blank");
       }, 1500);
     } else {
-      window.open(`https://yandex.ru/maps/?rtext=~${lat},${lon}`, '_blank');
+      window.open(`https://yandex.ru/maps/?rtext=~${lat},${lon}`, "_blank");
     }
     setRouteModalOpen(false);
   };
 
   const banners = [
     {
-      title: "Замена экранов на любом смартфоне",
-      description: "Используем оригинальные запчасти или аналоги, по желанию",
+      title: "Замена экрана на любом смартфоне",
+      description:
+        "Используем оригинальные запчасти или аналогисамого высокого качества",
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/0a5594fb-a578-4a23-bbba-3195d9aa15f5.jpg",
       icon: "Smartphone",
@@ -72,8 +73,6 @@ const Index = () => {
       icon: "Tv",
     },
   ];
-
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -255,8 +254,8 @@ const Index = () => {
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Заявка с сайта%0A%0AИмя: ${contactName}%0AТелефон: ${contactPhone}${contactMessage ? `%0A%0AСообщение: ${contactMessage}` : ''}`;
-    window.open(`https://t.me/element5_irk?text=${message}`, '_blank');
+    const message = `Заявка с сайта%0A%0AИмя: ${contactName}%0AТелефон: ${contactPhone}${contactMessage ? `%0A%0AСообщение: ${contactMessage}` : ""}`;
+    window.open(`https://t.me/element5_irk?text=${message}`, "_blank");
   };
 
   return (
@@ -268,117 +267,122 @@ const Index = () => {
       />
       <div
         className="fixed top-[72px] left-0 right-0 z-40 bg-orange-600 text-white text-center font-semibold uppercase"
-        style={{ padding: '9.6px 0', fontSize: '14.4px' }}
+        style={{ padding: "9.6px 0", fontSize: "14.4px" }}
       >
         Профессиональный ремонт электроники
       </div>
-      <div style={{ paddingTop: '110px' }}>
+      <div style={{ paddingTop: "110px" }}>
         <HeroSection
-        banners={banners}
-        currentSlide={currentSlide}
-        onSlideChange={setCurrentSlide}
-        onScrollToSection={scrollToSection}
-      />
+          banners={banners}
+          currentSlide={currentSlide}
+          onSlideChange={setCurrentSlide}
+          onScrollToSection={scrollToSection}
+        />
 
-      <MainContent
-        repairs={repairs}
-        workflow={workflow}
-        brands={brands}
-        equipment={equipment}
-        reviews={reviews}
-        orderNumber={orderNumber}
-        trackingVisible={trackingVisible}
-        contactName={contactName}
-        contactPhone={contactPhone}
-        contactMessage={contactMessage}
-        onContactNameChange={setContactName}
-        onContactPhoneChange={setContactPhone}
-        onContactMessageChange={setContactMessage}
-        onContactSubmit={handleContactSubmit}
-        onRouteClick={() => setRouteModalOpen(true)}
-      />
+        <MainContent
+          repairs={repairs}
+          workflow={workflow}
+          brands={brands}
+          equipment={equipment}
+          reviews={reviews}
+          orderNumber={orderNumber}
+          trackingVisible={trackingVisible}
+          contactName={contactName}
+          contactPhone={contactPhone}
+          contactMessage={contactMessage}
+          onContactNameChange={setContactName}
+          onContactPhoneChange={setContactPhone}
+          onContactMessageChange={setContactMessage}
+          onContactSubmit={handleContactSubmit}
+          onRouteClick={() => setRouteModalOpen(true)}
+        />
 
-      <ContactModal
-        isOpen={contactModalOpen}
-        onClose={() => setContactModalOpen(false)}
-      />
+        <ContactModal
+          isOpen={contactModalOpen}
+          onClose={() => setContactModalOpen(false)}
+        />
 
-      {routeModalOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
-          onClick={() => setRouteModalOpen(false)}
-        >
+        {routeModalOpen && (
           <div
-            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-in zoom-in-95 duration-200"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+            onClick={() => setRouteModalOpen(false)}
           >
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Выберите приложение
-              </h3>
-              <p className="text-gray-600">Построить маршрут в карте</p>
-            </div>
-
-            <div className="space-y-3">
-              <button
-                onClick={() => handleRouteApp('2gis')}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group"
-              >
-                <div className="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Icon name="MapPin" className="text-white" size={28} />
-                </div>
-                <div className="text-left">
-                  <div className="font-semibold text-gray-900">2GIS</div>
-                  <div className="text-sm text-gray-600">Открыть в 2ГИС</div>
-                </div>
-              </button>
-
-              <button
-                onClick={() => handleRouteApp('yandex')}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group"
-              >
-                <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Icon name="Map" className="text-white" size={28} />
-                </div>
-                <div className="text-left">
-                  <div className="font-semibold text-gray-900">Яндекс Карты</div>
-                  <div className="text-sm text-gray-600">Открыть в Яндекс Картах</div>
-                </div>
-              </button>
-            </div>
-
-            <button
-              onClick={() => setRouteModalOpen(false)}
-              className="mt-6 w-full py-3 text-gray-600 hover:text-gray-900 font-medium transition-colors"
+            <div
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-in zoom-in-95 duration-200"
+              onClick={(e) => e.stopPropagation()}
             >
-              Закрыть
-            </button>
-          </div>
-        </div>
-      )}
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Выберите приложение
+                </h3>
+                <p className="text-gray-600">Построить маршрут в карте</p>
+              </div>
 
-      <button
-        onClick={() => setContactModalOpen(true)}
-        style={{
-          position: "fixed",
-          bottom: "100px",
-          right: "24px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "56px",
-          height: "56px",
-          borderRadius: "50%",
-          backgroundColor: "#22c55e",
-          boxShadow: "0 0 0 4px rgba(34, 197, 94, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15)",
-          animation: "ripple-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-          border: "none",
-          cursor: "pointer",
-          zIndex: 40,
-        }}
-      >
-        <span className="text-white text-xs font-semibold">клик</span>
-      </button>
+              <div className="space-y-3">
+                <button
+                  onClick={() => handleRouteApp("2gis")}
+                  className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group"
+                >
+                  <div className="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Icon name="MapPin" className="text-white" size={28} />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-900">2GIS</div>
+                    <div className="text-sm text-gray-600">Открыть в 2ГИС</div>
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => handleRouteApp("yandex")}
+                  className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group"
+                >
+                  <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Icon name="Map" className="text-white" size={28} />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-900">
+                      Яндекс Карты
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Открыть в Яндекс Картах
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              <button
+                onClick={() => setRouteModalOpen(false)}
+                className="mt-6 w-full py-3 text-gray-600 hover:text-gray-900 font-medium transition-colors"
+              >
+                Закрыть
+              </button>
+            </div>
+          </div>
+        )}
+
+        <button
+          onClick={() => setContactModalOpen(true)}
+          style={{
+            position: "fixed",
+            bottom: "100px",
+            right: "24px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "56px",
+            height: "56px",
+            borderRadius: "50%",
+            backgroundColor: "#22c55e",
+            boxShadow:
+              "0 0 0 4px rgba(34, 197, 94, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15)",
+            animation: "ripple-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            border: "none",
+            cursor: "pointer",
+            zIndex: 40,
+          }}
+        >
+          <span className="text-white text-xs font-semibold">клик</span>
+        </button>
       </div>
     </div>
   );
