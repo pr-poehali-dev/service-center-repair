@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
-import ServiceBanner from "./ServiceBanner";
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -10,7 +9,6 @@ interface HeaderProps {
 
 const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [bannerOpen, setBannerOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -49,7 +47,6 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
           }}
         >
           <div
-            onClick={() => setBannerOpen(true)}
             style={{
               width: window.innerWidth > 480 ? "48px" : "40px",
               height: window.innerWidth > 480 ? "48px" : "40px",
@@ -61,7 +58,6 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
               position: "relative",
               flexShrink: 0,
-              cursor: "pointer",
             }}
           >
             <Icon name="Zap" className="text-white" size={24} />
@@ -307,12 +303,6 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               </button>
             </div>
           </div>
-        </div>
-      )}
-
-      {bannerOpen && (
-        <div onClick={() => setBannerOpen(false)}>
-          <ServiceBanner />
         </div>
       )}
     </header>
