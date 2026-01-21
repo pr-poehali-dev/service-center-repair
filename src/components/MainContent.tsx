@@ -13,10 +13,12 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 interface Repair {
-  title: string;
-  icon: string;
-  image: string;
-  items: string[];
+  title?: string;
+  icon?: string;
+  image?: string;
+  items?: string[];
+  type?: "banner";
+  text?: string;
 }
 
 interface WorkflowStep {
@@ -269,39 +271,61 @@ const MainContent = ({
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {repairs.map((repair, index) => (
-              <Card
-                key={index}
-                className="border-2 hover:border-orange-300 transition-all hover:shadow-xl"
-              >
-                <CardHeader>
-                  <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
-                    <img
-                      src={repair.image}
-                      alt={repair.title}
-                      className="w-full h-full object-cover"
-                    />
+            {repairs.map((repair, index) => {
+              if (repair.type === "banner") {
+                return (
+                  <div
+                    key={index}
+                    className="md:col-span-2 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 flex items-center gap-6 shadow-xl"
+                  >
+                    <div className="flex-shrink-0">
+                      <Icon
+                        name="ArrowLeft"
+                        className="text-white"
+                        size={64}
+                      />
+                    </div>
+                    <p className="text-white text-xl md:text-2xl font-semibold leading-relaxed">
+                      {repair.text}
+                    </p>
                   </div>
-                  <CardTitle className="text-2xl mb-4">
-                    {repair.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {repair.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <Icon
-                          name="CheckCircle2"
-                          className="text-green-600 flex-shrink-0 mt-1"
-                          size={18}
-                        />
-                        <span className="text-gray-700">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+                );
+              }
+
+              return (
+                <Card
+                  key={index}
+                  className="border-2 hover:border-orange-300 transition-all hover:shadow-xl"
+                >
+                  <CardHeader>
+                    <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
+                      <img
+                        src={repair.image}
+                        alt={repair.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardTitle className="text-2xl mb-4">
+                      {repair.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {repair.items?.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <Icon
+                            name="CheckCircle2"
+                            className="text-green-600 flex-shrink-0 mt-1"
+                            size={18}
+                          />
+                          <span className="text-gray-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
