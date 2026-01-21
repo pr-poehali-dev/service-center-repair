@@ -283,16 +283,16 @@ const MainContent = ({
                       alt="Рекламный баннер"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="absolute inset-0 bg-black/60"></div>
                     <div className="relative h-full flex items-center gap-6 px-8">
-                      <div className="flex-shrink-0">
+                      <div className="flex-shrink-0 w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center">
                         <Icon
                           name="ArrowLeft"
-                          className="text-yellow-400"
+                          className="text-gray-900"
                           size={40}
                         />
                       </div>
-                      <p className="text-yellow-400 text-lg md:text-xl font-semibold">
+                      <p className="text-yellow-400 text-xl md:text-2xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                         {repair.text}
                       </p>
                     </div>
