@@ -276,26 +276,25 @@ const MainContent = ({
                 return (
                   <div
                     key={index}
-                    className="md:col-span-2 relative overflow-hidden rounded-3xl"
+                    className="md:col-span-2 relative overflow-hidden rounded-2xl h-40"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700"></div>
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="absolute -right-20 -top-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-                      <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-                    </div>
-                    <div className="relative p-10 md:p-12 flex items-center gap-8">
-                      <div className="flex-shrink-0 w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
+                    <img
+                      src="https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/f80ed271-f291-41f8-929d-f91231559ebb.jpg"
+                      alt="Рекламный баннер"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="relative h-full flex items-center gap-6 px-8">
+                      <div className="flex-shrink-0">
                         <Icon
                           name="ArrowLeft"
-                          className="text-white"
-                          size={48}
+                          className="text-yellow-400"
+                          size={40}
                         />
                       </div>
-                      <div className="flex-1">
-                        <p className="text-white text-2xl md:text-3xl font-bold leading-relaxed drop-shadow-lg">
-                          {repair.text}
-                        </p>
-                      </div>
+                      <p className="text-yellow-400 text-lg md:text-xl font-semibold">
+                        {repair.text}
+                      </p>
                     </div>
                   </div>
                 );
