@@ -276,18 +276,27 @@ const MainContent = ({
                 return (
                   <div
                     key={index}
-                    className="md:col-span-2 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 flex items-center gap-6 shadow-xl"
+                    className="md:col-span-2 relative overflow-hidden rounded-3xl"
                   >
-                    <div className="flex-shrink-0">
-                      <Icon
-                        name="ArrowLeft"
-                        className="text-white"
-                        size={64}
-                      />
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700"></div>
+                    <div className="absolute inset-0 opacity-10">
+                      <div className="absolute -right-20 -top-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+                      <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
                     </div>
-                    <p className="text-white text-xl md:text-2xl font-semibold leading-relaxed">
-                      {repair.text}
-                    </p>
+                    <div className="relative p-10 md:p-12 flex items-center gap-8">
+                      <div className="flex-shrink-0 w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
+                        <Icon
+                          name="ArrowLeft"
+                          className="text-white"
+                          size={48}
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-white text-2xl md:text-3xl font-bold leading-relaxed drop-shadow-lg">
+                          {repair.text}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 );
               }
