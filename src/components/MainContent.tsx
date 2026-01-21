@@ -276,23 +276,17 @@ const MainContent = ({
                 return (
                   <div
                     key={index}
-                    className="md:col-span-2 relative overflow-hidden rounded-2xl h-40"
+                    className="md:col-span-2 bg-orange-600 rounded-xl p-6 border-4 border-orange-400"
                   >
-                    <img
-                      src="https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/f80ed271-f291-41f8-929d-f91231559ebb.jpg"
-                      alt="Рекламный баннер"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/60"></div>
-                    <div className="relative h-full flex items-center gap-6 px-8">
-                      <div className="flex-shrink-0 w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-yellow-400 rounded-full p-3">
                         <Icon
-                          name="ArrowLeft"
-                          className="text-gray-900"
-                          size={40}
+                          name="ShoppingBag"
+                          className="text-orange-600"
+                          size={32}
                         />
                       </div>
-                      <p className="text-yellow-400 text-xl md:text-2xl font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                      <p className="text-white text-lg font-semibold">
                         {repair.text}
                       </p>
                     </div>
