@@ -17,8 +17,8 @@ const Index = () => {
   const [routeModalOpen, setRouteModalOpen] = useState(false);
 
   const handleRouteApp = (app: "2gis" | "yandex") => {
-    const lat = 52.31673;
-    const lon = 1104.30244;
+    const lat = 52.317768;
+    const lon = 104.302578;
 
     if (app === "2gis") {
       // Попытка открыть приложение 2GIS
