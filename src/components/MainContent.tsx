@@ -274,23 +274,25 @@ const MainContent = ({
             {repairs.map((repair, index) => {
               if (repair.type === "banner") {
                 return (
-                  <div
+                  <Card
                     key={index}
-                    className="md:col-span-2 bg-orange-600 rounded-xl p-6 border-4 border-orange-400"
+                    className="md:col-span-2 border-2 border-orange-500 bg-gradient-to-br from-orange-50 to-yellow-50"
                   >
-                    <div className="flex items-center gap-4">
-                      <div className="bg-yellow-400 rounded-full p-3">
-                        <Icon
-                          name="ShoppingBag"
-                          className="text-orange-600"
-                          size={32}
-                        />
+                    <CardContent className="p-8">
+                      <div className="flex items-center gap-6">
+                        <div className="flex-shrink-0 w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
+                          <Icon
+                            name="ShoppingBag"
+                            className="text-white"
+                            size={32}
+                          />
+                        </div>
+                        <p className="text-2xl text-gray-900 font-semibold">
+                          {repair.text}
+                        </p>
                       </div>
-                      <p className="text-white text-lg font-semibold">
-                        {repair.text}
-                      </p>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
                 );
               }
 
