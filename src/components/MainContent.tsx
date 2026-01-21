@@ -287,7 +287,7 @@ const MainContent = ({
                             size={32}
                           />
                         </div>
-                        <p className="text-2xl text-gray-900 font-semibold">
+                        <p className="text-lg text-gray-900 font-semibold">
                           {repair.text}
                         </p>
                       </div>
