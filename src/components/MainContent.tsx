@@ -109,51 +109,6 @@ const MainContent = ({
 
   return (
     <>
-      <section id="tracking-widget" className="py-10 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <Card className="border-2 border-orange-200 shadow-xl">
-              <CardHeader className="text-center bg-gradient-to-r from-orange-50 to-white">
-                <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Search" className="text-white" size={28} />
-                </div>
-                <CardTitle className="text-2xl sm:text-3xl text-gray-900">
-                  Проверить статус ремонта
-                </CardTitle>
-                <CardDescription className="text-lg">
-                  Введите номер заказа для отслеживания
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-6">
-                <div className="relative flex flex-col items-center justify-center min-h-[250px]">
-                  <div
-                    id="livesklad-widget"
-                    className="w-full max-w-md ml-2"
-                  ></div>
-
-                  {!hideLoader && (
-                    <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-4 z-10">
-                      <div className="relative">
-                        <div className="w-16 h-16 border-4 border-orange-200 rounded-full"></div>
-                        <div className="w-16 h-16 border-4 border-orange-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
-                      </div>
-                      <div className="text-center space-y-2">
-                        <p className="text-gray-900 font-medium">
-                          Загрузка виджета отслеживания
-                        </p>
-                        <p className="text-sm text-gray-500">
-                          Подождите несколько секунд...
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {trackingVisible && (
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
