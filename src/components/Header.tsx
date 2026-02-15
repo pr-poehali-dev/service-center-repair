@@ -250,38 +250,7 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 </div>
               </button>
 
-              <button
-                onClick={() => scrollToSection("map")}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-cyan-50 to-cyan-100 hover:from-cyan-100 hover:to-cyan-200 rounded-xl border-2 border-cyan-200 transition-all duration-300 hover:shadow-lg group text-left"
-              >
-                <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                  <Icon name="Map" className="text-white" size={20} />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">Карта</div>
-                  <div className="text-sm text-gray-600">
-                    Наше местоположение
-                  </div>
-                </div>
-              </button>
 
-              <button
-                onClick={() => {
-                  onRouteClick();
-                  setMenuOpen(false);
-                }}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-indigo-50 to-indigo-100 hover:from-indigo-100 hover:to-indigo-200 rounded-xl border-2 border-indigo-200 transition-all duration-300 hover:shadow-lg group text-left"
-              >
-                <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                  <Icon name="Navigation" className="text-white" size={20} />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">
-                    Построить маршрут
-                  </div>
-                  <div className="text-sm text-gray-600">Как добраться</div>
-                </div>
-              </button>
             </div>
           </div>
         </div>
