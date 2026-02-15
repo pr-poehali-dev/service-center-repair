@@ -599,47 +599,6 @@ const MainContent = ({
         </div>
       </section>
 
-      <section id="map" className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
-              Карта
-            </Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Как нас найти
-            </h2>
-            <p className="text-xl text-gray-600">
-              г. Иркутск, ул. Рабочего Штаба, д. 78
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-gray-200">
-              <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3A8f8c5d5f5e5e5e5e5e5e5e5e5e5e5e5e&amp;source=constructor"
-                width="100%"
-                height="500"
-                frameBorder="0"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
-            </div>
-
-            <div className="mt-6 text-center">
-              <Button
-                onClick={onRouteClick}
-                size="lg"
-                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 h-auto text-lg"
-              >
-                <Icon name="Navigation" className="mr-2" size={24} />
-                Построить маршрут
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
