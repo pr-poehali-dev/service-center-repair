@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -83,30 +82,6 @@ const MainContent = ({
   onContactSubmit,
   onRouteClick,
 }: MainContentProps) => {
-  const [hideLoader, setHideLoader] = useState(false);
-
-  useEffect(() => {
-    const initWidget = setInterval(() => {
-      if ((window as any).createLSWidget) {
-        try {
-          (window as any).createLSWidget();
-        } catch (e) {
-          console.error("Init error:", e);
-        }
-        clearInterval(initWidget);
-      }
-    }, 150);
-
-    const hideTimer = setTimeout(() => {
-      setHideLoader(true);
-    }, 2500);
-
-    return () => {
-      clearInterval(initWidget);
-      clearTimeout(hideTimer);
-    };
-  }, []);
-
   return (
     <>
       {trackingVisible && (
