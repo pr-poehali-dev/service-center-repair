@@ -34,7 +34,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             </div>
             <div className="text-left">
               <div className="font-semibold text-gray-900">Позвонить</div>
-              <div className="text-sm text-gray-600">8-924-540-17-17</div>
+              <div className="text-sm text-gray-600">+79220573961</div>
             </div>
           </a>
 

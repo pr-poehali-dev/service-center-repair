@@ -1,8 +1,5 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
@@ -140,7 +137,7 @@ const ContactSection = ({
                   href="tel:89245401717"
                   className="text-orange-600 hover:text-orange-700 text-lg font-semibold"
                 >
-                  8-924-540-17-17
+                  +79220573961
                 </a>
               </CardContent>
             </Card>
