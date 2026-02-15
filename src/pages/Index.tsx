@@ -305,7 +305,7 @@ const Index = () => {
         className="fixed top-[72px] left-0 right-0 z-40 bg-orange-600 text-white text-center font-semibold uppercase"
         style={{ padding: "9.6px 0", fontSize: "12px" }}
       >
-        Профессиональный ремонт электроники в Иркутске
+        Профессиональный ремонт электроники с 2015 года
       </div>
       <div style={{ paddingTop: "110px" }}>
         <HeroSection
