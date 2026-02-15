@@ -54,21 +54,6 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           </a>
 
           <a
-            href="https://wa.me/+79245401717"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group"
-          >
-            <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Icon name="MessageCircle" className="text-white" size={28} />
-            </div>
-            <div className="text-left">
-              <div className="font-semibold text-gray-900">WhatsApp</div>
-              <div className="text-sm text-gray-600">Написать в WhatsApp</div>
-            </div>
-          </a>
-
-          <a
             href="https://t.me/+HKTSqQ6MPBwwZTMy"
             target="_blank"
             rel="noopener noreferrer"
@@ -78,7 +63,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <Icon name="Users" className="text-white" size={28} />
             </div>
             <div className="text-left">
-              <div className="font-semibold text-gray-900">Перейти в группу</div>
+              <div className="font-semibold text-gray-900">
+                Перейти в группу
+              </div>
               <div className="text-sm text-gray-600">Telegram группа</div>
             </div>
           </a>
