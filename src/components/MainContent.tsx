@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -82,6 +83,30 @@ const MainContent = ({
   onContactSubmit,
   onRouteClick,
 }: MainContentProps) => {
+  const [hideLoader, setHideLoader] = useState(false);
+
+  useEffect(() => {
+    const initWidget = setInterval(() => {
+      if ((window as any).createLSWidget) {
+        try {
+          (window as any).createLSWidget();
+        } catch (e) {
+          console.error("Init error:", e);
+        }
+        clearInterval(initWidget);
+      }
+    }, 150);
+
+    const hideTimer = setTimeout(() => {
+      setHideLoader(true);
+    }, 2500);
+
+    return () => {
+      clearInterval(initWidget);
+      clearTimeout(hideTimer);
+    };
+  }, []);
+
   return (
     <>
       {trackingVisible && (
@@ -630,10 +655,9 @@ const MainContent = ({
             <div>
               <h4 className="text-lg font-semibold mb-4">Контакты</h4>
               <div className="space-y-2 text-gray-400">
-                <p>+7 (3952) 407-405</p>
-                <p>г. Иркутск, ул. Рабочего Штаба, д. 78</p>
-                <p>Пн-Пт: 9:00 - 19:00</p>
-                <p>Сб: 10:00 - 16:00</p>
+                <p>+79220573961</p>
+                <p>Пн-Пт: 9:00 - 21:00</p>
+                <p>Сб: 9:00 - 21:00</p>
               </div>
             </div>
 
