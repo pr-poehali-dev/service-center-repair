@@ -113,7 +113,7 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               }}
             >
               <Icon name="Clock" size={14} className="text-orange-600" />
-              <span>Пн-Пт: 9:00-19:00, Сб-Вс: 10:00-18:00</span>
+              <span>Пн-Пт: 9:00-21:00, Сб-Вс: 09:00-21:00</span>
             </div>
             <div
               style={{
