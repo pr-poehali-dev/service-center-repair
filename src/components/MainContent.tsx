@@ -341,37 +341,6 @@ const MainContent = ({
       </section>
 
       <section
-        id="promo-tracking"
-        className="py-12 bg-gradient-to-br from-green-500 to-green-600 text-white"
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Icon name="Bell" className="text-white" size={40} />
-            </div>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-              Отслеживайте статус ремонта в реальном времени
-            </h3>
-            <p className="text-lg text-gray-700 mb-6">
-              На протяжении всего ремонта вы получаете уведомления о статусах
-              ремонта
-            </p>
-            <Button
-              onClick={() =>
-                document
-                  .getElementById("tracking-widget")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
-              }
-              className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 h-auto"
-            >
-              <Icon name="Search" className="mr-2" size={20} />
-              Проверить статус
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section
         id="contact-form"
         className="py-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white"
       >
