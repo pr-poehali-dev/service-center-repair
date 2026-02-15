@@ -123,13 +123,7 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 fontSize: "13px",
                 color: "#6b7280",
               }}
-            >
-              <Icon name="MapPin" size={14} className="text-orange-600" />
-              <span>
-                г. Иркутск, ул. Рабочего Штаба 78, здание супермаркета Слата, 2
-                этаж
-              </span>
-            </div>
+            ></div>
           </div>
 
           <button
