@@ -572,8 +572,8 @@ const MainContent = ({
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-red-400">
-                Сервис Клик
+              <h3 className="text-xl font-bold mb-4">
+                <span className="text-gray-400">СЕРВИС</span><span className="text-red-400">КЛИК</span>
               </h3>
               <p className="text-gray-400">
                 Профессиональный ремонт электроники с 2015 года.

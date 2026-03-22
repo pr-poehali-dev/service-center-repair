@@ -78,13 +78,12 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
             style={{
               fontSize: window.innerWidth > 480 ? "32px" : "24px",
               fontWeight: "700",
-              color: "#111827",
               margin: 0,
               lineHeight: 1,
               whiteSpace: "nowrap",
             }}
           >
-            Сервис Клик
+            <span style={{ color: "#6b7280" }}>СЕРВИС</span><span style={{ color: "#dc2626" }}>КЛИК</span>
           </h1>
         </div>
 
