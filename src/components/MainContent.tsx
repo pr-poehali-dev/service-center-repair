@@ -292,7 +292,7 @@ const MainContent = ({
       <section id="workflow" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Процесс
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -479,7 +479,7 @@ const MainContent = ({
       <section id="equipment" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Оборудование
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -519,7 +519,7 @@ const MainContent = ({
       <section id="reviews" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-green-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Отзывы
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
