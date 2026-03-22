@@ -584,7 +584,7 @@ const MainContent = ({
 
           <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl border-2 border-gray-200">
             <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=37.820%2C55.908%2C37.852%2C55.921&layer=mapnik&marker=55.9142%2C37.836"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=37.833%2C55.916%2C37.854%2C55.928&layer=mapnik&marker=55.92184%2C37.843481"
               width="100%"
               height="450"
               frameBorder="0"
