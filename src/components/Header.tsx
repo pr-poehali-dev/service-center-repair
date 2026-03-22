@@ -207,9 +207,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
 
               <button
                 onClick={() => scrollToSection("brands")}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-xl border-2 border-purple-200 transition-all duration-300 hover:shadow-lg group text-left"
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group text-left"
               >
-                <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                   <Icon name="Sparkles" className="text-white" size={20} />
                 </div>
                 <div>
