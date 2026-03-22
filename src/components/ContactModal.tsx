@@ -27,9 +27,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         <div className="space-y-3">
           <a
             href="tel:+79245401717"
-            className="flex items-center gap-4 p-4 bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 rounded-xl border-2 border-orange-200 transition-all duration-300 hover:shadow-lg group"
+            className="flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group"
           >
-            <div className="w-14 h-14 bg-orange-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
               <Icon name="Phone" className="text-white" size={28} />
             </div>
             <div className="text-left">

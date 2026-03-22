@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 20%;
 
-    --primary: 24 95% 53%;
+    --primary: 0 84% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 142 76% 36%;
@@ -24,7 +24,7 @@
     --muted: 210 40% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 24 95% 53%;
+    --accent: 0 84% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,7 +32,7 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 24 95% 53%;
+    --ring: 0 84% 50%;
 
     --success: 142 76% 36%;
     --warning: 38 92% 50%;
@@ -143,23 +143,23 @@
   @keyframes ripple {
     0% {
       box-shadow:
-        0 0 0 0px rgba(249, 115, 22, 0.4),
-        0 0 0 0px rgba(249, 115, 22, 0.3),
-        0 0 0 0px rgba(249, 115, 22, 0.2),
+        0 0 0 0px rgba(220, 38, 38, 0.4),
+        0 0 0 0px rgba(220, 38, 38, 0.3),
+        0 0 0 0px rgba(220, 38, 38, 0.2),
         0 4px 12px rgba(0, 0, 0, 0.15);
     }
     50% {
       box-shadow:
-        0 0 0 10px rgba(249, 115, 22, 0.3),
-        0 0 0 20px rgba(249, 115, 22, 0.2),
-        0 0 0 30px rgba(249, 115, 22, 0.1),
+        0 0 0 10px rgba(220, 38, 38, 0.3),
+        0 0 0 20px rgba(220, 38, 38, 0.2),
+        0 0 0 30px rgba(220, 38, 38, 0.1),
         0 4px 12px rgba(0, 0, 0, 0.15);
     }
     100% {
       box-shadow:
-        0 0 0 0px rgba(249, 115, 22, 0),
-        0 0 0 0px rgba(249, 115, 22, 0),
-        0 0 0 0px rgba(249, 115, 22, 0),
+        0 0 0 0px rgba(220, 38, 38, 0),
+        0 0 0 0px rgba(220, 38, 38, 0),
+        0 0 0 0px rgba(220, 38, 38, 0),
         0 4px 12px rgba(0, 0, 0, 0.15);
     }
   }

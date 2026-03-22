@@ -44,9 +44,9 @@ const TrackingWidget = ({ orderNumber, trackingVisible }: TrackingWidgetProps) =
       <section id="tracking-widget" className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <Card className="border-2 border-orange-200 shadow-xl">
-              <CardHeader className="text-center bg-gradient-to-r from-orange-50 to-white">
-                <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="border-2 border-red-200 shadow-xl">
+              <CardHeader className="text-center bg-gradient-to-r from-red-50 to-white">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Search" className="text-white" size={28} />
                 </div>
                 <CardTitle className="text-2xl sm:text-3xl text-gray-900">
@@ -63,8 +63,8 @@ const TrackingWidget = ({ orderNumber, trackingVisible }: TrackingWidgetProps) =
                   {!hideLoader && (
                     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-4 z-10">
                       <div className="relative">
-                        <div className="w-16 h-16 border-4 border-orange-200 rounded-full"></div>
-                        <div className="w-16 h-16 border-4 border-orange-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
+                        <div className="w-16 h-16 border-4 border-red-200 rounded-full"></div>
+                        <div className="w-16 h-16 border-4 border-red-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
                       </div>
                       <div className="text-center space-y-2">
                         <p className="text-gray-900 font-medium">Загрузка виджета отслеживания</p>
@@ -82,7 +82,7 @@ const TrackingWidget = ({ orderNumber, trackingVisible }: TrackingWidgetProps) =
       {trackingVisible && (
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
-            <Card className="max-w-3xl mx-auto border-2 border-orange-200 shadow-xl">
+            <Card className="max-w-3xl mx-auto border-2 border-red-200 shadow-xl">
               <CardHeader>
                 <CardTitle className="text-2xl">
                   Статус заказа {orderNumber}
@@ -121,7 +121,7 @@ const TrackingWidget = ({ orderNumber, trackingVisible }: TrackingWidgetProps) =
                       <div
                         className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
                           item.current
-                            ? "bg-orange-600 animate-pulse"
+                            ? "bg-red-600 animate-pulse"
                             : item.done
                               ? "bg-green-100"
                               : "bg-gray-200"
@@ -156,7 +156,7 @@ const TrackingWidget = ({ orderNumber, trackingVisible }: TrackingWidgetProps) =
                           </p>
                         )}
                         {item.current && (
-                          <Badge className="mt-2 bg-orange-600">
+                          <Badge className="mt-2 bg-red-600">
                             Текущий этап
                           </Badge>
                         )}
@@ -165,9 +165,9 @@ const TrackingWidget = ({ orderNumber, trackingVisible }: TrackingWidgetProps) =
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl border-2 border-orange-200">
+                <div className="mt-8 p-6 bg-gradient-to-r from-red-50 to-red-100 rounded-xl border-2 border-red-200">
                   <div className="flex items-center gap-2 mb-2">
-                    <Icon name="Bell" className="text-orange-600" size={24} />
+                    <Icon name="Bell" className="text-red-600" size={24} />
                     <h4 className="font-semibold text-gray-900 text-lg">
                       Уведомления
                     </h4>

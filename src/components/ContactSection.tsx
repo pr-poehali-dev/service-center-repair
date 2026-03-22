@@ -27,14 +27,14 @@ const ContactSection = ({
     <>
       <section
         id="contact-form"
-        className="py-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white"
+        className="py-12 bg-gradient-to-br from-red-500 to-red-600 text-white"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               Сделайте заказ прямо сейчас
             </h2>
-            <p className="text-xl text-orange-100">
+            <p className="text-xl text-red-100">
               Оставьте заявку и мы перезвоним вам в течение 10 минут
             </p>
           </div>
@@ -86,7 +86,7 @@ const ContactSection = ({
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-orange-600 hover:bg-orange-700 text-white text-xl py-6 h-auto"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white text-xl py-6 h-auto"
                 >
                   <Icon name="Send" className="mr-2" size={24} />
                   Отправить заявку
@@ -109,9 +109,9 @@ const ContactSection = ({
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300">
+            <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-red-300">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Icon name="MapPin" className="text-white" size={32} />
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-2">Адрес</h3>
@@ -125,9 +125,9 @@ const ContactSection = ({
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300">
+            <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-red-300">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Icon name="Phone" className="text-white" size={32} />
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-2">
@@ -135,16 +135,16 @@ const ContactSection = ({
                 </h3>
                 <a
                   href="tel:89245401717"
-                  className="text-orange-600 hover:text-orange-700 text-lg font-semibold"
+                  className="text-red-600 hover:text-red-700 text-lg font-semibold"
                 >
                   +79220573961
                 </a>
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300">
+            <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-red-300">
               <CardContent className="pt-8 pb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Icon name="Clock" className="text-white" size={32} />
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-2">

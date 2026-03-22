@@ -83,7 +83,7 @@ const HeroSection = ({
             <div className="container mx-auto px-4">
               <Button
                 size="default"
-                className="bg-orange-600 hover:bg-orange-700 text-white text-base px-6 py-4 h-auto"
+                className="bg-red-600 hover:bg-red-700 text-white text-base px-6 py-4 h-auto"
                 onClick={() => onScrollToSection("contact-form")}
               >
                 Записаться на ремонт
@@ -100,7 +100,7 @@ const HeroSection = ({
             key={index}
             onClick={() => onSlideChange(index)}
             className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide ? "bg-orange-600 w-8" : "bg-white/50"
+              index === currentSlide ? "bg-red-600 w-8" : "bg-white/50"
             }`}
           />
         ))}

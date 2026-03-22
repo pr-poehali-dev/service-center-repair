@@ -51,7 +51,7 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               width: window.innerWidth > 480 ? "48px" : "40px",
               height: window.innerWidth > 480 ? "48px" : "40px",
               borderRadius: "12px",
-              background: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
+              background: "linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -112,7 +112,7 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 color: "#6b7280",
               }}
             >
-              <Icon name="Clock" size={14} className="text-orange-600" />
+              <Icon name="Clock" size={14} className="text-red-600" />
               <span>Пн-Пт: 9:00-21:00, Сб-Вс: 09:00-21:00</span>
             </div>
             <div
@@ -135,18 +135,18 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               width: "48px",
               height: "48px",
               borderRadius: "12px",
-              backgroundColor: "#f97316",
+              backgroundColor: "#dc2626",
               border: "none",
               cursor: "pointer",
               boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
               transition: "all 0.3s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#ea580c";
+              e.currentTarget.style.backgroundColor = "#b91c1c";
               e.currentTarget.style.transform = "scale(1.05)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#f97316";
+              e.currentTarget.style.backgroundColor = "#dc2626";
               e.currentTarget.style.transform = "scale(1)";
             }}
           >
@@ -177,9 +177,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
             <div className="space-y-2 px-6 pb-6 overflow-y-auto flex-1">
               <button
                 onClick={() => scrollToSection("repairs")}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 rounded-xl border-2 border-orange-200 transition-all duration-300 hover:shadow-lg group text-left"
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group text-left"
               >
-                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                   <Icon name="Wrench" className="text-white" size={20} />
                 </div>
                 <div>

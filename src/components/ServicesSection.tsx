@@ -46,7 +46,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
       <section id="repairs" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Услуги
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -65,7 +65,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                   const element = document.getElementById(`repair-${index}`);
                   element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
-                className="px-6 py-3 bg-white hover:bg-orange-600 hover:text-white text-gray-700 rounded-lg border-2 border-gray-200 hover:border-orange-600 transition-all duration-300 font-semibold flex items-center gap-2 shadow-sm hover:shadow-lg"
+                className="px-6 py-3 bg-white hover:bg-red-600 hover:text-white text-gray-700 rounded-lg border-2 border-gray-200 hover:border-red-600 transition-all duration-300 font-semibold flex items-center gap-2 shadow-sm hover:shadow-lg"
               >
                 <Icon name={repair.icon as any} size={20} />
                 {repair.title}
@@ -78,7 +78,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
               <Card
                 key={index}
                 id={`repair-${index}`}
-                className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300 scroll-mt-32"
+                className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-red-300 scroll-mt-32"
               >
                 <CardHeader>
                   <div className="w-24 h-24 rounded-2xl flex items-center justify-center mb-4 shadow-lg overflow-hidden">
@@ -89,7 +89,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                      <div className="w-full h-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
                         <Icon name={repair.icon as any} className="text-white" size={32} />
                       </div>
                     )}
@@ -104,7 +104,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                       <li key={idx} className="flex items-start gap-3">
                         <Icon
                           name="Check"
-                          className="text-orange-600 flex-shrink-0 mt-1"
+                          className="text-red-600 flex-shrink-0 mt-1"
                           size={20}
                         />
                         <span className="text-gray-700 text-base">{item}</span>
@@ -116,7 +116,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                       const contactSection = document.getElementById('contact');
                       contactSection?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                   >
                     <Icon name="Phone" size={20} />
                     Заказать ремонт
@@ -131,7 +131,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
       <section id="workflow" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Процесс
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -146,9 +146,9 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
             {workflow.map((step, index) => (
               <Card
                 key={index}
-                className="relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300"
+                className="relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-red-300"
               >
-                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl">
+                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-xl">
                   <span className="text-white text-2xl font-bold">
                     {step.number}
                   </span>
@@ -162,8 +162,8 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full bg-orange-100 flex items-center justify-center">
-                        <Icon name={step.icon as any} className="text-orange-600" size={28} />
+                      <div className="w-full h-full bg-red-100 flex items-center justify-center">
+                        <Icon name={step.icon as any} className="text-red-600" size={28} />
                       </div>
                     )}
                   </div>
@@ -185,7 +185,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
       <section id="brands" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Бренды
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -202,7 +202,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                 key={index}
                 className={`text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 ${
                   brand.popular
-                    ? "border-orange-300 bg-gradient-to-br from-orange-50 to-white"
+                    ? "border-red-300 bg-gradient-to-br from-red-50 to-white"
                     : "border-gray-200"
                 }`}
               >
@@ -211,7 +211,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
                     {brand.name}
                   </p>
                   {brand.popular && (
-                    <Badge className="mt-3 bg-orange-600">Популярно</Badge>
+                    <Badge className="mt-3 bg-red-600">Популярно</Badge>
                   )}
                 </CardContent>
               </Card>
@@ -223,7 +223,7 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
       <section id="equipment" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Оборудование
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -238,10 +238,10 @@ const ServicesSection = ({ repairs, workflow, brands, equipment }: ServicesSecti
             {equipment.map((item, index) => (
               <Card
                 key={index}
-                className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300"
+                className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-red-300"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
                     <Icon
                       name={item.icon as any}
                       className="text-white"

@@ -112,7 +112,7 @@ const MainContent = ({
       {trackingVisible && (
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
-            <Card className="max-w-3xl mx-auto border-2 border-orange-200 shadow-xl">
+            <Card className="max-w-3xl mx-auto border-2 border-red-200 shadow-xl">
               <CardHeader>
                 <CardTitle className="text-2xl">
                   Статус заказа {orderNumber}
@@ -151,7 +151,7 @@ const MainContent = ({
                       <div
                         className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
                           item.current
-                            ? "bg-orange-600 animate-pulse"
+                            ? "bg-red-600 animate-pulse"
                             : item.done
                               ? "bg-green-100"
                               : "bg-gray-200"
@@ -186,7 +186,7 @@ const MainContent = ({
                           </p>
                         )}
                         {item.current && (
-                          <Badge className="mt-2 bg-orange-600">
+                          <Badge className="mt-2 bg-red-600">
                             Текущий этап
                           </Badge>
                         )}
@@ -195,9 +195,9 @@ const MainContent = ({
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl border-2 border-orange-200">
+                <div className="mt-8 p-6 bg-gradient-to-r from-red-50 to-red-100 rounded-xl border-2 border-red-200">
                   <div className="flex items-center gap-2 mb-2">
-                    <Icon name="Bell" className="text-orange-600" size={24} />
+                    <Icon name="Bell" className="text-red-600" size={24} />
                     <h4 className="font-semibold text-gray-900 text-lg">
                       Уведомления
                     </h4>
@@ -214,7 +214,7 @@ const MainContent = ({
       <section id="repairs" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Услуги
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -231,11 +231,11 @@ const MainContent = ({
                 return (
                   <Card
                     key={index}
-                    className="md:col-span-2 border-2 border-orange-500 bg-gradient-to-br from-orange-50 to-yellow-50"
+                    className="md:col-span-2 border-2 border-red-500 bg-gradient-to-br from-red-50 to-yellow-50"
                   >
                     <CardContent className="p-8">
                       <div className="flex items-center gap-6">
-                        <div className="flex-shrink-0 w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
+                        <div className="flex-shrink-0 w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center shadow-lg">
                           <Icon
                             name="ShoppingBag"
                             className="text-white"
@@ -254,7 +254,7 @@ const MainContent = ({
               return (
                 <Card
                   key={index}
-                  className="border-2 hover:border-orange-300 transition-all hover:shadow-xl"
+                  className="border-2 hover:border-red-300 transition-all hover:shadow-xl"
                 >
                   <CardHeader>
                     <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
@@ -307,7 +307,7 @@ const MainContent = ({
             <div className="grid md:grid-cols-5 gap-6">
               {workflow.map((step, index) => (
                 <div key={index} className="relative">
-                  <Card className="text-center hover:shadow-xl transition-all border-2 hover:border-orange-300">
+                  <Card className="text-center hover:shadow-xl transition-all border-2 hover:border-red-300">
                     <CardContent className="pt-6">
                       <div className="w-48 h-48 mx-auto mb-4 rounded-2xl overflow-hidden">
                         <img
@@ -328,7 +328,7 @@ const MainContent = ({
                     <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
                       <Icon
                         name="ArrowRight"
-                        className="text-orange-600"
+                        className="text-red-600"
                         size={24}
                       />
                     </div>
@@ -342,14 +342,14 @@ const MainContent = ({
 
       <section
         id="contact-form"
-        className="py-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white"
+        className="py-12 bg-gradient-to-br from-red-500 to-red-600 text-white"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               Сделайте заказ прямо сейчас
             </h2>
-            <p className="text-xl text-orange-100">
+            <p className="text-xl text-red-100">
               Оставьте заявку и мы перезвоним вам в течение 10 минут
             </p>
           </div>
@@ -401,7 +401,7 @@ const MainContent = ({
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-orange-600 hover:bg-orange-700 text-white text-xl py-6 h-auto"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white text-xl py-6 h-auto"
                 >
                   <Icon name="Send" className="mr-2" size={24} />
                   Отправить заявку
@@ -415,7 +415,7 @@ const MainContent = ({
       <section id="brands" className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
               Бренды
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -451,8 +451,8 @@ const MainContent = ({
                   key={index}
                   className={`p-6 border-2 rounded-xl text-center transition-all hover:shadow-lg flex flex-col items-center justify-center gap-3 ${
                     brand.popular
-                      ? "border-orange-300 bg-gradient-to-br from-orange-50 to-white"
-                      : "border-gray-200 hover:border-orange-200"
+                      ? "border-red-300 bg-gradient-to-br from-red-50 to-white"
+                      : "border-gray-200 hover:border-red-200"
                   }`}
                 >
                   <img
@@ -465,7 +465,7 @@ const MainContent = ({
                     }}
                   />
                   <p
-                    className={`font-semibold ${brand.popular ? "text-orange-600 text-lg" : "text-gray-700"}`}
+                    className={`font-semibold ${brand.popular ? "text-red-600 text-lg" : "text-gray-700"}`}
                   >
                     {brand.name}
                   </p>
@@ -495,7 +495,7 @@ const MainContent = ({
             {equipment.map((item, index) => (
               <Card
                 key={index}
-                className="border-2 hover:border-orange-300 transition-all hover:shadow-xl"
+                className="border-2 hover:border-red-300 transition-all hover:shadow-xl"
               >
                 <CardHeader>
                   <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
@@ -534,11 +534,11 @@ const MainContent = ({
             {reviews.map((review, index) => (
               <Card
                 key={index}
-                className="border-2 hover:border-orange-300 transition-all hover:shadow-xl"
+                className="border-2 hover:border-red-300 transition-all hover:shadow-xl"
               >
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-lg">
                         {review.name.charAt(0)}
                       </span>
@@ -572,7 +572,7 @@ const MainContent = ({
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-orange-400">
+              <h3 className="text-xl font-bold mb-4 text-red-400">
                 Сервис Клик
               </h3>
               <p className="text-gray-400">

@@ -21,7 +21,7 @@ const ReviewsSection = ({ reviews }: ReviewsSectionProps) => {
     <section id="reviews" className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-base">
+          <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
             Отзывы
           </Badge>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -36,11 +36,11 @@ const ReviewsSection = ({ reviews }: ReviewsSectionProps) => {
           {reviews.map((review, index) => (
             <Card
               key={index}
-              className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-orange-300"
+              className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-200 hover:border-red-300"
             >
               <CardContent className="pt-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-lg">
                     <Icon name="User" className="text-white" size={24} />
                   </div>
                   <div>
