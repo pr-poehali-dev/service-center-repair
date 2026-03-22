@@ -568,6 +568,34 @@ const MainContent = ({
         </div>
       </section>
 
+      <section id="address" className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
+              Адрес
+            </Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Как нас найти
+            </h2>
+            <p className="text-xl text-gray-600">
+              г. Королёв, проспект Королёва, 5д, корпус 1
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl border-2 border-gray-200">
+            <iframe
+              src="https://yandex.ru/maps/?text=Королёв%2C+проспект+Королёва%2C+5д+корпус+1&z=16&l=map"
+              width="100%"
+              height="450"
+              frameBorder="0"
+              allowFullScreen={true}
+              style={{ border: 0, display: "block" }}
+              title="Схема проезда"
+            />
+          </div>
+        </div>
+      </section>
+
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
