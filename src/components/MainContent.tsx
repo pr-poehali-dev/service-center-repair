@@ -584,7 +584,7 @@ const MainContent = ({
 
           <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl border-2 border-gray-200">
             <iframe
-              src="https://yandex.ru/maps/?text=Королёв%2C+проспект+Королёва%2C+5д+корпус+1&z=16&l=map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=37.820%2C55.908%2C37.852%2C55.921&layer=mapnik&marker=55.9142%2C37.836"
               width="100%"
               height="450"
               frameBorder="0"
