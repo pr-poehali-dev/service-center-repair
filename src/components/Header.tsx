@@ -192,9 +192,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
 
               <button
                 onClick={() => scrollToSection("workflow")}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl border-2 border-blue-200 transition-all duration-300 hover:shadow-lg group text-left"
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group text-left"
               >
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                   <Icon name="ListChecks" className="text-white" size={20} />
                 </div>
                 <div>
@@ -222,9 +222,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
 
               <button
                 onClick={() => scrollToSection("equipment")}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl border-2 border-green-200 transition-all duration-300 hover:shadow-lg group text-left"
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group text-left"
               >
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                   <Icon name="Settings" className="text-white" size={20} />
                 </div>
                 <div>
@@ -237,9 +237,9 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
 
               <button
                 onClick={() => scrollToSection("reviews")}
-                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 hover:from-yellow-100 hover:to-yellow-200 rounded-xl border-2 border-yellow-200 transition-all duration-300 hover:shadow-lg group text-left"
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group text-left"
               >
-                <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                   <Icon name="Star" className="text-white" size={20} />
                 </div>
                 <div>
