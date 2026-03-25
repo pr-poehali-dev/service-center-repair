@@ -94,6 +94,20 @@ const HeroSection = ({
         </div>
       ))}
 
+      <button
+        onClick={() => onSlideChange(currentSlide === 0 ? banners.length - 1 : currentSlide - 1)}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full w-11 h-11 flex items-center justify-center transition-all"
+      >
+        <Icon name="ChevronLeft" size={24} />
+      </button>
+
+      <button
+        onClick={() => onSlideChange((currentSlide + 1) % banners.length)}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full w-11 h-11 flex items-center justify-center transition-all"
+      >
+        <Icon name="ChevronRight" size={24} />
+      </button>
+
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {banners.map((_, index) => (
           <button
