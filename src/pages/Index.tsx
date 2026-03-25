@@ -87,7 +87,7 @@ const Index = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % banners.length);
-    }, 1000);
+    }, 4000);
     return () => clearInterval(timer);
   }, [banners.length]);
 
