@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MainContent from "@/components/MainContent";
@@ -12,6 +12,7 @@ const Index = () => {
   const [contactPhone, setContactPhone] = useState("");
   const [contactMessage, setContactMessage] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [routeModalOpen, setRouteModalOpen] = useState(false);
@@ -84,12 +85,22 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % banners.length);
     }, 4000);
-    return () => clearInterval(timer);
   }, [banners.length]);
+
+  useEffect(() => {
+    startTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [startTimer]);
+
+  const handleSlideChange = (index: number) => {
+    setCurrentSlide(index);
+    startTimer();
+  };
 
   const repairs = [
     {
@@ -336,7 +347,7 @@ const Index = () => {
         <HeroSection
           banners={banners}
           currentSlide={currentSlide}
-          onSlideChange={setCurrentSlide}
+          onSlideChange={handleSlideChange}
           onScrollToSection={scrollToSection}
         />
 
