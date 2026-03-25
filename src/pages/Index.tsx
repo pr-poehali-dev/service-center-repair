@@ -63,16 +63,14 @@ const Index = () => {
     },
     {
       title: "Ремонт принтеров и МФУ",
-      description:
-        "Профессиональное восстановление печатающих головок струйных принтеров Epson",
-      description: "Ремонт лазерных принтеров и МФУ",
+      description: "Ремонт лазерных, струйных принтеров и МФУ",
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/4f7c085b-e9c2-44a6-b25a-9e9532e0cb82.jpg",
       icon: "Printer",
     },
     {
       title: "Ремонт телевизоров всех марок",
-      description: "Замена матрицы, подсветки, ремонт блоков питания",
+      description: "Замена подсветки, ремонт материнских плат и блоков питания",
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1add2846-e57f-4058-833b-ddcec0feeb40.jpg",
       icon: "Tv",
