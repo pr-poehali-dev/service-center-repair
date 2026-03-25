@@ -54,7 +54,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           </a>
 
           <a
-            href="https://max.ru/+79220573961"
+            href="https://max.ru/u/f9LHodD0cOJOJD6hay1PE3q1ZFF_exVhKKicYndizHkk533C6c0J2a4d-F0"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-xl border-2 border-purple-200 transition-all duration-300 hover:shadow-lg group"
