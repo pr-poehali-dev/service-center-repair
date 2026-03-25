@@ -41,7 +41,7 @@ const Index = () => {
       description:
         "Используем оригинальные запчасти или аналоги самого высокого качества",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/0a5594fb-a578-4a23-bbba-3195d9aa15f5.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/6d4f1e82-aa72-4bf2-a401-9caefce7ed97.jpg",
       icon: "Smartphone",
     },
     {
@@ -49,7 +49,7 @@ const Index = () => {
       description:
         "Установка ПО, восстановление данных, замена комплектующих. Техническое обслуживание.",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/7a5023e9-82b3-497a-9cf7-4e69b5c30cee.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/4b5c5bf1-7dc2-4d02-ae59-d91c4044e064.jpg",
       icon: "Monitor",
     },
     {
@@ -57,21 +57,21 @@ const Index = () => {
       description:
         "Чистка системы охлаждения, замена экрана, клавиатуры. Ремонт после другого сервисного центра.",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/e4b5f5c4-93d7-4ccf-b783-b5d0ecc3bbf2.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/812692dd-66a5-41dc-9956-291febbafc1f.jpg",
       icon: "Laptop",
     },
     {
       title: "Ремонт принтеров и МФУ",
       description: "Профессиональное восстановление печатающих головок Epson",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/015b32b0-0f45-4368-8228-220a972a6bac.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/feed6420-950c-4107-9bd1-4e6dc51797f3.jpg",
       icon: "Printer",
     },
     {
       title: "Ремонт телевизоров всех марок",
       description: "Замена матрицы, подсветки, ремонт блоков питания",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a084f4fe-5907-4182-930d-8b7f5bf0fa59.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/b0381d7b-e945-497f-9f7c-0acbcb5df2bf.jpg",
       icon: "Tv",
     },
   ];
@@ -83,6 +83,13 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % banners.length);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [banners.length]);
 
   const repairs = [
     {
