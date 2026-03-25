@@ -42,7 +42,7 @@ const Index = () => {
       description:
         "Используем оригинальные запчасти или аналоги самого высокого качества",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1b9a46ca-4a1f-4346-bca1-6f5b69ebed4d.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/f861dbd6-5677-4678-9e49-6b75deb83f99.jpg",
       icon: "Smartphone",
     },
     {
@@ -50,7 +50,7 @@ const Index = () => {
       description:
         "Установка ПО, восстановление данных, замена комплектующих. Техническое обслуживание.",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/4b5c5bf1-7dc2-4d02-ae59-d91c4044e064.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a46bcf77-e61d-4f22-b64b-3140c07ac674.jpg",
       icon: "Monitor",
     },
     {
@@ -58,21 +58,21 @@ const Index = () => {
       description:
         "Чистка системы охлаждения, замена экрана, клавиатуры. Ремонт после другого сервисного центра.",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/812692dd-66a5-41dc-9956-291febbafc1f.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/f7e57041-99e0-4606-a81d-b7ff4b6c0822.jpg",
       icon: "Laptop",
     },
     {
       title: "Ремонт принтеров и МФУ",
       description: "Профессиональное восстановление печатающих головок Epson",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/feed6420-950c-4107-9bd1-4e6dc51797f3.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/bf3a494b-2c1e-4005-b6d3-b46d826006a1.jpg",
       icon: "Printer",
     },
     {
       title: "Ремонт телевизоров всех марок",
       description: "Замена матрицы, подсветки, ремонт блоков питания",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/aeca642d-3884-45aa-8007-68a348c836b8.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/687810c8-22cf-453f-a73b-f6467b8b1628.jpg",
       icon: "Tv",
     },
   ];
