@@ -42,7 +42,7 @@ const Index = () => {
       description:
         "Используем оригинальные запчасти или аналоги самого высокого качества",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/6d4f1e82-aa72-4bf2-a401-9caefce7ed97.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1d5318bf-1e59-43cb-8d98-6e24de7828f2.jpg",
       icon: "Smartphone",
     },
     {
@@ -72,7 +72,7 @@ const Index = () => {
       title: "Ремонт телевизоров всех марок",
       description: "Замена матрицы, подсветки, ремонт блоков питания",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/b0381d7b-e945-497f-9f7c-0acbcb5df2bf.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/e74c502c-25a6-488b-8f9a-980f09370f01.jpg",
       icon: "Tv",
     },
   ];
