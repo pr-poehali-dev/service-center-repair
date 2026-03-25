@@ -72,7 +72,7 @@ const Index = () => {
       title: "Ремонт телевизоров всех марок",
       description: "Замена матрицы, подсветки, ремонт блоков питания",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/f8a82719-781e-4a9c-b466-085e888ec3c4.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1add2846-e57f-4058-833b-ddcec0feeb40.jpg",
       icon: "Tv",
     },
   ];
