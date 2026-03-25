@@ -64,7 +64,6 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             </div>
             <div className="text-left">
               <div className="font-semibold text-gray-900">Написать в Max</div>
-              <div className="text-sm text-gray-600">+79220573961</div>
             </div>
           </a>
         </div>
