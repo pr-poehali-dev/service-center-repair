@@ -42,7 +42,7 @@ const Index = () => {
       description:
         "Используем оригинальные запчасти или аналоги самого высокого качества",
       image:
-        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/cbdceba3-7bf2-4565-b020-efe12b56cf1d.jpg",
+        "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/ae40a60a-2623-4dda-8276-6440f5140053.jpg",
       icon: "Smartphone",
     },
     {
