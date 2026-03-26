@@ -19,6 +19,7 @@ const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [routeModalOpen, setRouteModalOpen] = useState(false);
+  const [branchModalOpen, setBranchModalOpen] = useState(false);
 
   const handleRouteApp = (app: "2gis" | "yandex") => {
     const lat = branch.lat;
@@ -351,7 +352,14 @@ const Index = () => {
         className="fixed top-[72px] left-0 right-0 z-40 bg-red-600 text-white text-center font-semibold uppercase"
         style={{ padding: "9.6px 0", fontSize: "12px" }}
       >
-        Профессиональный ремонт электроники с 2015 года
+        Ваш регион: {branch.shortName}&nbsp;·&nbsp;
+        <button
+          onClick={() => setBranchModalOpen(true)}
+          className="underline underline-offset-2 hover:no-underline transition-all"
+          style={{ fontSize: "12px", background: "none", border: "none", color: "white", cursor: "pointer", fontWeight: "600" }}
+        >
+          Изменить регион
+        </button>
       </div>
       <div style={{ paddingTop: "110px" }}>
         <HeroSection
@@ -384,7 +392,7 @@ const Index = () => {
           onClose={() => setContactModalOpen(false)}
         />
 
-        <BranchSelectModal />
+        <BranchSelectModal forceOpen={branchModalOpen} onClose={() => setBranchModalOpen(false)} />
 
         {routeModalOpen && (
           <div

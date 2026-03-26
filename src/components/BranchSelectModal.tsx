@@ -1,15 +1,16 @@
 import { BRANCHES, useBranch } from "@/context/BranchContext";
 import Icon from "@/components/ui/icon";
 
-const BranchSelectModal = () => {
+const BranchSelectModal = ({ forceOpen, onClose }: { forceOpen?: boolean; onClose?: () => void }) => {
   const { isChosen, setBranch, setIsChosen } = useBranch();
 
-  if (isChosen) return null;
+  if (!forceOpen && isChosen) return null;
 
   const handleSelect = (branchId: string) => {
     const b = BRANCHES.find((br) => br.id === branchId)!;
     setBranch(b);
     setIsChosen(true);
+    onClose?.();
   };
 
   return (
