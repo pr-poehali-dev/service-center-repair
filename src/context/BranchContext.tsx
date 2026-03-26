@@ -40,8 +40,8 @@ export const BRANCHES: Branch[] = [
     addressLines: ["г. Королёв,", "пр. Королёва 5д, к1"],
     telegram: null,
     maxUrl: "https://max.ru/u/f9LHodD0cOINFOgagFqOueCYFwY3LvsfLiFjf_6XipuOhHDXq78ArFpWbXo",
-    lat: 55.932,
-    lon: 37.8145,
+    lat: 55.92184,
+    lon: 37.843481,
     city: "moscow",
   },
 ];
