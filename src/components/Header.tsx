@@ -128,54 +128,6 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
             ></div>
           </div>
 
-          <div ref={regionRef} style={{ position: "relative" }}>
-            <button
-              onClick={() => setRegionOpen((v) => !v)}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                height: "40px",
-                padding: "0 12px",
-                borderRadius: "10px",
-                backgroundColor: "#f3f4f6",
-                border: "1.5px solid #e5e7eb",
-                cursor: "pointer",
-                fontSize: "13px",
-                fontWeight: "600",
-                color: "#374151",
-                transition: "all 0.2s",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#e5e7eb"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#f3f4f6"; }}
-            >
-              <Icon name="MapPin" size={14} className="text-red-600" />
-              <span>{branch.shortName}</span>
-              <Icon name={regionOpen ? "ChevronUp" : "ChevronDown"} size={14} className="text-gray-400" />
-            </button>
-            {regionOpen && (
-              <div style={{ position: "absolute", top: "calc(100% + 8px)", right: 0, background: "white", borderRadius: "12px", boxShadow: "0 10px 40px rgba(0,0,0,0.15)", border: "1px solid #e5e7eb", overflow: "hidden", minWidth: "200px", zIndex: 100 }}>
-                {BRANCHES.map((b) => (
-                  <button
-                    key={b.id}
-                    onClick={() => { setBranch(b); setIsChosen(true); setRegionOpen(false); }}
-                    style={{ display: "flex", alignItems: "center", gap: "10px", width: "100%", padding: "12px 16px", background: b.id === branch.id ? "#fef2f2" : "transparent", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: b.id === branch.id ? "600" : "400", color: b.id === branch.id ? "#dc2626" : "#374151", textAlign: "left", transition: "background 0.15s" }}
-                    onMouseEnter={(e) => { if (b.id !== branch.id) e.currentTarget.style.background = "#f9fafb"; }}
-                    onMouseLeave={(e) => { if (b.id !== branch.id) e.currentTarget.style.background = "transparent"; }}
-                  >
-                    <Icon name="MapPin" size={14} className={b.id === branch.id ? "text-red-600" : "text-gray-400"} />
-                    <div>
-                      <div>{b.shortName}</div>
-                      <div style={{ fontSize: "11px", color: "#9ca3af", fontWeight: "400" }}>{b.name}</div>
-                    </div>
-                    {b.id === branch.id && <Icon name="Check" size={14} className="text-red-600" style={{ marginLeft: "auto" }} />}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
           <button
             onClick={() => setMenuOpen(true)}
             style={{
@@ -297,6 +249,19 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                   <div className="text-sm text-gray-600">
                     Что говорят клиенты
                   </div>
+                </div>
+              </button>
+
+              <button
+                onClick={() => scrollToSection("address")}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="MapPin" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Адрес и режим работы</div>
+                  <div className="text-sm text-gray-600">Как нас найти</div>
                 </div>
               </button>
             </div>
