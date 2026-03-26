@@ -97,7 +97,8 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               whiteSpace: "nowrap",
             }}
           >
-            <span style={{ color: "#6b7280" }}>СЕРВИС</span><span style={{ color: "#dc2626" }}>КЛИК</span>
+            <span style={{ color: "#6b7280" }}>СЕРВИС</span>
+            <span style={{ color: "#dc2626" }}>КЛИК</span>
           </h1>
         </div>
 
@@ -116,18 +117,6 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
               gap: "4px",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                fontSize: "13px",
-                color: "#6b7280",
-              }}
-            >
-              <Icon name="Clock" size={14} className="text-red-600" />
-              <span>Пн-Пт: 9:00-21:00, Сб-Вс: 09:00-21:00</span>
-            </div>
             <div
               style={{
                 display: "flex",
@@ -158,12 +147,20 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 transition: "all 0.2s",
                 whiteSpace: "nowrap",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#e5e7eb"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#f3f4f6"; }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#e5e7eb";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#f3f4f6";
+              }}
             >
               <Icon name="MapPin" size={14} className="text-red-600" />
               <span>{branch.shortName}</span>
-              <Icon name={regionOpen ? "ChevronUp" : "ChevronDown"} size={14} className="text-gray-400" />
+              <Icon
+                name={regionOpen ? "ChevronUp" : "ChevronDown"}
+                size={14}
+                className="text-gray-400"
+              />
             </button>
 
             {regionOpen && (
@@ -184,14 +181,19 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                 {BRANCHES.map((b) => (
                   <button
                     key={b.id}
-                    onClick={() => { setBranch(b); setIsChosen(true); setRegionOpen(false); }}
+                    onClick={() => {
+                      setBranch(b);
+                      setIsChosen(true);
+                      setRegionOpen(false);
+                    }}
                     style={{
                       display: "flex",
                       alignItems: "center",
                       gap: "10px",
                       width: "100%",
                       padding: "12px 16px",
-                      background: b.id === branch.id ? "#fef2f2" : "transparent",
+                      background:
+                        b.id === branch.id ? "#fef2f2" : "transparent",
                       border: "none",
                       cursor: "pointer",
                       fontSize: "14px",
@@ -200,15 +202,42 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                       textAlign: "left",
                       transition: "background 0.15s",
                     }}
-                    onMouseEnter={(e) => { if (b.id !== branch.id) e.currentTarget.style.background = "#f9fafb"; }}
-                    onMouseLeave={(e) => { if (b.id !== branch.id) e.currentTarget.style.background = "transparent"; }}
+                    onMouseEnter={(e) => {
+                      if (b.id !== branch.id)
+                        e.currentTarget.style.background = "#f9fafb";
+                    }}
+                    onMouseLeave={(e) => {
+                      if (b.id !== branch.id)
+                        e.currentTarget.style.background = "transparent";
+                    }}
                   >
-                    <Icon name="MapPin" size={14} className={b.id === branch.id ? "text-red-600" : "text-gray-400"} />
+                    <Icon
+                      name="MapPin"
+                      size={14}
+                      className={
+                        b.id === branch.id ? "text-red-600" : "text-gray-400"
+                      }
+                    />
                     <div>
                       <div>{b.shortName}</div>
-                      <div style={{ fontSize: "11px", color: "#9ca3af", fontWeight: "400" }}>{b.name}</div>
+                      <div
+                        style={{
+                          fontSize: "11px",
+                          color: "#9ca3af",
+                          fontWeight: "400",
+                        }}
+                      >
+                        {b.name}
+                      </div>
                     </div>
-                    {b.id === branch.id && <Icon name="Check" size={14} className="text-red-600" style={{ marginLeft: "auto" }} />}
+                    {b.id === branch.id && (
+                      <Icon
+                        name="Check"
+                        size={14}
+                        className="text-red-600"
+                        style={{ marginLeft: "auto" }}
+                      />
+                    )}
                   </button>
                 ))}
               </div>
@@ -338,8 +367,6 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
                   </div>
                 </div>
               </button>
-
-
             </div>
           </div>
         </div>
