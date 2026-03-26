@@ -128,6 +128,54 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
             ></div>
           </div>
 
+          <div ref={regionRef} style={{ position: "relative" }}>
+            <button
+              onClick={() => setRegionOpen((v) => !v)}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                height: "40px",
+                padding: "0 12px",
+                borderRadius: "10px",
+                backgroundColor: "#f3f4f6",
+                border: "1.5px solid #e5e7eb",
+                cursor: "pointer",
+                fontSize: "13px",
+                fontWeight: "600",
+                color: "#374151",
+                transition: "all 0.2s",
+                whiteSpace: "nowrap",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#e5e7eb"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#f3f4f6"; }}
+            >
+              <Icon name="MapPin" size={14} className="text-red-600" />
+              <span>{branch.shortName}</span>
+              <Icon name={regionOpen ? "ChevronUp" : "ChevronDown"} size={14} className="text-gray-400" />
+            </button>
+            {regionOpen && (
+              <div style={{ position: "absolute", top: "calc(100% + 8px)", right: 0, background: "white", borderRadius: "12px", boxShadow: "0 10px 40px rgba(0,0,0,0.15)", border: "1px solid #e5e7eb", overflow: "hidden", minWidth: "200px", zIndex: 100 }}>
+                {BRANCHES.map((b) => (
+                  <button
+                    key={b.id}
+                    onClick={() => { setBranch(b); setIsChosen(true); setRegionOpen(false); }}
+                    style={{ display: "flex", alignItems: "center", gap: "10px", width: "100%", padding: "12px 16px", background: b.id === branch.id ? "#fef2f2" : "transparent", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: b.id === branch.id ? "600" : "400", color: b.id === branch.id ? "#dc2626" : "#374151", textAlign: "left", transition: "background 0.15s" }}
+                    onMouseEnter={(e) => { if (b.id !== branch.id) e.currentTarget.style.background = "#f9fafb"; }}
+                    onMouseLeave={(e) => { if (b.id !== branch.id) e.currentTarget.style.background = "transparent"; }}
+                  >
+                    <Icon name="MapPin" size={14} className={b.id === branch.id ? "text-red-600" : "text-gray-400"} />
+                    <div>
+                      <div>{b.shortName}</div>
+                      <div style={{ fontSize: "11px", color: "#9ca3af", fontWeight: "400" }}>{b.name}</div>
+                    </div>
+                    {b.id === branch.id && <Icon name="Check" size={14} className="text-red-600" style={{ marginLeft: "auto" }} />}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
           <button
             onClick={() => setMenuOpen(true)}
             style={{

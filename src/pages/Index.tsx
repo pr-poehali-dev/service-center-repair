@@ -5,10 +5,10 @@ import MainContent from "@/components/MainContent";
 import ContactModal from "@/components/ContactModal";
 import BranchSelectModal from "@/components/BranchSelectModal";
 import Icon from "@/components/ui/icon";
-import { useBranch } from "@/context/BranchContext";
+import { useBranch, BRANCHES } from "@/context/BranchContext";
 
 const Index = () => {
-  const { branch } = useBranch();
+  const { branch, setBranch, setIsChosen } = useBranch();
   const [orderNumber, setOrderNumber] = useState("");
   const [trackingVisible, setTrackingVisible] = useState(false);
   const [contactName, setContactName] = useState("");
@@ -20,6 +20,18 @@ const Index = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [routeModalOpen, setRouteModalOpen] = useState(false);
   const [branchModalOpen, setBranchModalOpen] = useState(false);
+  const [regionOpen, setRegionOpen] = useState(false);
+  const regionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (regionRef.current && !regionRef.current.contains(e.target as Node)) {
+        setRegionOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleRouteApp = (app: "2gis" | "yandex") => {
     const lat = branch.lat;
@@ -352,14 +364,39 @@ const Index = () => {
         className="fixed top-[72px] left-0 right-0 z-40 bg-red-600 text-white text-center font-semibold uppercase"
         style={{ padding: "9.6px 0", fontSize: "12px" }}
       >
-        Ваш регион:&nbsp;
-        <button
-          onClick={() => setBranchModalOpen(true)}
-          className="underline underline-offset-2 hover:no-underline transition-all"
-          style={{ fontSize: "12px", background: "none", border: "none", color: "white", cursor: "pointer", fontWeight: "700" }}
-        >
-          {branch.shortName} ▾
-        </button>
+        <div className="flex items-center justify-center gap-2">
+          <span>Ваш регион:</span>
+          <div ref={regionRef} style={{ position: "relative", display: "inline-block" }}>
+            <button
+              onClick={() => setRegionOpen((v) => !v)}
+              style={{ display: "flex", alignItems: "center", gap: "4px", background: "rgba(255,255,255,0.2)", border: "1px solid rgba(255,255,255,0.4)", borderRadius: "6px", padding: "2px 8px", color: "white", cursor: "pointer", fontSize: "12px", fontWeight: "700" }}
+            >
+              <Icon name="MapPin" size={11} />
+              {branch.shortName}
+              <Icon name={regionOpen ? "ChevronUp" : "ChevronDown"} size={11} />
+            </button>
+            {regionOpen && (
+              <div style={{ position: "absolute", top: "calc(100% + 6px)", left: "50%", transform: "translateX(-50%)", background: "white", borderRadius: "12px", boxShadow: "0 10px 40px rgba(0,0,0,0.2)", border: "1px solid #e5e7eb", overflow: "hidden", minWidth: "200px", zIndex: 100 }}>
+                {BRANCHES.map((b) => (
+                  <button
+                    key={b.id}
+                    onClick={() => { setBranch(b); setIsChosen(true); setRegionOpen(false); }}
+                    style={{ display: "flex", alignItems: "center", gap: "10px", width: "100%", padding: "12px 16px", background: b.id === branch.id ? "#fef2f2" : "transparent", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: b.id === branch.id ? "600" : "400", color: b.id === branch.id ? "#dc2626" : "#374151", textAlign: "left", transition: "background 0.15s" }}
+                    onMouseEnter={(e) => { if (b.id !== branch.id) e.currentTarget.style.background = "#f9fafb"; }}
+                    onMouseLeave={(e) => { if (b.id !== branch.id) e.currentTarget.style.background = "transparent"; }}
+                  >
+                    <Icon name="MapPin" size={14} className={b.id === branch.id ? "text-red-600" : "text-gray-400"} />
+                    <div>
+                      <div>{b.shortName}</div>
+                      <div style={{ fontSize: "11px", color: "#9ca3af", fontWeight: "400" }}>{b.name}</div>
+                    </div>
+                    {b.id === branch.id && <Icon name="Check" size={14} className="text-red-600" style={{ marginLeft: "auto" }} />}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
       <div style={{ paddingTop: "110px" }}>
         <HeroSection
