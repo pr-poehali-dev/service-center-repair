@@ -3,9 +3,12 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MainContent from "@/components/MainContent";
 import ContactModal from "@/components/ContactModal";
+import BranchSelectModal from "@/components/BranchSelectModal";
 import Icon from "@/components/ui/icon";
+import { useBranch } from "@/context/BranchContext";
 
 const Index = () => {
+  const { branch } = useBranch();
   const [orderNumber, setOrderNumber] = useState("");
   const [trackingVisible, setTrackingVisible] = useState(false);
   const [contactName, setContactName] = useState("");
@@ -18,17 +21,14 @@ const Index = () => {
   const [routeModalOpen, setRouteModalOpen] = useState(false);
 
   const handleRouteApp = (app: "2gis" | "yandex") => {
-    const lat = 52.317768;
-    const lon = 104.302578;
+    const lat = branch.lat;
+    const lon = branch.lon;
 
     if (app === "2gis") {
-      // Попытка открыть приложение 2GIS
       const deepLink = `dgis://2gis.ru/routeSearch/rsType/car/to/${lon},${lat}`;
       window.location.href = deepLink;
-
-      // Если приложение не открылось, через 1.5 сек открываем веб-версию
       setTimeout(() => {
-        window.open(`https://2gis.ru/irkutsk?m=${lon},${lat}`, "_blank");
+        window.open(`https://2gis.ru/${branch.city}?m=${lon},${lat}`, "_blank");
       }, 1500);
     } else {
       window.open(`https://yandex.ru/maps/?rtext=~${lat},${lon}`, "_blank");
@@ -333,7 +333,11 @@ const Index = () => {
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `Заявка с сайта%0A%0AИмя: ${contactName}%0AТелефон: ${contactPhone}${contactMessage ? `%0A%0AСообщение: ${contactMessage}` : ""}`;
-    window.open(`https://t.me/element5_irk?text=${message}`, "_blank");
+    if (branch.telegram) {
+      window.open(`https://t.me/${branch.telegram}?text=${message}`, "_blank");
+    } else {
+      window.open(branch.maxUrl, "_blank");
+    }
   };
 
   return (
@@ -379,6 +383,8 @@ const Index = () => {
           isOpen={contactModalOpen}
           onClose={() => setContactModalOpen(false)}
         />
+
+        <BranchSelectModal />
 
         {routeModalOpen && (
           <div

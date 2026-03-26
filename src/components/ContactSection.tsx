@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
+import { useBranch } from "@/context/BranchContext";
 
 interface ContactSectionProps {
   contactName: string;
@@ -23,6 +24,8 @@ const ContactSection = ({
   onContactMessageChange,
   onContactSubmit,
 }: ContactSectionProps) => {
+  const { branch } = useBranch();
+
   return (
     <>
       <section
@@ -116,11 +119,9 @@ const ContactSection = ({
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-2">Адрес</h3>
                 <p className="text-gray-600">
-                  г. Иркутск,
-                  <br />
-                  ул. Рабочего Штаба 78,
-                  <br />
-                  здание супермаркета Слата, 2 этаж
+                  {branch.addressLines.map((line, i) => (
+                    <span key={i}>{line}{i < branch.addressLines.length - 1 && <br />}</span>
+                  ))}
                 </p>
               </CardContent>
             </Card>
@@ -134,10 +135,10 @@ const ContactSection = ({
                   Телефон
                 </h3>
                 <a
-                  href="tel:89245401717"
+                  href={`tel:${branch.phoneTel}`}
                   className="text-red-600 hover:text-red-700 text-lg font-semibold"
                 >
-                  +79220573961
+                  {branch.phone}
                 </a>
               </CardContent>
             </Card>

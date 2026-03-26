@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import { useBranch } from "@/context/BranchContext";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -6,6 +7,8 @@ interface ContactModalProps {
 }
 
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
+  const { branch } = useBranch();
+
   if (!isOpen) return null;
 
   return (
@@ -26,7 +29,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
         <div className="space-y-3">
           <a
-            href="tel:+79220573961"
+            href={`tel:${branch.phoneTel}`}
             className="flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group"
           >
             <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -34,27 +37,29 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             </div>
             <div className="text-left">
               <div className="font-semibold text-gray-900">Позвонить</div>
-              <div className="text-sm text-gray-600">+79220573961</div>
+              <div className="text-sm text-gray-600">{branch.phone}</div>
             </div>
           </a>
 
-          <a
-            href="https://t.me/element5_irk"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl border-2 border-blue-200 transition-all duration-300 hover:shadow-lg group"
-          >
-            <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Icon name="Send" className="text-white" size={28} />
-            </div>
-            <div className="text-left">
-              <div className="font-semibold text-gray-900">Telegram</div>
-              <div className="text-sm text-gray-600">Написать в Telegram</div>
-            </div>
-          </a>
+          {branch.telegram && (
+            <a
+              href={`https://t.me/${branch.telegram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl border-2 border-blue-200 transition-all duration-300 hover:shadow-lg group"
+            >
+              <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Icon name="Send" className="text-white" size={28} />
+              </div>
+              <div className="text-left">
+                <div className="font-semibold text-gray-900">Telegram</div>
+                <div className="text-sm text-gray-600">Написать в Telegram</div>
+              </div>
+            </a>
+          )}
 
           <a
-            href="https://max.ru/u/f9LHodD0cOJOJD6hay1PE3q1ZFF_exVhKKicYndizHkk533C6c0J2a4d-F0"
+            href={branch.maxUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-xl border-2 border-purple-200 transition-all duration-300 hover:shadow-lg group"
