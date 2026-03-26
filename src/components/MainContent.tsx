@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useBranch } from "@/context/BranchContext";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -84,6 +85,7 @@ const MainContent = ({
   onRouteClick,
 }: MainContentProps) => {
   const [hideLoader, setHideLoader] = useState(false);
+  const { branch } = useBranch();
 
   useEffect(() => {
     const initWidget = setInterval(() => {
@@ -577,14 +579,13 @@ const MainContent = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Как нас найти
             </h2>
-            <p className="text-xl text-gray-600">
-              г. Королёв, проспект Королёва, 5д, корпус 1
-            </p>
+            <p className="text-xl text-gray-600">{branch.address}</p>
           </div>
 
           <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl border-2 border-gray-200">
             <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=37.833%2C55.916%2C37.854%2C55.928&layer=mapnik&marker=55.92184%2C37.843481"
+              key={branch.id}
+              src={`https://www.openstreetmap.org/export/embed.html?bbox=${branch.lon - 0.01}%2C${branch.lat - 0.006}%2C${branch.lon + 0.01}%2C${branch.lat + 0.006}&layer=mapnik&marker=${branch.lat}%2C${branch.lon}`}
               width="100%"
               height="450"
               frameBorder="0"
