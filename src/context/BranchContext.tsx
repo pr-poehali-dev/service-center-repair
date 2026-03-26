@@ -26,8 +26,8 @@ export const BRANCHES: Branch[] = [
     addressLines: ["г. Иркутск,", "ул. Рабочего Штаба 78,", "здание супермаркета Слата, 2 этаж"],
     telegram: "element5_irk",
     maxUrl: "https://max.ru/u/f9LHodD0cOLgxe4XB1Ih1XpZssZV97CCsvyEip8PtyHwWACwWA5WLcm8dbo",
-    lat: 52.317768,
-    lon: 104.302578,
+    lat: 52.317736,
+    lon: 104.302618,
     city: "irkutsk",
   },
   {
