@@ -352,13 +352,13 @@ const Index = () => {
         className="fixed top-[72px] left-0 right-0 z-40 bg-red-600 text-white text-center font-semibold uppercase"
         style={{ padding: "9.6px 0", fontSize: "12px" }}
       >
-        Ваш регион: {branch.shortName}&nbsp;·&nbsp;
+        Ваш регион:&nbsp;
         <button
           onClick={() => setBranchModalOpen(true)}
           className="underline underline-offset-2 hover:no-underline transition-all"
-          style={{ fontSize: "12px", background: "none", border: "none", color: "white", cursor: "pointer", fontWeight: "600" }}
+          style={{ fontSize: "12px", background: "none", border: "none", color: "white", cursor: "pointer", fontWeight: "700" }}
         >
-          Изменить регион
+          {branch.shortName} ▾
         </button>
       </div>
       <div style={{ paddingTop: "110px" }}>
