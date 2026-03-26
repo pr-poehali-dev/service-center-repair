@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useBranch } from "@/context/BranchContext";
+import { useBranch, BRANCHES } from "@/context/BranchContext";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -85,7 +85,8 @@ const MainContent = ({
   onRouteClick,
 }: MainContentProps) => {
   const [hideLoader, setHideLoader] = useState(false);
-  const { branch } = useBranch();
+  const { branch, setBranch, setIsChosen } = useBranch();
+  const [footerRegionOpen, setFooterRegionOpen] = useState(false);
 
   useEffect(() => {
     const initWidget = setInterval(() => {
@@ -622,9 +623,30 @@ const MainContent = ({
                 <span className="text-gray-400">СЕРВИС</span>
                 <span className="text-red-400">КЛИК</span>
               </h3>
-              <p className="text-gray-400">
-                Профессиональный ремонт электроники с 2015 года.
-              </p>
+              <div className="relative">
+                <p className="text-gray-400 text-sm mb-2">Ваш регион: <span className="text-white font-semibold">{branch.shortName}</span></p>
+                <button
+                  onClick={() => setFooterRegionOpen((v) => !v)}
+                  className="flex items-center gap-2 text-sm text-red-400 hover:text-red-300 transition-colors"
+                >
+                  <Icon name="MapPin" size={13} />
+                  Изменить регион
+                </button>
+                {footerRegionOpen && (
+                  <div className="absolute left-0 bottom-full mb-2 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden min-w-[200px] z-50">
+                    {BRANCHES.map((b) => (
+                      <button
+                        key={b.id}
+                        onClick={() => { setBranch(b); setIsChosen(true); setFooterRegionOpen(false); }}
+                        className={`flex items-center gap-2 w-full px-4 py-3 text-left text-sm transition-colors ${b.id === branch.id ? "bg-red-50 text-red-600 font-semibold" : "text-gray-700 hover:bg-gray-50"}`}
+                      >
+                        <Icon name="MapPin" size={13} className={b.id === branch.id ? "text-red-600" : "text-gray-400"} />
+                        {b.shortName}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             <div>
