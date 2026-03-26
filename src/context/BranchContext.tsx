@@ -13,6 +13,7 @@ export interface Branch {
   lat: number;
   lon: number;
   city: string;
+  workingHours: { days: string; hours: string }[];
 }
 
 export const BRANCHES: Branch[] = [
@@ -29,6 +30,11 @@ export const BRANCHES: Branch[] = [
     lat: 52.317736,
     lon: 104.302618,
     city: "irkutsk",
+    workingHours: [
+      { days: "Пн–Пт", hours: "9:00 – 19:00" },
+      { days: "Суббота", hours: "10:00 – 16:00" },
+      { days: "Воскресенье", hours: "Выходной" },
+    ],
   },
   {
     id: "moscow",
@@ -43,6 +49,11 @@ export const BRANCHES: Branch[] = [
     lat: 55.92184,
     lon: 37.843481,
     city: "moscow",
+    workingHours: [
+      { days: "Пн–Пт", hours: "9:00 – 21:00" },
+      { days: "Суббота", hours: "9:00 – 21:00" },
+      { days: "Воскресенье", hours: "Выходной" },
+    ],
   },
 ];
 

@@ -582,6 +582,23 @@ const MainContent = ({
             <p className="text-xl text-gray-600">{branch.address}</p>
           </div>
 
+          <div className="max-w-5xl mx-auto mb-6 bg-white rounded-2xl shadow-md border border-gray-200 p-6">
+            <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+              <span>🕐</span> Режим работы
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {branch.workingHours.map((row) => (
+                <div
+                  key={row.days}
+                  className={`rounded-xl px-4 py-3 text-center ${row.hours === "Выходной" ? "bg-gray-100 text-gray-400" : "bg-red-50 text-gray-800"}`}
+                >
+                  <div className="text-sm font-semibold mb-1">{row.days}</div>
+                  <div className="text-base font-bold">{row.hours}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl border-2 border-gray-200">
             <iframe
               key={branch.id}
