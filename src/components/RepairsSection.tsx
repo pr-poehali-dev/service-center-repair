@@ -393,6 +393,22 @@ const RepairsSection = ({
           </div>
         </div>
       </section>
+
+      <section className="py-16 bg-gradient-to-br from-yellow-400 to-orange-500">
+        <div className="container mx-auto px-4 text-center">
+          <div className="text-5xl mb-4">🎉</div>
+          <h2 className="text-3xl font-bold text-white mb-3">
+            Поздравляем — вы просмотрели наш сайт до конца!
+          </h2>
+          <p className="text-white/90 text-lg mb-6">
+            Вам подарок! Предъявите промокод и получите скидку <span className="font-bold">10%</span> на нашу работу.
+          </p>
+          <div className="inline-block bg-white rounded-2xl px-10 py-5 shadow-xl">
+            <p className="text-sm text-gray-500 mb-1 uppercase tracking-widest font-medium">Ваш промокод</p>
+            <p className="text-4xl font-extrabold text-orange-500 tracking-wider">удача2026</p>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
