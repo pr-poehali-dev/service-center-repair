@@ -80,21 +80,23 @@ const HeroSection = ({
             </div>
           </div>
 
-          <div className="absolute bottom-20 left-0 right-0 z-10">
-            <div className="container mx-auto px-4">
-              <Button
-                size="default"
-                className="bg-red-600 hover:bg-red-700 text-white text-base px-6 py-4 h-auto"
-                onClick={() => banner.cardId
-                  ? document.getElementById(banner.cardId)?.scrollIntoView({ behavior: "smooth", block: "center" })
-                  : onScrollToSection("repairs")
-                }
-              >
-                Подробнее
-                <Icon name="ArrowRight" className="ml-2" size={18} />
-              </Button>
+          {index === currentSlide && (
+            <div className="absolute bottom-20 left-0 right-0 z-10">
+              <div className="container mx-auto px-4">
+                <Button
+                  size="default"
+                  className="bg-red-600 hover:bg-red-700 text-white text-base px-6 py-4 h-auto"
+                  onClick={() => banner.cardId
+                    ? document.getElementById(banner.cardId)?.scrollIntoView({ behavior: "smooth", block: "center" })
+                    : onScrollToSection("repairs")
+                  }
+                >
+                  Подробнее
+                  <Icon name="ArrowRight" className="ml-2" size={18} />
+                </Button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       ))}
 
