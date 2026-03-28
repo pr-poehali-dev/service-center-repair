@@ -100,17 +100,17 @@ const RepairsSection = ({
               <div className="flex flex-col md:flex-row items-center">
                 <div className="w-full md:w-64 h-56 md:h-auto flex-shrink-0">
                   <img
-                    src="https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3ad7a922-410f-4a51-a14a-03beb18e2a5f.jpg"
+                    src="https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/f1b2ba4c-e02c-441d-bce1-ed35cd944db1.jpg"
                     alt="Hi Black — расходные материалы"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon name="Package" className="text-white" size={20} />
+                    <div className="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name="Tag" className="text-gray-900" size={20} />
                     </div>
-                    <span className="text-xl font-bold text-gray-900">Hi Black</span>
+                    <span className="text-xl font-bold text-gray-900">Специальное предложение</span>
                   </div>
                   <p className="text-gray-600 text-lg">Продажа расходных материалов для офисной техники.</p>
                 </div>
