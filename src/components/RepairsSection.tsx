@@ -93,6 +93,33 @@ const RepairsSection = ({
 
   return (
     <>
+      <section className="py-10 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <Card className="border-2 border-gray-200 overflow-hidden">
+            <CardContent className="p-0">
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="w-full md:w-64 h-56 md:h-auto flex-shrink-0">
+                  <img
+                    src="https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3ad7a922-410f-4a51-a14a-03beb18e2a5f.jpg"
+                    alt="Hi Black — расходные материалы"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name="Package" className="text-white" size={20} />
+                    </div>
+                    <span className="text-xl font-bold text-gray-900">Hi Black</span>
+                  </div>
+                  <p className="text-gray-600 text-lg">Продажа расходных материалов для офисной техники.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section id="repairs" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
