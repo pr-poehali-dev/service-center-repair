@@ -110,8 +110,8 @@ const RepairsSection = ({
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {repairs.map((repair, index) => {
               if (repair.type === "banner") {
-                const prevCard = repairs[index - 1];
-                const cardId = prevCard?.title ? `repair-card-${prevCard.title.replace(/\s+/g, "-").toLowerCase()}` : null;
+                const nextCard = repairs.slice(index + 1).find(r => r.type !== "banner");
+                const cardId = nextCard?.title ? `repair-card-${nextCard.title.replace(/\s+/g, "-").toLowerCase()}` : null;
                 return (
                   <Card
                     key={index}
