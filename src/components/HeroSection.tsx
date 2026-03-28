@@ -86,7 +86,7 @@ const HeroSection = ({
                   size="default"
                   className="bg-red-600 hover:bg-red-700 text-white text-base px-6 py-4 h-auto"
                   onClick={() => banner.cardId
-                    ? document.getElementById(banner.cardId)?.scrollIntoView({ behavior: "smooth", block: "center" })
+                    ? document.getElementById(banner.cardId)?.scrollIntoView({ behavior: "smooth", block: "start" })
                     : onScrollToSection("repairs")
                   }
                 >
