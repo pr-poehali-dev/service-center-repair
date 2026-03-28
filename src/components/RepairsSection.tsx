@@ -1,11 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
@@ -63,15 +58,20 @@ interface RepairsSectionProps {
 }
 
 const brandLogos: Record<string, string> = {
-  Samsung: "https://cdn.poehali.dev/files/Samsung_Electro-Mechanics_логотип.png",
-  Apple: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png",
-  Xiaomi: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/320px-Xiaomi_logo.svg.png",
+  Samsung:
+    "https://cdn.poehali.dev/files/Samsung_Electro-Mechanics_логотип.png",
+  Apple:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png",
+  Xiaomi:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/320px-Xiaomi_logo.svg.png",
   Huawei: "https://cdn.poehali.dev/files/Huawei-Logo1.png",
   Infinix: "https://cdn.worldvectorlogo.com/logos/infinix-1.svg",
-  Realme: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Realme_logo.svg/320px-Realme_logo.svg.png",
+  Realme:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Realme_logo.svg/320px-Realme_logo.svg.png",
   Tecno: "https://cdn.worldvectorlogo.com/logos/tecno-1.svg",
   LG: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LG_logo_%282015%29.svg/200px-LG_logo_%282015%29.svg.png",
-  Haier: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Haier_logo.svg/320px-Haier_logo.svg.png",
+  Haier:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Haier_logo.svg/320px-Haier_logo.svg.png",
   BBK: "https://cdn.worldvectorlogo.com/logos/bbk-electronics.svg",
 };
 
@@ -110,9 +110,16 @@ const RepairsSection = ({
                     <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Icon name="Package" className="text-white" size={20} />
                     </div>
-                    <span className="text-xl font-bold text-gray-900">Специальное предложение</span>
+                    <span className="text-xl font-bold text-gray-900">
+                      Специальное предложение
+                    </span>
                   </div>
-                  <p className="text-gray-600 text-lg">Продажа расходных материалов для офисной техники.</p>
+                  <p className="text-gray-600 text-lg">
+                    Наша компания является официальным дистребьютером комнапии
+                    Hi Black. На нашем складе присутствует весь перечень
+                    расходных материалов для офисной техники. Лазерных, струйных
+                    принтеров и МФУ.
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -137,8 +144,12 @@ const RepairsSection = ({
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {repairs.map((repair, index) => {
               if (repair.type === "banner") {
-                const nextCard = repairs.slice(index + 1).find(r => r.type !== "banner");
-                const cardId = nextCard?.title ? `repair-card-${nextCard.title.replace(/\s+/g, "-").toLowerCase()}` : null;
+                const nextCard = repairs
+                  .slice(index + 1)
+                  .find((r) => r.type !== "banner");
+                const cardId = nextCard?.title
+                  ? `repair-card-${nextCard.title.replace(/\s+/g, "-").toLowerCase()}`
+                  : null;
                 return (
                   <Card
                     key={index}
@@ -148,7 +159,11 @@ const RepairsSection = ({
                       <div className="flex items-center justify-between gap-6 flex-wrap">
                         <div className="flex items-center gap-6">
                           <div className="flex-shrink-0 w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center shadow-lg">
-                            <Icon name="ShoppingBag" className="text-white" size={32} />
+                            <Icon
+                              name="ShoppingBag"
+                              className="text-white"
+                              size={32}
+                            />
                           </div>
                           <p className="text-lg text-gray-900 font-semibold">
                             {repair.text}
@@ -158,7 +173,14 @@ const RepairsSection = ({
                           <Button
                             variant="outline"
                             className="border-red-500 text-red-600 hover:bg-red-50 shrink-0"
-                            onClick={() => document.getElementById(cardId)?.scrollIntoView({ behavior: "smooth", block: "center" })}
+                            onClick={() =>
+                              document
+                                .getElementById(cardId)
+                                ?.scrollIntoView({
+                                  behavior: "smooth",
+                                  block: "center",
+                                })
+                            }
                           >
                             Подробнее
                             <Icon name="ArrowDown" className="ml-2" size={16} />
@@ -185,13 +207,19 @@ const RepairsSection = ({
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <CardTitle className="text-2xl mb-4">{repair.title}</CardTitle>
+                    <CardTitle className="text-2xl mb-4">
+                      {repair.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="flex flex-col flex-1">
                     <ul className="space-y-3 flex-1">
                       {repair.items?.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                          <Icon
+                            name="CheckCircle2"
+                            className="text-green-600 flex-shrink-0 mt-1"
+                            size={18}
+                          />
                           <span className="text-gray-700">{item}</span>
                         </li>
                       ))}
@@ -242,13 +270,21 @@ const RepairsSection = ({
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
-                      <p className="text-sm text-gray-600">{step.description}</p>
+                      <h3 className="font-semibold text-gray-900 mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {step.description}
+                      </p>
                     </CardContent>
                   </Card>
                   {index < workflow.length - 1 && (
                     <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                      <Icon name="ArrowRight" className="text-red-600" size={24} />
+                      <Icon
+                        name="ArrowRight"
+                        className="text-red-600"
+                        size={24}
+                      />
                     </div>
                   )}
                 </div>
@@ -258,7 +294,10 @@ const RepairsSection = ({
         </div>
       </section>
 
-      <section id="contact-form" className="py-12 bg-gradient-to-br from-red-500 to-red-600 text-white">
+      <section
+        id="contact-form"
+        className="py-12 bg-gradient-to-br from-red-500 to-red-600 text-white"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
@@ -360,7 +399,9 @@ const RepairsSection = ({
                     target.style.display = "none";
                   }}
                 />
-                <p className={`font-semibold ${brand.popular ? "text-red-600 text-lg" : "text-gray-700"}`}>
+                <p
+                  className={`font-semibold ${brand.popular ? "text-red-600 text-lg" : "text-gray-700"}`}
+                >
                   {brand.name}
                 </p>
               </div>
@@ -379,7 +420,8 @@ const RepairsSection = ({
               Профессиональное оборудование
             </h2>
             <p className="text-xl text-gray-600">
-              Мы используем современное профессиональное оборудование для ремонта электроники
+              Мы используем современное профессиональное оборудование для
+              ремонта электроники
             </p>
           </div>
 
@@ -398,7 +440,9 @@ const RepairsSection = ({
                     />
                   </div>
                   <CardTitle className="text-xl">{item.name}</CardTitle>
-                  <p className="text-base text-muted-foreground">{item.description}</p>
+                  <p className="text-base text-muted-foreground">
+                    {item.description}
+                  </p>
                 </CardHeader>
               </Card>
             ))}
@@ -440,7 +484,12 @@ const RepairsSection = ({
                   </div>
                   <div className="flex gap-1 mb-3">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Icon key={i} name="Star" className="text-yellow-400 fill-yellow-400" size={18} />
+                      <Icon
+                        key={i}
+                        name="Star"
+                        className="text-yellow-400 fill-yellow-400"
+                        size={18}
+                      />
                     ))}
                   </div>
                   <p className="text-base text-gray-700">{review.text}</p>
@@ -458,11 +507,16 @@ const RepairsSection = ({
             Поздравляем — вы просмотрели наш сайт до конца!
           </h2>
           <p className="text-white/90 text-lg mb-6">
-            Вам подарок! Предъявите промокод и получите скидку <span className="font-bold">10%</span> на нашу работу.
+            Вам подарок! Предъявите промокод и получите скидку{" "}
+            <span className="font-bold">10%</span> на нашу работу.
           </p>
           <div className="inline-block bg-white rounded-2xl px-10 py-5 shadow-xl">
-            <p className="text-sm text-gray-500 mb-1 uppercase tracking-widest font-medium">Ваш промокод</p>
-            <p className="text-4xl font-extrabold text-orange-500 tracking-wider">удача2026</p>
+            <p className="text-sm text-gray-500 mb-1 uppercase tracking-widest font-medium">
+              Ваш промокод
+            </p>
+            <p className="text-4xl font-extrabold text-orange-500 tracking-wider">
+              удача2026
+            </p>
           </div>
         </div>
       </section>
