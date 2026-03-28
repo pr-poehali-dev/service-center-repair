@@ -85,6 +85,7 @@ interface BranchContextType {
   isChosen: boolean;
   setIsChosen: (v: boolean) => void;
   isDetecting: boolean;
+  detectedBranch: Branch | null;
 }
 
 const BranchContext = createContext<BranchContextType>({
@@ -93,6 +94,7 @@ const BranchContext = createContext<BranchContextType>({
   isChosen: false,
   setIsChosen: () => {},
   isDetecting: true,
+  detectedBranch: null,
 });
 
 export const BranchProvider = ({ children }: { children: ReactNode }) => {
@@ -102,14 +104,14 @@ export const BranchProvider = ({ children }: { children: ReactNode }) => {
   });
   const [isChosen, setIsChosen] = useState(() => !!localStorage.getItem("branch"));
   const [isDetecting, setIsDetecting] = useState(() => !localStorage.getItem("branch"));
+  const [detectedBranch, setDetectedBranch] = useState<Branch | null>(null);
 
   useEffect(() => {
     if (localStorage.getItem("branch")) return;
     detectBranchByIp().then((detected) => {
+      setDetectedBranch(detected);
       if (detected) {
         setBranchState(detected);
-        localStorage.setItem("branch", detected.id);
-        setIsChosen(true);
       }
       setIsDetecting(false);
     });
@@ -121,7 +123,7 @@ export const BranchProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <BranchContext.Provider value={{ branch, setBranch, isChosen, setIsChosen, isDetecting }}>
+    <BranchContext.Provider value={{ branch, setBranch, isChosen, setIsChosen, isDetecting, detectedBranch }}>
       {children}
     </BranchContext.Provider>
   );
