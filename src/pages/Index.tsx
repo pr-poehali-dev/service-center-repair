@@ -347,6 +347,7 @@ const Index = () => {
         isScrolled={isScrolled}
         onContactClick={() => setContactModalOpen(true)}
         onRouteClick={() => setRouteModalOpen(true)}
+        onChangeBranch={() => setBranchModalOpen(true)}
       />
       <div style={{ paddingTop: "104px" }}>
         <HeroSection

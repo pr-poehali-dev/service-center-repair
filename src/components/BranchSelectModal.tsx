@@ -24,7 +24,7 @@ const BranchSelectModal = ({ forceOpen, onClose }: { forceOpen?: boolean; onClos
     onClose?.();
   };
 
-  if (!showList && detectedBranch) {
+  if (!showList && detectedBranch && !forceOpen) {
     return (
       <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 animate-in zoom-in-95 duration-200">

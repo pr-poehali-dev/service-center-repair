@@ -6,9 +6,10 @@ interface HeaderProps {
   isScrolled: boolean;
   onContactClick: () => void;
   onRouteClick: () => void;
+  onChangeBranch: () => void;
 }
 
-const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
+const Header = ({ isScrolled, onContactClick, onRouteClick, onChangeBranch }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { branch, setBranch, setIsChosen } = useBranch();
 
@@ -42,6 +43,21 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
       >
         <Icon name="MapPin" size={13} className="text-white opacity-80 flex-shrink-0" />
         <span>Ваш регион: <strong>{branch.name}</strong></span>
+        <button
+          onClick={onChangeBranch}
+          style={{
+            marginLeft: "8px",
+            fontSize: "12px",
+            color: "rgba(255,255,255,0.8)",
+            textDecoration: "underline",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: "0",
+          }}
+        >
+          Сменить
+        </button>
       </div>
       <div
         className="w-full px-4"
