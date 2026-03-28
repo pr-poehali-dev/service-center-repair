@@ -186,7 +186,7 @@ const Header = ({ isScrolled, onContactClick, onRouteClick, onChangeBranch }: He
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between p-6 pb-4 flex-shrink-0">
-              <h3 className="text-2xl font-bold text-gray-900">Навигация</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Меню</h3>
               <button
                 onClick={() => setMenuOpen(false)}
                 className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
@@ -270,6 +270,22 @@ const Header = ({ isScrolled, onContactClick, onRouteClick, onChangeBranch }: He
                   </div>
                 </div>
               </button>
+
+              <a
+                href="https://max.ru/u/f9LHodD0cOINFOgagFqOueCYFwY3LvsfLiFjf_6XipuOhHDXq78ArFpWbXo"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-xl border-2 border-purple-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="HeadphonesIcon" fallback="MessageCircle" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Техническая поддержка</div>
+                  <div className="text-sm text-gray-600">Работает по московскому времени</div>
+                </div>
+              </a>
 
               <button
                 onClick={() => scrollToSection("address")}
