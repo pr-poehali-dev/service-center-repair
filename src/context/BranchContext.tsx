@@ -57,11 +57,29 @@ export const BRANCHES: Branch[] = [
   },
 ];
 
+const IRKUTSK_REGIONS = ["иркутск", "irkutsk", "иркутская"];
+const MOSCOW_REGIONS = ["москв", "moscow", "московская", "королёв", "korolev", "подмосковье"];
+
+async function detectBranchByIp(): Promise<Branch | null> {
+  try {
+    const res = await fetch("https://ipapi.co/json/");
+    if (!res.ok) return null;
+    const data = await res.json();
+    const region = ((data.region || "") + " " + (data.city || "")).toLowerCase();
+    if (IRKUTSK_REGIONS.some((r) => region.includes(r))) return BRANCHES[0];
+    if (MOSCOW_REGIONS.some((r) => region.includes(r))) return BRANCHES[1];
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 interface BranchContextType {
   branch: Branch;
   setBranch: (branch: Branch) => void;
   isChosen: boolean;
   setIsChosen: (v: boolean) => void;
+  isDetecting: boolean;
 }
 
 const BranchContext = createContext<BranchContextType>({
@@ -69,6 +87,7 @@ const BranchContext = createContext<BranchContextType>({
   setBranch: () => {},
   isChosen: false,
   setIsChosen: () => {},
+  isDetecting: true,
 });
 
 export const BranchProvider = ({ children }: { children: ReactNode }) => {
@@ -77,6 +96,19 @@ export const BranchProvider = ({ children }: { children: ReactNode }) => {
     return BRANCHES.find((b) => b.id === saved) ?? BRANCHES[0];
   });
   const [isChosen, setIsChosen] = useState(() => !!localStorage.getItem("branch"));
+  const [isDetecting, setIsDetecting] = useState(() => !localStorage.getItem("branch"));
+
+  useEffect(() => {
+    if (localStorage.getItem("branch")) return;
+    detectBranchByIp().then((detected) => {
+      if (detected) {
+        setBranchState(detected);
+        localStorage.setItem("branch", detected.id);
+        setIsChosen(true);
+      }
+      setIsDetecting(false);
+    });
+  }, []);
 
   const setBranch = (b: Branch) => {
     localStorage.setItem("branch", b.id);
@@ -84,7 +116,7 @@ export const BranchProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <BranchContext.Provider value={{ branch, setBranch, isChosen, setIsChosen }}>
+    <BranchContext.Provider value={{ branch, setBranch, isChosen, setIsChosen, isDetecting }}>
       {children}
     </BranchContext.Provider>
   );

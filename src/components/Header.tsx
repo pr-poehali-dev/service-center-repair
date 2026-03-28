@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { useBranch, BRANCHES } from "@/context/BranchContext";
 
@@ -10,19 +10,7 @@ interface HeaderProps {
 
 const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [regionOpen, setRegionOpen] = useState(false);
-  const regionRef = useRef<HTMLDivElement>(null);
   const { branch, setBranch, setIsChosen } = useBranch();
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (regionRef.current && !regionRef.current.contains(e.target as Node)) {
-        setRegionOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -35,11 +23,26 @@ const Header = ({ isScrolled, onContactClick, onRouteClick }: HeaderProps) => {
     <header
       className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200"
       style={{
-        height: "72px",
+        height: "auto",
         minHeight: "72px",
-        maxHeight: "72px",
       }}
     >
+      <div
+        style={{
+          backgroundColor: "#dc2626",
+          padding: "6px 16px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "8px",
+          fontSize: "13px",
+          color: "white",
+          fontWeight: "500",
+        }}
+      >
+        <Icon name="MapPin" size={13} className="text-white opacity-80 flex-shrink-0" />
+        <span>Ваш регион: <strong>{branch.name}</strong></span>
+      </div>
       <div
         className="w-full px-4"
         style={{
