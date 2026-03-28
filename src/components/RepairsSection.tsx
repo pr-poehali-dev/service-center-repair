@@ -9,6 +9,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
+import { useBranch } from "@/context/BranchContext";
 
 interface Repair {
   title?: string;
@@ -88,6 +89,8 @@ const RepairsSection = ({
   onContactMessageChange,
   onContactSubmit,
 }: RepairsSectionProps) => {
+  const { branch } = useBranch();
+
   return (
     <>
       <section id="repairs" className="py-12 bg-gray-50">
@@ -129,7 +132,7 @@ const RepairsSection = ({
               return (
                 <Card
                   key={index}
-                  className="border-2 hover:border-red-300 transition-all hover:shadow-xl"
+                  className="border-2 hover:border-red-300 transition-all hover:shadow-xl flex flex-col"
                 >
                   <CardHeader>
                     <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
@@ -141,8 +144,8 @@ const RepairsSection = ({
                     </div>
                     <CardTitle className="text-2xl mb-4">{repair.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3">
+                  <CardContent className="flex flex-col flex-1">
+                    <ul className="space-y-3 flex-1">
                       {repair.items?.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0 mt-1" size={18} />
@@ -150,6 +153,17 @@ const RepairsSection = ({
                         </li>
                       ))}
                     </ul>
+                    <a
+                      href={branch?.maxUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 block"
+                    >
+                      <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+                        <Icon name="MessageCircle" className="mr-2" size={18} />
+                        Получить консультацию
+                      </Button>
+                    </a>
                   </CardContent>
                 </Card>
               );
