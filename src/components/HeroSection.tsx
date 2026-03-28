@@ -46,7 +46,7 @@ const HeroSection = ({
   };
 
   return (
-    <section 
+    <section
       className="relative h-[600px] overflow-hidden bg-gray-900"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -78,7 +78,7 @@ const HeroSection = ({
               </p>
             </div>
           </div>
-          
+
           <div className="absolute bottom-20 left-0 right-0 z-10">
             <div className="container mx-auto px-4">
               <Button
@@ -86,7 +86,7 @@ const HeroSection = ({
                 className="bg-red-600 hover:bg-red-700 text-white text-base px-6 py-4 h-auto"
                 onClick={() => onScrollToSection("contact-form")}
               >
-                Получить консультацию
+                Подробнее
                 <Icon name="ArrowRight" className="ml-2" size={18} />
               </Button>
             </div>
@@ -95,7 +95,11 @@ const HeroSection = ({
       ))}
 
       <button
-        onClick={() => onSlideChange(currentSlide === 0 ? banners.length - 1 : currentSlide - 1)}
+        onClick={() =>
+          onSlideChange(
+            currentSlide === 0 ? banners.length - 1 : currentSlide - 1,
+          )
+        }
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full w-11 h-11 flex items-center justify-center transition-all"
       >
         <Icon name="ChevronLeft" size={24} />
