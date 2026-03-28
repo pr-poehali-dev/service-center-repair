@@ -45,6 +45,7 @@ const Index = () => {
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/ced87ac5-df43-462f-9452-5e71d950c4e8.jpg",
       icon: "Smartphone",
+      cardId: "repair-card-ремонт-смартфонов",
     },
     {
       title: "Ремонт компьютеров",
@@ -53,6 +54,7 @@ const Index = () => {
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/a46bcf77-e61d-4f22-b64b-3140c07ac674.jpg",
       icon: "Monitor",
+      cardId: "repair-card-ремонт-компьютеров-и-ноутбуков",
     },
     {
       title: "Ремонт ноутбуков любой сложности",
@@ -61,6 +63,7 @@ const Index = () => {
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/f7e57041-99e0-4606-a81d-b7ff4b6c0822.jpg",
       icon: "Laptop",
+      cardId: "repair-card-ремонт-компьютеров-и-ноутбуков",
     },
     {
       title: "Ремонт принтеров и МФУ",
@@ -68,6 +71,7 @@ const Index = () => {
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/4f7c085b-e9c2-44a6-b25a-9e9532e0cb82.jpg",
       icon: "Printer",
+      cardId: "repair-card-ремонт-принтеров-и-мфу",
     },
     {
       title: "Ремонт телевизоров всех марок",
@@ -75,6 +79,7 @@ const Index = () => {
       image:
         "https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/1add2846-e57f-4058-833b-ddcec0feeb40.jpg",
       icon: "Tv",
+      cardId: "repair-card-ремонт-телевизоров",
     },
   ];
 

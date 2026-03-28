@@ -7,6 +7,7 @@ interface Banner {
   description: string;
   image: string;
   icon: string;
+  cardId?: string;
 }
 
 interface HeroSectionProps {
@@ -84,7 +85,10 @@ const HeroSection = ({
               <Button
                 size="default"
                 className="bg-red-600 hover:bg-red-700 text-white text-base px-6 py-4 h-auto"
-                onClick={() => onScrollToSection("contact-form")}
+                onClick={() => banner.cardId
+                  ? document.getElementById(banner.cardId)?.scrollIntoView({ behavior: "smooth", block: "center" })
+                  : onScrollToSection("repairs")
+                }
               >
                 Подробнее
                 <Icon name="ArrowRight" className="ml-2" size={18} />
