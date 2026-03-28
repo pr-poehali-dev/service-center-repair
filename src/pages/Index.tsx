@@ -127,10 +127,7 @@ const Index = () => {
         "Продажа кабелей, чехлов, зарядных устройств",
       ],
     },
-    {
-      type: "banner",
-      text: "А также мы продаем защитные пленки, зарядные устройства и кабели.",
-    },
+
     {
       title: "Ремонт компьютеров и ноутбуков",
       icon: "Laptop",
@@ -151,7 +148,7 @@ const Index = () => {
     },
     {
       type: "banner",
-      text: "А также мы продаем зарядные устройства для всех моделей ноутбуков",
+      text: "А также мы продаем зарядные устройства для всех моделей ноутбуков. Защитные пленки, зарядные устройства и кабели.",
     },
     {
       title: "Ремонт принтеров и МФУ",
@@ -385,7 +382,10 @@ const Index = () => {
           onClose={() => setContactModalOpen(false)}
         />
 
-        <BranchSelectModal forceOpen={branchModalOpen} onClose={() => setBranchModalOpen(false)} />
+        <BranchSelectModal
+          forceOpen={branchModalOpen}
+          onClose={() => setBranchModalOpen(false)}
+        />
 
         {routeModalOpen && (
           <div
