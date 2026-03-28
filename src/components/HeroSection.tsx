@@ -23,11 +23,12 @@ const HeroSection = ({
   onSlideChange,
   onScrollToSection,
 }: HeroSectionProps) => {
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(null);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -35,13 +36,11 @@ const HeroSection = ({
   };
 
   const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 75) {
-      // Swipe left - next slide
+    if (touchStart === null || touchEnd === null) return;
+    const diff = touchStart - touchEnd;
+    if (diff > 75) {
       onSlideChange((currentSlide + 1) % banners.length);
-    }
-
-    if (touchStart - touchEnd < -75) {
-      // Swipe right - previous slide
+    } else if (diff < -75) {
       onSlideChange(currentSlide === 0 ? banners.length - 1 : currentSlide - 1);
     }
   };
