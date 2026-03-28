@@ -110,28 +110,44 @@ const RepairsSection = ({
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {repairs.map((repair, index) => {
               if (repair.type === "banner") {
+                const prevCard = repairs[index - 1];
+                const cardId = prevCard?.title ? `repair-card-${prevCard.title.replace(/\s+/g, "-").toLowerCase()}` : null;
                 return (
                   <Card
                     key={index}
                     className="md:col-span-2 border-2 border-red-500 bg-gradient-to-br from-red-50 to-yellow-50"
                   >
                     <CardContent className="p-8">
-                      <div className="flex items-center gap-6">
-                        <div className="flex-shrink-0 w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center shadow-lg">
-                          <Icon name="ShoppingBag" className="text-white" size={32} />
+                      <div className="flex items-center justify-between gap-6 flex-wrap">
+                        <div className="flex items-center gap-6">
+                          <div className="flex-shrink-0 w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <Icon name="ShoppingBag" className="text-white" size={32} />
+                          </div>
+                          <p className="text-lg text-gray-900 font-semibold">
+                            {repair.text}
+                          </p>
                         </div>
-                        <p className="text-lg text-gray-900 font-semibold">
-                          {repair.text}
-                        </p>
+                        {cardId && (
+                          <Button
+                            variant="outline"
+                            className="border-red-500 text-red-600 hover:bg-red-50 shrink-0"
+                            onClick={() => document.getElementById(cardId)?.scrollIntoView({ behavior: "smooth", block: "center" })}
+                          >
+                            Подробнее
+                            <Icon name="ArrowDown" className="ml-2" size={16} />
+                          </Button>
+                        )}
                       </div>
                     </CardContent>
                   </Card>
                 );
               }
 
+              const cardId = `repair-card-${repair.title?.replace(/\s+/g, "-").toLowerCase()}`;
               return (
                 <Card
                   key={index}
+                  id={cardId}
                   className="border-2 hover:border-red-300 transition-all hover:shadow-xl flex flex-col"
                 >
                   <CardHeader>
