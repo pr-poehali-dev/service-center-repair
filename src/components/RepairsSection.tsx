@@ -115,7 +115,7 @@ const RepairsSection = ({
                     </span>
                   </div>
                   <p className="text-gray-600 text-lg">
-                    Наша компания является официальным дистребьютером комнапии
+                    Наша компания является официальным дистрибьютером комнапии
                     Hi Black. На нашем складе присутствует весь перечень
                     расходных материалов для офисной техники. Лазерных, струйных
                     принтеров и МФУ.
@@ -142,7 +142,7 @@ const RepairsSection = ({
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-red-600 text-white px-6 py-2 text-base">
-              Услуги
+              Наши услуги
             </Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Что мы ремонтируем
@@ -185,12 +185,10 @@ const RepairsSection = ({
                             variant="outline"
                             className="border-red-500 text-red-600 hover:bg-red-50 shrink-0"
                             onClick={() =>
-                              document
-                                .getElementById(cardId)
-                                ?.scrollIntoView({
-                                  behavior: "smooth",
-                                  block: "center",
-                                })
+                              document.getElementById(cardId)?.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center",
+                              })
                             }
                           >
                             Подробнее
