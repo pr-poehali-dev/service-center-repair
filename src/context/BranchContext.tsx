@@ -44,7 +44,7 @@ export const BRANCHES: Branch[] = [
     phoneTel: "+73952407405",
     address: "г. Иркутск, ул. Рабочего Штаба 80",
     addressLines: ["г. Иркутск,", "ул. Рабочего Штаба 80,", "здание супермаркета Слата, 2 этаж"],
-    telegram: "element5_irk",
+    telegram: null,
     maxUrl: "https://max.ru/u/f9LHodD0cOLgxe4XB1Ih1XpZssZV97CCsvyEip8PtyHwWACwWA5WLcm8dbo",
     lat: 52.317736,
     lon: 104.302618,
