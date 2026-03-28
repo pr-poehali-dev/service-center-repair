@@ -85,10 +85,17 @@ const HeroSection = ({
                 <Button
                   size="default"
                   className="bg-red-600 hover:bg-red-700 text-white text-base px-6 py-4 h-auto"
-                  onClick={() => banner.cardId
-                    ? document.getElementById(banner.cardId)?.scrollIntoView({ behavior: "smooth", block: "start" })
-                    : onScrollToSection("repairs")
-                  }
+                  onClick={() => {
+                    if (banner.cardId) {
+                      const el = document.getElementById(banner.cardId);
+                      if (el) {
+                        const top = el.getBoundingClientRect().top + window.scrollY - 80;
+                        window.scrollTo({ top, behavior: "smooth" });
+                      }
+                    } else {
+                      onScrollToSection("repairs");
+                    }
+                  }}
                 >
                   Подробнее
                   <Icon name="ArrowRight" className="ml-2" size={18} />
