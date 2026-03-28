@@ -86,7 +86,7 @@ const HeroSection = ({
                 className="bg-red-600 hover:bg-red-700 text-white text-base px-6 py-4 h-auto"
                 onClick={() => onScrollToSection("contact-form")}
               >
-                Записаться на ремонт
+                Получить консультацию
                 <Icon name="ArrowRight" className="ml-2" size={18} />
               </Button>
             </div>
