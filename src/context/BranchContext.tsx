@@ -18,25 +18,6 @@ export interface Branch {
 
 export const BRANCHES: Branch[] = [
   {
-    id: "irkutsk",
-    name: "Иркутская область",
-    shortName: "Иркутск",
-    phone: "+73952407405",
-    phoneTel: "+73952407405",
-    address: "г. Иркутск, ул. Рабочего Штаба 80",
-    addressLines: ["г. Иркутск,", "ул. Рабочего Штаба 80,", "здание супермаркета Слата, 2 этаж"],
-    telegram: "element5_irk",
-    maxUrl: "https://max.ru/u/f9LHodD0cOLgxe4XB1Ih1XpZssZV97CCsvyEip8PtyHwWACwWA5WLcm8dbo",
-    lat: 52.317736,
-    lon: 104.302618,
-    city: "irkutsk",
-    workingHours: [
-      { days: "Пн–Пт", hours: "9:00 – 19:00" },
-      { days: "Суббота", hours: "10:00 – 16:00" },
-      { days: "Воскресенье", hours: "Выходной" },
-    ],
-  },
-  {
     id: "moscow",
     name: "Московская область",
     shortName: "Королёв",
@@ -55,19 +36,43 @@ export const BRANCHES: Branch[] = [
       { days: "Воскресенье", hours: "Выходной" },
     ],
   },
+  {
+    id: "irkutsk",
+    name: "Иркутская область",
+    shortName: "Иркутск",
+    phone: "+73952407405",
+    phoneTel: "+73952407405",
+    address: "г. Иркутск, ул. Рабочего Штаба 80",
+    addressLines: ["г. Иркутск,", "ул. Рабочего Штаба 80,", "здание супермаркета Слата, 2 этаж"],
+    telegram: "element5_irk",
+    maxUrl: "https://max.ru/u/f9LHodD0cOLgxe4XB1Ih1XpZssZV97CCsvyEip8PtyHwWACwWA5WLcm8dbo",
+    lat: 52.317736,
+    lon: 104.302618,
+    city: "irkutsk",
+    workingHours: [
+      { days: "Пн–Пт", hours: "9:00 – 19:00" },
+      { days: "Суббота", hours: "10:00 – 16:00" },
+      { days: "Воскресенье", hours: "Выходной" },
+    ],
+  },
 ];
 
-const IRKUTSK_REGIONS = ["иркутск", "irkutsk", "иркутская"];
-const MOSCOW_REGIONS = ["москв", "moscow", "московская", "королёв", "korolev", "подмосковье"];
+const MOSCOW_BRANCH = BRANCHES[0];
+const IRKUTSK_BRANCH = BRANCHES[1];
 
 async function detectBranchByIp(): Promise<Branch | null> {
   try {
     const res = await fetch("https://ipapi.co/json/");
     if (!res.ok) return null;
     const data = await res.json();
-    const region = ((data.region || "") + " " + (data.city || "")).toLowerCase();
-    if (IRKUTSK_REGIONS.some((r) => region.includes(r))) return BRANCHES[0];
-    if (MOSCOW_REGIONS.some((r) => region.includes(r))) return BRANCHES[1];
+    const regionRaw: string = (data.region || "").toLowerCase();
+    const cityRaw: string = (data.city || "").toLowerCase();
+    if (regionRaw.includes("irkutsk") || regionRaw.includes("иркутск") || cityRaw.includes("irkutsk") || cityRaw.includes("иркутск")) {
+      return IRKUTSK_BRANCH;
+    }
+    if (regionRaw.includes("moscow") || regionRaw.includes("московская") || cityRaw.includes("korolev") || cityRaw.includes("королёв") || cityRaw.includes("korolyov")) {
+      return MOSCOW_BRANCH;
+    }
     return null;
   } catch {
     return null;
