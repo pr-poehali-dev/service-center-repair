@@ -124,7 +124,7 @@ const RepairsSection = ({
                     href={branch?.maxUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-block"
+                    className="mt-4 flex justify-center"
                   >
                     <Button className="bg-gray-900 hover:bg-gray-700 text-white">
                       <Icon name="MessageCircle" className="mr-2" size={18} />
