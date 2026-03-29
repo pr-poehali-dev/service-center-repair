@@ -6,7 +6,7 @@ import requests
 SHOP_ID = "689a3d8a07da4b648b117a6d"
 
 def handler(event: dict, context) -> dict:
-    """Поиск товара по коду в LiveSklad. Авторизуется и возвращает остаток."""
+    """Поиск остатка товара по коду в LiveSklad."""
 
     if event.get('httpMethod') == 'OPTIONS':
         return {
@@ -33,16 +33,25 @@ def handler(event: dict, context) -> dict:
     login = os.environ['LIVESKLAD_LOGIN']
     password = os.environ['LIVESKLAD_PASSWORD']
 
-    # Авторизация
-    auth_resp = requests.post(
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        'Content-Type': 'application/json',
+        'Origin': 'https://my.livesklad.com',
+        'Referer': 'https://my.livesklad.com/'
+    })
+
+    # Авторизация — isRetry=true позволяет войти без recaptcha
+    auth_resp = session.post(
         'https://api.livesklad.com/auth',
         json={
             'email': login,
             'password': password,
             'date': int(time.time() * 1000),
+            'recaptchaToken': '',
+            'isRetry': True,
             'version': '7.5.4'
-        },
-        headers={'Content-Type': 'application/json'}
+        }
     )
 
     if auth_resp.status_code != 200:
@@ -50,16 +59,27 @@ def handler(event: dict, context) -> dict:
             'statusCode': 502,
             'headers': {'Access-Control-Allow-Origin': '*'},
             'body': json.dumps({
-                'error': 'Ошибка авторизации в LiveSklad',
+                'error': 'Ошибка авторизации',
                 'status': auth_resp.status_code,
                 'body': auth_resp.text[:500]
             }, ensure_ascii=False)
         }
 
-    token = auth_resp.json().get('token') or auth_resp.json().get('data', {}).get('token', '')
+    auth_data = auth_resp.json()
+    token = auth_data.get('token') or auth_data.get('data', {}).get('token', '')
+
+    if not token:
+        return {
+            'statusCode': 502,
+            'headers': {'Access-Control-Allow-Origin': '*'},
+            'body': json.dumps({
+                'error': 'Токен не получен',
+                'auth_body': auth_resp.text[:500]
+            }, ensure_ascii=False)
+        }
 
     # Поиск товара по коду
-    search_resp = requests.get(
+    search_resp = session.get(
         'https://api.livesklad.com/nomenclature-groups',
         params={
             'countFilter': 1,
@@ -72,19 +92,15 @@ def handler(event: dict, context) -> dict:
             'pageSize': 30,
             'version': '7.5.4'
         },
-        headers={
-            'authorization': token,
-            'Content-Type': 'application/json'
-        }
+        headers={'authorization': token}
     )
 
     return {
         'statusCode': 200,
         'headers': {'Access-Control-Allow-Origin': '*'},
         'body': json.dumps({
-            'auth_status': auth_resp.status_code,
-            'token_preview': token[:20] + '...' if token else None,
+            'code': code,
             'search_status': search_resp.status_code,
-            'search_body': search_resp.text[:3000]
+            'result': search_resp.json() if search_resp.ok else search_resp.text[:1000]
         }, ensure_ascii=False)
     }
