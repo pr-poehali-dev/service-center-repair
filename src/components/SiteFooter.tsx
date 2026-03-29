@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useBranch, BRANCHES } from "@/context/BranchContext";
 import Icon from "@/components/ui/icon";
+import VisitorCounter from "@/components/VisitorCounter";
 
 const SiteFooter = () => {
   const { branch, setBranch, setIsChosen } = useBranch();
@@ -70,7 +71,9 @@ const SiteFooter = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+        <VisitorCounter />
+
+        <div className="pt-4 text-center text-gray-400">
           <p>&copy; 2024 Сервис Клик. Все права защищены.</p>
         </div>
       </div>

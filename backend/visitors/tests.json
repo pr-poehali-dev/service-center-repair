@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "name": "GET counts",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "POST track moscow",
+      "method": "POST",
+      "path": "/",
+      "body": {"branch_id": "moscow"},
+      "expectedStatus": 200
+    }
+  ]
+}
