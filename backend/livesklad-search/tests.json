@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Поиск товара по коду 3804",
+      "method": "GET",
+      "path": "/?code=3804",
+      "expectedStatus": 200,
+      "expectedBody": {"auth_status": 200},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
