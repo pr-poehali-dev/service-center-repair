@@ -125,20 +125,7 @@ const BrandsAndEquipment = ({ brands, equipment }: BrandsAndEquipmentProps) => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">{item.description}</p>
-                  <a
-                    href={branch?.maxUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full border-red-300 text-red-600 hover:bg-red-50"
-                    >
-                      <Icon name="MessageCircle" className="mr-2" size={16} />
-                      Записаться на ремонт
-                    </Button>
-                  </a>
+                  <p className="text-gray-600">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
