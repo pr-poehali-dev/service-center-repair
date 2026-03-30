@@ -32,7 +32,9 @@ def handler(event: dict, context) -> dict:
             return {"statusCode": 400, "headers": headers, "body": json.dumps({"error": "invalid branch_id"})}
 
         ip = (event.get("headers") or {}).get("x-forwarded-for", "unknown").split(",")[0].strip()
-        visitor_hash = hashlib.sha256(f"{ip}:{branch_id}".encode()).hexdigest()
+        from datetime import date
+        today = date.today().isoformat()
+        visitor_hash = hashlib.sha256(f"{ip}:{branch_id}:{today}".encode()).hexdigest()
 
         conn = get_conn()
         cur = conn.cursor()
