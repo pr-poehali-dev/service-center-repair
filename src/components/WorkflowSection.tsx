@@ -33,9 +33,9 @@ const WorkflowSection = ({ workflow }: WorkflowSectionProps) => {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-5 gap-6">
             {workflow.map((step, index) => (
-              <div key={index} className="relative">
-                <Card className="text-center hover:shadow-xl transition-all border-2 hover:border-red-300">
-                  <CardContent className="pt-6">
+              <div key={index} className="relative flex flex-col">
+                <Card className="text-center hover:shadow-xl transition-all border-2 hover:border-red-300 h-full">
+                  <CardContent className="pt-6 h-full flex flex-col">
                     <div className="w-full h-36 mb-4 rounded-2xl overflow-hidden">
                       <img
                         src={step.image}
