@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { useBranch, BRANCHES } from "@/context/BranchContext";
+import ProposalModal from "@/components/ProposalModal";
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -11,6 +12,7 @@ interface HeaderProps {
 
 const Header = ({ isScrolled, onContactClick, onRouteClick, onChangeBranch }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [proposalOpen, setProposalOpen] = useState(false);
   const { branch, setBranch, setIsChosen } = useBranch();
 
   const scrollToSection = (id: string) => {
@@ -196,6 +198,19 @@ const Header = ({ isScrolled, onContactClick, onRouteClick, onChangeBranch }: He
             </div>
 
             <div className="space-y-2 px-6 pb-6 overflow-y-auto flex-1">
+              <button
+                onClick={() => { setMenuOpen(false); setProposalOpen(true); }}
+                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 rounded-xl border-2 border-red-200 transition-all duration-300 hover:shadow-lg group text-left"
+              >
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <Icon name="FileText" className="text-white" size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Получить коммерческое предложение</div>
+                  <div className="text-sm text-gray-600">Для организаций и ИП</div>
+                </div>
+              </button>
+
               <a
                 href="https://max.ru/u/f9LHodD0cOINFOgagFqOueCYFwY3LvsfLiFjf_6XipuOhHDXq78ArFpWbXo"
                 target="_blank"
@@ -227,6 +242,10 @@ const Header = ({ isScrolled, onContactClick, onRouteClick, onChangeBranch }: He
             </div>
           </div>
         </div>
+      )}
+
+      {proposalOpen && (
+        <ProposalModal onClose={() => setProposalOpen(false)} />
       )}
     </header>
   );
