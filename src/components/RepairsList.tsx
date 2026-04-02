@@ -81,7 +81,7 @@ const RepairsList = ({ repairs }: RepairsListProps) => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {repairs.map((repair, index) => {
               if (repair.type === "banner") {
                 const nextCard = repairs
@@ -93,7 +93,7 @@ const RepairsList = ({ repairs }: RepairsListProps) => {
                 return (
                   <Card
                     key={index}
-                    className="md:col-span-2 border-2 border-red-500 bg-gradient-to-br from-red-50 to-yellow-50"
+                    className="md:col-span-2 lg:hidden border-2 border-red-500 bg-gradient-to-br from-red-50 to-yellow-50"
                   >
                     <CardContent className="p-8">
                       <div className="flex items-center justify-between gap-6 flex-wrap">
