@@ -23,6 +23,7 @@ def handler(event: dict, context) -> dict:
     body = json.loads(event.get('body', '{}'))
 
     full_name = body.get('fullName', '')
+    phone = body.get('phone', '')
     organization = body.get('organization', '')
     inn = body.get('inn', '')
     activity = body.get('activity', '')
@@ -35,6 +36,7 @@ def handler(event: dict, context) -> dict:
     <h2>Новый запрос на коммерческое предложение</h2>
     <table style="border-collapse:collapse;width:100%">
       <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">ФИО</td><td style="padding:8px;border:1px solid #ddd">{full_name}</td></tr>
+      <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Контактный номер</td><td style="padding:8px;border:1px solid #ddd">{phone or '—'}</td></tr>
       <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Организация</td><td style="padding:8px;border:1px solid #ddd">{organization}</td></tr>
       <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">ИНН</td><td style="padding:8px;border:1px solid #ddd">{inn}</td></tr>
       <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Вид деятельности</td><td style="padding:8px;border:1px solid #ddd">{activity}</td></tr>
