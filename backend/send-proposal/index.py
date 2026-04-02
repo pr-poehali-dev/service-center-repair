@@ -1,8 +1,11 @@
+import base64
 import json
 import os
 import smtplib
+from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email import encoders
 
 
 def handler(event: dict, context) -> dict:
@@ -29,6 +32,9 @@ def handler(event: dict, context) -> dict:
     activity = body.get('activity', '')
     equipment = body.get('equipment', [])
     comment = body.get('comment', '')
+    file_data = body.get('fileData')
+    file_name = body.get('fileName')
+    file_type = body.get('fileType', 'application/octet-stream')
 
     equipment_str = ', '.join(equipment) if equipment else '—'
 
@@ -45,11 +51,19 @@ def handler(event: dict, context) -> dict:
     </table>
     """
 
-    msg = MIMEMultipart('alternative')
+    msg = MIMEMultipart('mixed')
     msg['Subject'] = f'КП запрос: {organization or full_name}'
     msg['From'] = '89220573961@mail.ru'
     msg['To'] = '89220573961@mail.ru'
     msg.attach(MIMEText(html, 'html', 'utf-8'))
+
+    if file_data and file_name:
+        file_bytes = base64.b64decode(file_data)
+        part = MIMEBase(*file_type.split('/', 1) if '/' in file_type else ('application', 'octet-stream'))
+        part.set_payload(file_bytes)
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', 'attachment', filename=file_name)
+        msg.attach(part)
 
     smtp_password = os.environ.get('SMTP_PASSWORD', '')
 

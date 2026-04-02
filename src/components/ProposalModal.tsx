@@ -22,6 +22,7 @@ const ProposalModal = ({ onClose }: ProposalModalProps) => {
     comment: "",
   });
   const [equipment, setEquipment] = useState<string[]>([]);
+  const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
@@ -37,12 +38,30 @@ const ProposalModal = ({ onClose }: ProposalModalProps) => {
     setLoading(true);
     setError("");
     try {
+      let fileData: string | null = null;
+      let fileName: string | null = null;
+      let fileType: string | null = null;
+
+      if (file) {
+        fileName = file.name;
+        fileType = file.type || "application/octet-stream";
+        fileData = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const result = reader.result as string;
+            resolve(result.split(",")[1]);
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+
       const res = await fetch(
         "https://functions.poehali.dev/e8c475b8-12db-4e97-85e5-36288f0e6eab",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...form, equipment }),
+          body: JSON.stringify({ ...form, equipment, fileData, fileName, fileType }),
         }
       );
       if (!res.ok) throw new Error("Ошибка отправки");
@@ -210,6 +229,33 @@ const ProposalModal = ({ onClose }: ProposalModalProps) => {
                   className="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 resize-none"
                   placeholder="Дополнительная информация..."
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Прикрепить файл
+                </label>
+                <label className={`flex items-center gap-3 w-full border-2 border-dashed rounded-xl px-4 py-3 cursor-pointer transition-all ${file ? "border-red-400 bg-red-50" : "border-gray-300 hover:border-gray-400 bg-gray-50"}`}>
+                  <Icon name="Paperclip" className={file ? "text-red-500" : "text-gray-400"} size={18} />
+                  <span className="text-sm text-gray-600 truncate flex-1">
+                    {file ? file.name : "Выберите файл (PDF, Word, изображение)"}
+                  </span>
+                  {file && (
+                    <button
+                      type="button"
+                      onClick={(e) => { e.preventDefault(); setFile(null); }}
+                      className="text-gray-400 hover:text-red-500 flex-shrink-0"
+                    >
+                      <Icon name="X" size={16} />
+                    </button>
+                  )}
+                  <input
+                    type="file"
+                    className="hidden"
+                    accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg"
+                    onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+                  />
+                </label>
               </div>
 
               {error && (
