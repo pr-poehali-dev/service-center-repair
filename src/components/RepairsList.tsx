@@ -137,14 +137,14 @@ const RepairsList = ({ repairs }: RepairsListProps) => {
                   id={cardId}
                   className="border-2 hover:border-red-300 transition-all hover:shadow-xl flex flex-col overflow-hidden"
                 >
-                  <div className="w-full h-48 overflow-hidden">
-                    <img
-                      src={repair.image}
-                      alt={repair.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
                   <CardHeader>
+                    <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
+                      <img
+                        src={repair.image}
+                        alt={repair.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <CardTitle className="text-2xl mb-4">
                       {repair.title}
                     </CardTitle>
