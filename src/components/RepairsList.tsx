@@ -135,7 +135,7 @@ const RepairsList = ({ repairs }: RepairsListProps) => {
                 <Card
                   key={index}
                   id={cardId}
-                  className="border-2 hover:border-red-300 transition-all hover:shadow-xl flex flex-col"
+                  className="border-2 hover:border-red-300 transition-all hover:shadow-xl flex flex-col overflow-hidden"
                 >
                   <CardHeader>
                     <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
