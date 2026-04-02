@@ -68,7 +68,7 @@ const HeroSection = ({
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
           </div>
 
-          <div className="relative container mx-auto px-4 h-full flex items-start pt-[20%] lg:pt-[10%]">
+          <div className="relative container mx-auto px-4 h-full flex items-start pt-[20%] lg:pt-[6%]">
             <div className="max-w-2xl text-white">
               <h2 className="text-[2.4rem] sm:text-[3.17rem] lg:text-[3.96rem] font-bold mb-6 text-yellow-400 leading-tight">
                 {banner.title}
