@@ -67,6 +67,26 @@ const RepairsList = ({ repairs }: RepairsListProps) => {
         </div>
       </section>
 
+      <section className="py-6 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="rounded-2xl overflow-hidden bg-yellow-400 flex flex-col md:flex-row items-center gap-6 px-8 py-7 shadow-md">
+            <div className="flex-1 text-center md:text-left">
+              <p className="text-2xl md:text-3xl font-black text-red-600 leading-tight uppercase tracking-wide">
+                Покупаем неисправные смартфоны, компьютеры, ноутбуки, телевизоры
+              </p>
+              <p className="mt-2 text-red-700 font-semibold text-base">
+                Быстрая оценка и оплата на месте
+              </p>
+            </div>
+            <img
+              src="https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3d7f02a1-80d1-4135-a866-069d64b82d6a.jpg"
+              alt="Покупаем неисправную технику"
+              className="w-full md:w-64 h-48 object-cover rounded-xl flex-shrink-0"
+            />
+          </div>
+        </div>
+      </section>
+
       <section id="repairs" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
