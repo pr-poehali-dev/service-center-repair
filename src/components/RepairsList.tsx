@@ -67,45 +67,6 @@ const RepairsList = ({ repairs }: RepairsListProps) => {
         </div>
       </section>
 
-      <section className="py-6 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <Card className="border-2 border-yellow-400 hover:border-yellow-500 transition-all hover:shadow-xl flex flex-col overflow-hidden bg-yellow-400">
-            <CardHeader>
-              <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
-                <img
-                  src="https://cdn.poehali.dev/projects/76e42107-86b0-4909-a0e6-6d5cf09e173d/files/3d7f02a1-80d1-4135-a866-069d64b82d6a.jpg"
-                  alt="Покупаем неисправную технику"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardTitle className="text-2xl mb-4 text-red-600 uppercase">
-                Покупаем неисправную технику
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col flex-1">
-              <ul className="space-y-3 flex-1">
-                {["Смартфоны", "Компьютеры и ноутбуки", "Телевизоры"].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-red-600 flex-shrink-0 mt-1" size={18} />
-                    <span className="text-red-700 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={branch?.maxUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 block"
-              >
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
-                  <Icon name="MessageCircle" className="mr-2" size={18} />
-                  Узнать стоимость
-                </Button>
-              </a>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       <section id="repairs" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
